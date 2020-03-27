@@ -9,6 +9,11 @@
         <e p="_Scripts" t="Include">
           <e p="Controllers" t="Include">
             <e p="BotController.cs" t="Include" />
+            <e p="BulletsController" t="Include">
+              <e p="BulletController.cs" t="Include" />
+              <e p="BulletMove.cs" t="Include" />
+              <e p="BulletsQuantity.cs" t="Include" />
+            </e>
             <e p="CameraController.cs" t="Include" />
             <e p="HealthController.cs" t="Include" />
             <e p="InputController.cs" t="Include" />
@@ -17,10 +22,9 @@
             </e>
             <e p="MovementController.cs" t="Include" />
             <e p="ShootingController" t="Include">
-              <e p="BulletController.cs" t="Include" />
-              <e p="BulletMove.cs" t="Include" />
-              <e p="ChoiceWeaponController.cs" t="Include" />
+              <e p="ShootingCheck.cs" t="Include" />
               <e p="ShootingController.cs" t="Include" />
+              <e p="WeaponController.cs" t="Include" />
             </e>
             <e p="Unit.cs" t="Include" />
           </e>

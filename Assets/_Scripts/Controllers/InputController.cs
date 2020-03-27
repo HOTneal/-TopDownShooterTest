@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
-    [SerializeField] private Unit m_PlayerUnit;
-    
     private LinkManager m_LinkManager;
+    private Unit m_Player;
 
     private void Start()
     {
         m_LinkManager = LinkManager.Instance;
+        m_Player = m_LinkManager.m_Player;
     }
 
     private void Update()
@@ -38,15 +38,12 @@ public class InputController : MonoBehaviour
     private void PlayerShoot()
     {
         if (Input.GetMouseButton(0))
-            m_PlayerUnit.Shoot(m_PlayerUnit);
-        
-        if (Input.GetMouseButtonUp(0))
-            m_LinkManager.m_EventsManager.EndPlayerShoot(m_PlayerUnit);
+            m_Player.Shoot(m_Player);
     }
 
     private void NextWeapon()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") != 0)
-            m_LinkManager.m_EventsManager.NextWeapon();
+        if (Input.GetAxis("Mouse ScrollWheel") != 0) 
+            m_Player.NextWeapon();
     }
 }

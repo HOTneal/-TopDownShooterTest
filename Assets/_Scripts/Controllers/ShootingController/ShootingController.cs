@@ -5,116 +5,81 @@ using UnityEngine;
 
 public class ShootingController : MonoBehaviour
 {
-
-    public enum ModeCanShooting
-    {
-        Shooting,
-        NoShooting,
-        NoAmmo
-    }
-    
-    [SerializeField] private Transform m_PointStartRaycast;
     [SerializeField] private GameObject m_Bullet;
     [SerializeField] private AudioSource m_AudioSourceShooting;
     [SerializeField] private AudioClip m_SoundNoAmmo;
-    
-    [HideInInspector] public DataWeapons m_CurrentWeapon;
-    [SerializeField] public ModeCanShooting m_ModeCanShooting = ModeCanShooting.Shooting;
-    [HideInInspector] public bool isNoAmmo = false;
-    
-    private Vector3 m_BulletTargetPoint;
+
     private RaycastHit m_Hit;
-    private float m_SpeedMoveBullet = 100.0f;
     private LinkManager m_LinkManager;
 
     private void Start()
     {
         m_LinkManager = LinkManager.Instance;
-        m_LinkManager.m_EventsManager.OnStartPlayerShooting += StartShooting;
-        m_LinkManager.m_EventsManager.OnEndPlayerShooting += EndShooting;
     }
 
-    public void StartShooting(DataWeapons weapon, Unit unit)
+    public IEnumerator Shooting(Unit unit)
     {
-        if (!isNoAmmo)
-        {
-            if (m_ModeCanShooting == ModeCanShooting.Shooting)
-                StartCoroutine(Shooting(weapon, unit));
-        }
-        else
-        {
-            if (m_ModeCanShooting == ModeCanShooting.NoAmmo)
-                StartCoroutine(NoAmmo());
-        }
-    }
-    
-    private IEnumerator Shooting(DataWeapons weapon, Unit unit)
-    {
-        print(unit.m_Nickname);
-
-        DisableShooting();
-        m_LinkManager.m_BulletController.BulletsCount(weapon);
+        DataWeapons weapon = unit.m_BulletsQuantity.m_CurrentWeapon;
+        unit.m_ShootingCheck.DisableShooting();
+        m_LinkManager.m_BulletController.BulletsCount(unit);
         m_LinkManager.m_UIManager.SetQuantityBullets();
-        StartRaycast();
-        GenerateBullets(weapon);
-        AnimShooting(unit, weapon ,true);
+        StartRaycast(unit);
+        GenerateBullets(weapon, unit);
+        AnimShooting(unit,true);
         m_AudioSourceShooting.PlayOneShot(weapon.SoundShot);
+        
         yield return new WaitForSeconds(weapon.SpeedShoot);
-        EnableShooting();
+        
+        unit.m_ShootingCheck.EnableShooting();
+        EndShooting(unit);
     }
 
-    private void EndShooting(DataWeapons weapon, Unit unit)
+    private void EndShooting(Unit unit)
     {
-        AnimShooting(unit, weapon,false);
+        AnimShooting(unit,false);
     }
     
-    private void StartRaycast()
+    private void StartRaycast(Unit unit)
     {
-        if (Physics.Raycast(m_PointStartRaycast.position, m_PointStartRaycast.forward, out m_Hit))
+        if (Physics.Raycast(unit.m_PointForGenerateBullets.position, unit.m_PointForGenerateBullets.forward, out m_Hit))
         {
-            //print(m_Hit.transform.name);
-            m_BulletTargetPoint = m_Hit.point;
+            print(m_Hit.transform.name);
+            unit.m_ShootingCheck.m_BulletTargetPoint = m_Hit.point;
         }
     }
 
-    private void GenerateBullets(DataWeapons weapon)
+    private void GenerateBullets(DataWeapons weapon, Unit unit)
     {
-        float offsetBulletPos = 0.0f;
-        float marginBetweenBullets = 0.3f;
+        var offsetBulletPos = 0.0f;
+        var marginBetweenBullets = 0.3f;
+        ShootingCheck shootingCheck = unit.m_ShootingCheck;
+        
         for (int i = 0; i < weapon.QuantityBulletsPerShot; i++)
         {
-            var bullet = Instantiate(m_Bullet, m_PointStartRaycast.position, Quaternion.identity);
+            var bullet = Instantiate(m_Bullet, unit.m_PointForGenerateBullets.position, Quaternion.identity);
             var bulletPos = bullet.transform.position;
             var bulletMove = bullet.GetComponent<BulletMove>();
             
             bullet.transform.position = new Vector3(bulletPos.x - offsetBulletPos, bulletPos.y, bulletPos.z);
-            bulletMove.m_TargetPos = new Vector3(m_BulletTargetPoint.x - offsetBulletPos, m_BulletTargetPoint.y, m_BulletTargetPoint.z);
-            bulletMove.m_Speed = m_SpeedMoveBullet;
+            bulletMove.m_TargetPos = new Vector3(shootingCheck.m_BulletTargetPoint.x - offsetBulletPos, shootingCheck.m_BulletTargetPoint.y, shootingCheck.m_BulletTargetPoint.z);
+            bulletMove.m_Speed = shootingCheck.m_SpeedMoveBullet;
 
             offsetBulletPos -= marginBetweenBullets;
         }
     }
 
-    private IEnumerator NoAmmo()
+    public IEnumerator NoAmmo(Unit unit)
     {
-        DisableShooting();
+        unit.m_ShootingCheck.DisableShooting();
         m_AudioSourceShooting.PlayOneShot(m_SoundNoAmmo);
+        
         yield return new WaitForSeconds(0.3f);
-        m_ModeCanShooting = ModeCanShooting.NoAmmo;
+        
+        unit.m_ShootingCheck.m_ModeCanShooting = ShootingCheck.ModeCanShooting.NoAmmo;
     }
 
-    private void AnimShooting(Unit unit, DataWeapons weapon, bool value)
+    private void AnimShooting(Unit unit, bool value)
     {
-        unit.m_Animator.SetBool(weapon.NameAnim, value);
-    }
-
-    public void EnableShooting()
-    {
-        m_ModeCanShooting = ModeCanShooting.Shooting;
-    }
-    
-    public void DisableShooting()
-    {
-        m_ModeCanShooting = ModeCanShooting.NoShooting;
+        unit.m_Animator.SetBool(unit.m_BulletsQuantity.m_CurrentWeapon.NameAnim, value);
     }
 }

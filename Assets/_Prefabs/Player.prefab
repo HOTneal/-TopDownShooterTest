@@ -894,7 +894,6 @@ GameObject:
   - component: {fileID: 1012697319233663892}
   - component: {fileID: 2922884530869867105}
   - component: {fileID: 497780300540637968}
-  - component: {fileID: 8197513003118349656}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -913,9 +912,9 @@ Transform:
   m_LocalPosition: {x: 30.92493, y: 0.2577591, z: 8.948494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8534899748933621389}
   - {fileID: 610063083681256145}
   - {fileID: 299681766164928932}
-  - {fileID: 8534899748933621389}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -968,25 +967,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c578fff1080494e8c7edb0146b42b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpeedWalk: 10
   m_Nickname: iRom
   isBot: 0
   isEnemy: 0
   m_PointForGenerateBullets: {fileID: 0}
+  m_BulletsQuantity: {fileID: 0}
+  m_ShootingCheck: {fileID: 0}
+  m_SpeedWalk: 10
   m_Animator: {fileID: 0}
---- !u!114 &8197513003118349656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3338827185580732999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9c67da94f94054c99fc532437e38cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 0}
+  m_ChController: {fileID: 0}
+  m_IdCurrentWeapon: 0
+  m_IdDefaultWeaponAtStart: 0
 --- !u!1 &3505663903494244531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1150,7 @@ Transform:
   m_LocalScale: {x: 99.99999, y: 99.99999, z: 99.99999}
   m_Children: []
   m_Father: {fileID: 8197513003387265195}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1969774001797942067
 SkinnedMeshRenderer:
@@ -1320,7 +1311,7 @@ Transform:
   - {fileID: 1886811074111014162}
   - {fileID: 5860289500690530110}
   m_Father: {fileID: 8197513003387265195}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5169720677246792092
 GameObject:
@@ -2122,7 +2113,7 @@ Transform:
   m_LocalScale: {x: 0.12696455, y: 0.12696455, z: 0.12696455}
   m_Children: []
   m_Father: {fileID: 8197513003387265195}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.023000002, y: 0, z: 0.28100002}
 --- !u!33 &8534899748933621384
 MeshFilter:

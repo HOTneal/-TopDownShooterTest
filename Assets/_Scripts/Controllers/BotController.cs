@@ -6,7 +6,9 @@ using UnityEngine;
 public class BotController : MonoBehaviour
 {
     [SerializeField] private Transform m_Target;
-
+    [SerializeField] private float m_DistanceLookAt = 100.0f;
+    [SerializeField] private float m_DistanceAttack = 20.0f;
+    
     private Transform m_BotTransform;
     private Unit m_Bot;
 
@@ -18,8 +20,17 @@ public class BotController : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= 5.0f && m_Bot.isEnemy)
-            m_Bot.Shoot(m_Bot);
+        if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= m_DistanceLookAt && m_Bot.isEnemy)
+        {
+            m_BotTransform.LookAt(m_Target);
+            
+            if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= m_DistanceAttack)
+                Attack();
+        }
     }
-    
+
+    private void Attack()
+    {
+        m_Bot.Shoot(m_Bot);
+    }
 }

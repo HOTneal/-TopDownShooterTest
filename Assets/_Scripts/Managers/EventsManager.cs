@@ -6,36 +6,16 @@ using UnityEngine.Serialization;
 
 public class EventsManager : MonoBehaviour
 {
-    public event Action<DataWeapons, Unit> OnStartPlayerShooting;
-    public event Action<DataWeapons, Unit> OnEndPlayerShooting;
-    public event Action OnNextWeapon;
+    public event Action<Unit> OnStartShooting;
+    public event Action<Unit> OnNextWeapon;
 
-    public event Action OnBotShooting;
-
-    private LinkManager m_LinkManager;
-
-    private void Start()
+    public void StartShoot(Unit unit)
     {
-        m_LinkManager = LinkManager.Instance;
+        OnStartShooting?.Invoke(unit);
     }
 
-    public void StartPlayerShoot(Unit unit)
+    public void NextWeapon(Unit unit)
     {
-        OnStartPlayerShooting?.Invoke(m_LinkManager.m_ShootingController.m_CurrentWeapon, unit);
-    }
-
-    public void EndPlayerShoot(Unit unit)
-    {
-        OnEndPlayerShooting?.Invoke(m_LinkManager.m_ShootingController.m_CurrentWeapon, unit);
-    }
-
-    public void NextWeapon()
-    {
-        OnNextWeapon?.Invoke();
-    }
-
-    public void BotShooting()
-    {
-        OnBotShooting?.Invoke();
+        OnNextWeapon?.Invoke(unit);
     }
 }

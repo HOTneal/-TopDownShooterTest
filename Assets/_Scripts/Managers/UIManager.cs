@@ -21,8 +21,8 @@ public class UIManager : MonoBehaviour
     public void SetQuantityBullets()
     {
         m_LinkManager = LinkManager.Instance;
-        var bulletsInClip = m_LinkManager.m_BulletController.m_QuantityBulletsInClip.ToString();
-        var allBullets = m_LinkManager.m_BulletController.m_AllBulletsWeapon.ToString();
-        m_QuantityBullets.text = $"{bulletsInClip}/{allBullets}";
+        //var bulletsInClip = m_LinkManager.m_BulletController.m_QuantityBulletsInClip.ToString();
+        //var allBullets = m_LinkManager.m_BulletController.m_AllBulletsWeapon.ToString();
+        //m_QuantityBullets.text = $"{bulletsInClip}/{allBullets}";
     }
 }

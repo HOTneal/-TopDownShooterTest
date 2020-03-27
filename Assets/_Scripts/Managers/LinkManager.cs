@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ public class LinkManager : MonoBehaviour
     }
     #endregion
 
+    public Unit m_Player;
     public MovementController m_MovementController;
     public EventsManager m_EventsManager;
     public ShootingController m_ShootingController;
@@ -28,4 +30,5 @@ public class LinkManager : MonoBehaviour
     public InputController m_InputController;
     public MobileInputController m_MobilePlayerController;
     public BulletController m_BulletController;
+    public WeaponController m_WeaponController;
 }

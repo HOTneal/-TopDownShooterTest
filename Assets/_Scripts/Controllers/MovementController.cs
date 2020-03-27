@@ -18,12 +18,12 @@ public class MovementController : MonoBehaviour {
         GravityPlayer();
     }
 
-    public void SetPlayerMoveSettings(Transform playerTransform, Animator playerAnimator, CharacterController playerController, float playerSpeed)
+    public void SetPlayerMoveSettings(Unit unit)
     {
-        m_PlayerTransform = playerTransform;
-        m_Animator = playerAnimator;
-        m_ChController = playerController;
-        m_SpeedWalk = playerSpeed;
+        m_PlayerTransform = unit.transform;
+        m_Animator = unit.m_Animator;
+        m_ChController = unit.m_ChController;
+        m_SpeedWalk = unit.m_SpeedWalk;
     }
     
     private void MovePlayer()
