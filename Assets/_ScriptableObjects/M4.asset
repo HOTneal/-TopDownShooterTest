@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: M4
+  m_EditorClassIdentifier: Assembly-CSharp::DataWeapons
+  m_IdWeapon: 1
+  m_SpeedShoot: 0.1
+  m_ReloadTime: 3
+  m_Damage: 3
+  m_QuantityBulletsPerShot: 1
+  m_QuantityBulletsInClip: 48
+  m_QuantityAllBulletsWeapon: 144
+  m_TypeShooting: 0
+  m_Icon: {fileID: 21300000, guid: b23c239ece1e9054f8c79f51f9778607, type: 3}
+  m_SoundShot: {fileID: 8300000, guid: 4e227fc79764f0e4b97f6d84b0a493a8, type: 3}
+  m_NameAnim: Shooting
+  m_InfinityBullets: 1

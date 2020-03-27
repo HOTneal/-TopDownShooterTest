@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: Assembly-CSharp::DataWeapons
+  m_IdWeapon: 2
+  m_SpeedShoot: 0.7
+  m_ReloadTime: 4
+  m_Damage: 5
+  m_QuantityBulletsPerShot: 3
+  m_QuantityBulletsInClip: 12
+  m_QuantityAllBulletsWeapon: 36
+  m_TypeShooting: 0
+  m_Icon: {fileID: 21300000, guid: 55132b4d7aabfd7449a15e18b15658ea, type: 3}
+  m_SoundShot: {fileID: 8300000, guid: d46add771d3165f44b0ff3b1c6248a35, type: 3}
+  m_NameAnim: Shooting
+  m_InfinityBullets: 1
