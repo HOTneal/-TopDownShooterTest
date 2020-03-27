@@ -6,6 +6,7 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     public string m_Nickname;
+    public int m_Helth = 100;
     public bool isBot = false;
     public bool isEnemy = false;
     public Transform m_PointForGenerateBullets;

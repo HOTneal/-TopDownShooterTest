@@ -23,12 +23,13 @@ public class LinkManager : MonoBehaviour
     #endregion
 
     public Unit m_Player;
-    public MovementController m_MovementController;
-    public EventsManager m_EventsManager;
-    public ShootingController m_ShootingController;
-    public UIManager m_UIManager;
-    public InputController m_InputController;
     public MobileInputController m_MobilePlayerController;
+    public MovementController m_MovementController;
+    public ShootingController m_ShootingController;
     public BulletController m_BulletController;
     public WeaponController m_WeaponController;
+    public DamageController m_DamageController;
+    public InputController m_InputController;
+    public EventsManager m_EventsManager;
+    public UIManager m_UIManager;
 }

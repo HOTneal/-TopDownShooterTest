@@ -36,7 +36,9 @@ public class WeaponController : MonoBehaviour
     {
         BulletsQuantity bulletsQuantity = unit.m_BulletsQuantity;
         m_AudioSource.PlayOneShot(m_NextWeapon);
+        bulletsQuantity.m_LastWeapon = bulletsQuantity.m_CurrentWeapon.IdWeapon;
         bulletsQuantity.m_NextWeapon = bulletsQuantity.m_CurrentWeapon.IdWeapon + 1;
+        
         if (bulletsQuantity.m_NextWeapon >= m_DataWeapons.Length)
             bulletsQuantity.m_NextWeapon = 0;
         

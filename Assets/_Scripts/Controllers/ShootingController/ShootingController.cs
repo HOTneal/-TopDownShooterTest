@@ -43,8 +43,13 @@ public class ShootingController : MonoBehaviour
     {
         if (Physics.Raycast(unit.m_PointForGenerateBullets.position, unit.m_PointForGenerateBullets.forward, out m_Hit))
         {
-            print(m_Hit.transform.name);
+            Unit damageUnit = new Unit();
+
+            if (m_Hit.transform.TryGetComponent(out Unit returnUnit))
+                damageUnit = returnUnit;
+
             unit.m_ShootingCheck.m_BulletTargetPoint = m_Hit.point;
+            m_LinkManager.m_DamageController.Damage(unit, damageUnit);
         }
     }
 

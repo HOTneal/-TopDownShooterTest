@@ -15,7 +15,12 @@
               <e p="BulletsQuantity.cs" t="Include" />
             </e>
             <e p="CameraController.cs" t="Include" />
-            <e p="HealthController.cs" t="Include" />
+            <e p="DamageController.cs" t="Include" />
+            <e p="DeadController.cs" t="Include" />
+            <e p="HelthbarController" t="Include">
+              <e p="HelthbarController.cs" t="Include" />
+              <e p="HelthbarRotate.cs" t="Include" />
+            </e>
             <e p="InputController.cs" t="Include" />
             <e p="MobileControllers" t="Include">
               <e p="MobileInputController.cs" t="Include" />

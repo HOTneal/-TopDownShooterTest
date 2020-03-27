@@ -15,7 +15,7 @@ MonoBehaviour:
   m_IdWeapon: 2
   m_SpeedShoot: 0.7
   m_ReloadTime: 4
-  m_Damage: 5
+  m_Damage: 30
   m_QuantityBulletsPerShot: 3
   m_QuantityBulletsInClip: 12
   m_QuantityAllBulletsWeapon: 36

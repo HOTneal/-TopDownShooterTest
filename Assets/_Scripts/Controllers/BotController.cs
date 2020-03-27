@@ -22,7 +22,7 @@ public class BotController : MonoBehaviour
     {
         if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= m_DistanceLookAt && m_Bot.isEnemy)
         {
-            m_BotTransform.LookAt(m_Target);
+            //m_BotTransform.LookAt(m_Target);
             
             if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= m_DistanceAttack)
                 Attack();
