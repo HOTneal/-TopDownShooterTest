@@ -9,7 +9,6 @@ public class Unit : MonoBehaviour
     public int m_Helth = 100;
     public bool isBot = false;
     public bool isEnemy = false;
-    public bool isDead = false;
     public Transform m_PointForGenerateBullets;
     public BulletsQuantityUnit m_BulletsQuantity;
     public ShootingCheckUnit m_ShootingCheck;
