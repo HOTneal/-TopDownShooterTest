@@ -1188,6 +1188,7 @@ GameObject:
   - component: {fileID: 723956358613983695}
   - component: {fileID: 3494839541404166976}
   - component: {fileID: 2048061379}
+  - component: {fileID: 1146759527920024252}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1277,6 +1278,7 @@ MonoBehaviour:
   m_IdDefaultWeaponAtStart: 0
   m_HelthbarUnit: {fileID: 0}
   m_BotController: {fileID: 0}
+  m_SetTarget: {fileID: 0}
 --- !u!114 &5955215099167960832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,6 +1370,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Offset: {x: 0, y: 20, z: -25}
   m_SpeedMoveCam: 20
+--- !u!114 &1146759527920024252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617199119289052361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1fac73924d43674eb4765245ffa9663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8786897367546406582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,15 +1521,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d, type: 3}
---- !u!4 &4277656495856900544 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400150, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4277656495857287894}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4277656495857255904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100150, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4277656495857287894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4277656495856900544 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400150, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d,
     type: 3}
   m_PrefabInstance: {fileID: 4277656495857287894}
   m_PrefabAsset: {fileID: 0}

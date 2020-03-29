@@ -17,6 +17,7 @@ public class RespawnController : MonoBehaviour
     {
         SortPoints(m_SpawnPointsTeam1, m_Bot);
         SortPoints(m_SpawnPointsTeam2, m_Player);
+        
         m_LinkManager = LinkManager.Instance;
     }
 
@@ -30,9 +31,9 @@ public class RespawnController : MonoBehaviour
     {
         GameObject spawnedUnit = Instantiate(unitObj, point.position, Quaternion.identity) as GameObject;
         Unit unit = spawnedUnit.GetComponent<Unit>();
-        
+
         unit.m_PointForSpawn = point;
-        
+
         if (unit.isBot)
             unit.m_Nickname = GenerateBotNickname();
 

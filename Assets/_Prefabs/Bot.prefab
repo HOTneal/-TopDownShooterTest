@@ -181,6 +181,7 @@ MonoBehaviour:
   m_ChController: {fileID: 0}
   m_IdDefaultWeaponAtStart: 0
   m_HelthbarUnit: {fileID: 0}
+  m_BotController: {fileID: 0}
 --- !u!114 &4207883778890434413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DistanceLookAt: 100
   m_DistanceAttack: 20
+  m_Target: {fileID: 0}
+  isAttack: 1
 --- !u!114 &1045122874216075042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Helthbar: {fileID: 0}
+  m_Nickname: {fileID: 0}
 --- !u!1 &125403475638431602
 GameObject:
   m_ObjectHideFlags: 0

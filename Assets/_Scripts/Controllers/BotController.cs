@@ -9,6 +9,7 @@ public class BotController : MonoBehaviour
     [SerializeField] private float m_DistanceAttack = 20.0f;
 
     public Transform m_Target;
+    public bool isAttack = true;
     
     private Unit m_TargetUnit;
     private Unit m_BotUnit;
@@ -17,22 +18,25 @@ public class BotController : MonoBehaviour
 
     private void Start()
     {
-        m_Target = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        m_TargetUnit = m_Target.GetComponent<Unit>();
+        m_LinkManager = LinkManager.Instance;
+
+        if (m_LinkManager.m_Player != null && m_Target == null)
+            m_Target = m_LinkManager.m_Player.transform;
+        
         m_BotUnit = GetComponent<Unit>();
         m_BotTransform = transform;
-        m_LinkManager = LinkManager.Instance;
     }
 
     private void Update()
     {
-        if (m_LinkManager.m_Player == null)
+        if (!isAttack)
             return;
-        
+
+        if (m_LinkManager.m_Player == null || m_Target == null)
+            return;
+
         if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= m_DistanceLookAt)
         {
-            //m_BotTransform.LookAt(m_Target);
-            
             if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= m_DistanceAttack)
                 Attack();
         }

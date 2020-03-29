@@ -20,6 +20,7 @@ public class Unit : MonoBehaviour
     [HideInInspector] public int m_IdDefaultWeaponAtStart = 0;
     [HideInInspector] public HelthbarUnit m_HelthbarUnit;
     [HideInInspector] public BotController m_BotController;
+    [HideInInspector] public SetTarget m_SetTarget;
 
     private LinkManager m_LinkManager;
     private MovementController m_MovementController;
@@ -39,10 +40,12 @@ public class Unit : MonoBehaviour
         {
             m_LinkManager.m_Player = this;
             SetPlayerMoveSettings();
+            m_SetTarget = GetComponent<SetTarget>();
+            m_SetTarget.SetTargetForBotAttack();
         }
         else
             m_BotController = GetComponent<BotController>();
-        
+
         SetWeapon();
     }
 

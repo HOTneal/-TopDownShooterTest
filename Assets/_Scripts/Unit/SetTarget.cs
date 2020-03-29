@@ -10,16 +10,14 @@ public class SetTarget : MonoBehaviour
     private void Start()
     {
         m_LinkManager = LinkManager.Instance;
-        SetTargetForBotAttack();
     }
 
     public void SetTargetForBotAttack()
     {
-        foreach (var element in LinkManager.Instance.m_UnitsHolder.m_Units)
+        foreach (var value in LinkManager.Instance.m_UnitsHolder.m_Units)
         {
-            if (element.isBot)
-                element.m_BotController.m_Target = GetComponent<Transform>();
+            if (value.isBot)
+                value.m_BotController.m_Target = transform;
         }
-
     }
 }
