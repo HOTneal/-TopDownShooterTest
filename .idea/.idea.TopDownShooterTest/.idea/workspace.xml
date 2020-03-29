@@ -12,7 +12,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarRotate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/ShootingCheckUnit.cs" root0="FORCE_HIGHLIGHTING" />
@@ -45,7 +45,6 @@
         <option value="$PROJECT_DIR$/Assets/_Shaders/Sprites.shader" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/ResetPlayerParameters.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
@@ -64,10 +63,12 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/HelthbarUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/UnitsHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/SetTarget.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
       </list>
     </option>
   </component>
@@ -125,6 +126,7 @@
       <workItem from="1585364826076" duration="23608000" />
       <workItem from="1585396265001" duration="6068000" />
       <workItem from="1585449398283" duration="11340000" />
+      <workItem from="1585464725679" duration="4608000" />
     </task>
     <servers />
   </component>

@@ -14,7 +14,7 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
-        if (m_LinkManager.m_Player.isDead)
+        if (m_LinkManager.m_Player == null)
             return;
         
         PlayerShoot();

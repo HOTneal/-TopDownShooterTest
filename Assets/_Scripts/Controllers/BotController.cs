@@ -11,14 +11,15 @@ public class BotController : MonoBehaviour
     public Transform m_Target;
     
     private Unit m_TargetUnit;
+    private Unit m_BotUnit;
     private Transform m_BotTransform;
-    private Unit m_Bot;
     private LinkManager m_LinkManager;
 
     private void Start()
     {
+        m_Target = GameObject.FindWithTag("Player").GetComponent<Transform>();
         m_TargetUnit = m_Target.GetComponent<Unit>();
-        m_Bot = GetComponent<Unit>();
+        m_BotUnit = GetComponent<Unit>();
         m_BotTransform = transform;
         m_LinkManager = LinkManager.Instance;
     }
@@ -28,7 +29,7 @@ public class BotController : MonoBehaviour
         if (m_LinkManager.m_Player == null)
             return;
         
-        if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= m_DistanceLookAt && m_Bot.isEnemy && !m_TargetUnit.isDead)
+        if (Vector3.Distance(m_BotTransform.position, m_Target.position) <= m_DistanceLookAt)
         {
             //m_BotTransform.LookAt(m_Target);
             
@@ -39,7 +40,7 @@ public class BotController : MonoBehaviour
 
     private void Attack()
     {
-        m_Bot.Shoot(m_Bot);
+        m_BotUnit.Shoot(m_BotUnit);
     }
 
     public void SetTarget(Transform player)

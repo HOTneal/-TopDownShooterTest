@@ -31,7 +31,6 @@ public class DeadController : MonoBehaviour
         m_LinkManager.m_UIManager.DeadPanel(true);
         m_LinkManager.m_UIManager.DarkPanel(0.8f, true);
         m_LinkManager.m_UIManager.Interface(false);
-        unit.isDead = true;
         m_LinkManager.m_UnitsHolder.DeleteUnitFromHolder(unit);
         Destroy(unit.gameObject);
     }
