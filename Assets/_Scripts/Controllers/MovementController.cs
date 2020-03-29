@@ -1,19 +1,31 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementController : MonoBehaviour {
+public class MovementController : MonoBehaviour
+{
 
+    private LinkManager m_LinkManager;
     private Transform m_PlayerTransform;
     public Animator m_Animator;
     private CharacterController m_ChController;
     private float m_SpeedWalk;
     private float m_GravityForce;
-    private float m_SpeedAnim;
     private Vector3 m_MoveVector;
+    private InputController m_InputController;
 
+    private void Start()
+    {
+        m_LinkManager = LinkManager.Instance;
+        m_InputController = GetComponent<InputController>();
+    }
+    
     private void Update()
     {
+        if (m_LinkManager.m_Player.isDead)
+            return;
+        
         MovePlayer();
         GravityPlayer();
     }
@@ -31,8 +43,8 @@ public class MovementController : MonoBehaviour {
         if (m_ChController.isGrounded)
         {
             m_MoveVector = Vector3.zero;
-            m_MoveVector.x = LinkManager.Instance.m_InputController.MovePlayer().x * m_SpeedWalk;
-            m_MoveVector.z = LinkManager.Instance.m_InputController.MovePlayer().y * m_SpeedWalk;
+            m_MoveVector.x = m_InputController.MovePlayer().x * m_SpeedWalk;
+            m_MoveVector.z = m_InputController.MovePlayer().y * m_SpeedWalk;
 
             PlayerWalkAnim();
             PlayerRotate();

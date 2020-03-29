@@ -13,7 +13,7 @@ public class DataWeapons : ScriptableObject {
     [SerializeField] private int m_IdWeapon;
     [SerializeField] private float m_SpeedShoot;
     [SerializeField] private float m_ReloadTime;
-    [SerializeField] private int m_Damage;
+    [SerializeField] private float m_Damage;
     [SerializeField] private int m_QuantityBulletsPerShot;
     [SerializeField] private int m_QuantityBulletsInClip;
     [SerializeField] private int m_QuantityAllBulletsWeapon;
@@ -26,7 +26,7 @@ public class DataWeapons : ScriptableObject {
     public int IdWeapon { get { return m_IdWeapon; } }
     public float SpeedShoot { get { return m_SpeedShoot; } }
     public float ReloadTime { get { return m_ReloadTime; } }
-    public int Damage { get { return m_Damage; } }
+    public float Damage { get { return m_Damage; } }
     public int QuantityBulletsPerShot { get { return m_QuantityBulletsPerShot; } }
     public int QuantityBulletsInClip { get { return m_QuantityBulletsInClip; } }
     public int QuantityAllBulletsWeapon { get { return m_QuantityAllBulletsWeapon; } }

@@ -1,16 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-
-    [SerializeField] private Transform m_Target;
+    
     [SerializeField] private Vector3 m_Offset;
     [SerializeField] private float m_SpeedMoveCam;
 
+    private Transform m_Target;
+    private Transform m_Camera;
+
+    private void Start()
+    {
+        m_Target = transform;
+        if (Camera.main != null) m_Camera = Camera.main.transform;
+    }
+
     private void Update()
     {
-        transform.LookAt(m_Target);
-        transform.position = Vector3.Lerp(transform.position, m_Target.position + m_Offset, m_SpeedMoveCam * Time.deltaTime);
+        m_Camera.LookAt(m_Target);
+        m_Camera.position = Vector3.Lerp(m_Camera.position, m_Target.position + m_Offset, m_SpeedMoveCam * Time.deltaTime);
     }
 }

@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletsQuantity : MonoBehaviour
+public class BulletsQuantityUnit : MonoBehaviour
 {
     [HideInInspector] public DataWeapons m_CurrentWeapon;
+    public GameObject[] m_AllWeaponUnit;
     [HideInInspector] public int m_QuantityBulletsInClip;
     [HideInInspector] public int m_AllBulletsWeapon;
     [HideInInspector] public int m_NextWeapon;

@@ -9,16 +9,20 @@ public class Unit : MonoBehaviour
     public int m_Helth = 100;
     public bool isBot = false;
     public bool isEnemy = false;
+    public bool isDead = false;
     public Transform m_PointForGenerateBullets;
-    public BulletsQuantity m_BulletsQuantity;
-    public ShootingCheck m_ShootingCheck;
-    [HideInInspector] public float m_SpeedWalk;
+    public BulletsQuantityUnit m_BulletsQuantity;
+    public ShootingCheckUnit m_ShootingCheck;
+    public float m_SpeedWalk;
+    public Transform m_PointForSpawn;
     [HideInInspector] public Animator m_Animator;
     [HideInInspector] public CharacterController m_ChController;
     [HideInInspector] public int m_IdDefaultWeaponAtStart = 0;
-    
+    [HideInInspector] public HelthbarUnit m_HelthbarUnit;
+    [HideInInspector] public BotController m_BotController;
+
     private LinkManager m_LinkManager;
-    private BotController m_BotController;
+    private MovementController m_MovementController;
     
     private void Start()
     {
@@ -26,11 +30,16 @@ public class Unit : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_ChController = GetComponent<CharacterController>();
         m_PointForGenerateBullets = transform.GetChild(0).GetComponent<Transform>();
-        m_BulletsQuantity = GetComponent<BulletsQuantity>();
-        m_ShootingCheck = GetComponent<ShootingCheck>();
+        m_BulletsQuantity = GetComponent<BulletsQuantityUnit>();
+        m_ShootingCheck = GetComponent<ShootingCheckUnit>();
+        m_HelthbarUnit = GetComponent<HelthbarUnit>();
+        m_MovementController = GetComponent<MovementController>();
 
         if (!isBot)
+        {
+            m_LinkManager.m_Player = this;
             SetPlayerMoveSettings();
+        }
         else
             m_BotController = GetComponent<BotController>();
         
@@ -39,7 +48,7 @@ public class Unit : MonoBehaviour
 
     private void SetPlayerMoveSettings()
     {
-        m_LinkManager.m_MovementController.SetPlayerMoveSettings(this);
+        m_MovementController.SetPlayerMoveSettings(this);
     }
     
     public void Shoot(Unit unit)
@@ -50,7 +59,7 @@ public class Unit : MonoBehaviour
     
     private void SetWeapon()
     {
-        m_LinkManager.m_WeaponController.SetWeapon(m_IdDefaultWeaponAtStart, m_BulletsQuantity);
+        m_LinkManager.m_WeaponController.SetWeaponParameters(m_IdDefaultWeaponAtStart, this);
     }
 
     public void NextWeapon()

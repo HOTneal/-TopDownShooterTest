@@ -1,11 +1,55 @@
 fileFormatVersion: 2
 guid: dd0b1cd0b4bb71c429dd9a664e3d60d5
 ModelImporter:
-  serializedVersion: 19300
-  internalIDToNameTable: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 870mcs
+    100002: 870mcs_bolt
+    100004: 870mcs_pump
+    100006: 870mcs_side shells
+    100008: 870mcs_side shells.001
+    100010: 870mcs_top rail
+    100012: //RootNode
+    400000: 870mcs
+    400002: 870mcs_bolt
+    400004: 870mcs_pump
+    400006: 870mcs_side shells
+    400008: 870mcs_side shells.001
+    400010: 870mcs_top rail
+    400012: //RootNode
+    2100000: Metallic Paint Satin - Black
+    2100002: 'Material #28'
+    2100004: Plastic Fine Textured - Black
+    2100006: Plastic LED - Red On
+    2100008: Metal Brass - Polished
+    2100010: Plastic High Gloss - Burnt Red
+    2100012: Plastic LED - Red Off
+    2100014: Plastic Fine Textured - Black.001
+    2100016: Metal Brass - Polished.001
+    2100018: Plastic High Gloss - Burnt Red.001
+    2100020: Plastic LED - Red Off.001
+    2300000: 870mcs
+    2300002: 870mcs_bolt
+    2300004: 870mcs_pump
+    2300006: 870mcs_side shells
+    2300008: 870mcs_side shells.001
+    2300010: 870mcs_top rail
+    3300000: 870mcs
+    3300002: 870mcs_bolt
+    3300004: 870mcs_pump
+    3300006: 870mcs_side shells
+    3300008: 870mcs_side shells.001
+    3300010: 870mcs_top rail
+    4300000: 870mcs
+    4300002: 870mcs_top rail
+    4300004: 870mcs_pump
+    4300006: 870mcs_bolt
+    4300008: 870mcs_side shells
+    4300010: 870mcs_side shells.001
+    9500000: //RootNode
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -38,7 +82,6 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -46,19 +89,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -67,10 +109,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -80,16 +122,13 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

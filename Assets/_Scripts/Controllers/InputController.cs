@@ -6,17 +6,17 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     private LinkManager m_LinkManager;
-    private Unit m_Player;
 
     private void Start()
     {
         m_LinkManager = LinkManager.Instance;
-        m_Player = m_LinkManager.m_Player;
     }
 
     private void Update()
     {
-        MovePlayer();
+        if (m_LinkManager.m_Player.isDead)
+            return;
+        
         PlayerShoot();
         NextWeapon();
     }
@@ -38,12 +38,12 @@ public class InputController : MonoBehaviour
     private void PlayerShoot()
     {
         if (Input.GetMouseButton(0))
-            m_Player.Shoot(m_Player);
+            m_LinkManager.m_Player.Shoot(m_LinkManager.m_Player);
     }
 
     private void NextWeapon()
     {
         if (Input.GetAxis("Mouse ScrollWheel") != 0) 
-            m_Player.NextWeapon();
+            m_LinkManager.m_Player.NextWeapon();
     }
 }

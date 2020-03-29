@@ -24,12 +24,14 @@ public class LinkManager : MonoBehaviour
 
     public Unit m_Player;
     public MobileInputController m_MobilePlayerController;
-    public MovementController m_MovementController;
     public ShootingController m_ShootingController;
+    public RespawnController m_RespawnController;
     public BulletController m_BulletController;
     public WeaponController m_WeaponController;
     public DamageController m_DamageController;
-    public InputController m_InputController;
+    public HelthController m_HelthController;
+    public DeadController m_DeadController;
     public EventsManager m_EventsManager;
+    public UnitsHolder m_UnitsHolder;
     public UIManager m_UIManager;
 }

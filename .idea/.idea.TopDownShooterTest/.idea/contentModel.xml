@@ -12,26 +12,27 @@
             <e p="BulletsController" t="Include">
               <e p="BulletController.cs" t="Include" />
               <e p="BulletMove.cs" t="Include" />
-              <e p="BulletsQuantity.cs" t="Include" />
             </e>
             <e p="CameraController.cs" t="Include" />
             <e p="DamageController.cs" t="Include" />
             <e p="DeadController.cs" t="Include" />
             <e p="HelthbarController" t="Include">
-              <e p="HelthbarController.cs" t="Include" />
               <e p="HelthbarRotate.cs" t="Include" />
+              <e p="HelthController.cs" t="Include" />
             </e>
             <e p="InputController.cs" t="Include" />
             <e p="MobileControllers" t="Include">
               <e p="MobileInputController.cs" t="Include" />
             </e>
             <e p="MovementController.cs" t="Include" />
+            <e p="RespawnController" t="Include">
+              <e p="RespawnController.cs" t="Include" />
+              <e p="RespawnPlayer.cs" t="Include" />
+            </e>
             <e p="ShootingController" t="Include">
-              <e p="ShootingCheck.cs" t="Include" />
               <e p="ShootingController.cs" t="Include" />
               <e p="WeaponController.cs" t="Include" />
             </e>
-            <e p="Unit.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
             <e p="EventsManager.cs" t="Include" />
@@ -41,6 +42,17 @@
           <e p="ScriptableObjects" t="Include">
             <e p="DataWeapons.cs" t="Include" />
           </e>
+          <e p="Unit" t="Include">
+            <e p="BulletsQuantityUnit.cs" t="Include" />
+            <e p="HelthbarUnit.cs" t="Include" />
+            <e p="SetTarget.cs" t="Include" />
+            <e p="ShootingCheckUnit.cs" t="Include" />
+            <e p="Unit.cs" t="Include" />
+            <e p="UnitsHolder.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Resources" t="Include">
+          <e p="BotsName.txt" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

@@ -6,7 +6,6 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [SerializeField] private DataWeapons[] m_DataWeapons;
-    [SerializeField] private GameObject[] m_AllWeapons;
     [SerializeField] private AudioSource m_AudioSource;
     [SerializeField] private AudioClip m_NextWeapon;
 
@@ -15,26 +14,39 @@ public class WeaponController : MonoBehaviour
         LinkManager.Instance.m_EventsManager.OnNextWeapon += NextWeapon;
     }
 
-    public void SetWeapon(int idWeapon, BulletsQuantity bulletsQuantity)
+    public void SetWeaponParameters(int idWeapon, Unit unit)
     {
         DataWeapons weapon = m_DataWeapons[idWeapon];
-        LinkManager m_LinkManager = LinkManager.Instance;
+        LinkManager linkManager = LinkManager.Instance;
+        BulletsQuantityUnit bulletsQuantity = unit.m_BulletsQuantity;
 
+        SetBullets(bulletsQuantity, weapon);
+
+        if (unit.isBot) 
+            return;
+        
+        SetUIWeaponParameters(linkManager, bulletsQuantity, weapon);
+        bulletsQuantity.m_AllWeaponUnit[bulletsQuantity.m_LastWeapon].SetActive(false);
+        bulletsQuantity.m_AllWeaponUnit[bulletsQuantity.m_CurrentWeapon.IdWeapon].SetActive(true);
+    }
+
+    private void SetBullets(BulletsQuantityUnit bulletsQuantity, DataWeapons weapon)
+    {
         bulletsQuantity.m_AllBulletsWeapon = weapon.QuantityAllBulletsWeapon;
         bulletsQuantity.m_QuantityBulletsInClip = weapon.QuantityBulletsInClip;
         bulletsQuantity.m_DefaultBulletsInClip = weapon.QuantityBulletsInClip;
-        bulletsQuantity.m_CurrentWeapon = weapon;
-        
-        m_AllWeapons[bulletsQuantity.m_LastWeapon].SetActive(false);
-        m_AllWeapons[bulletsQuantity.m_CurrentWeapon.IdWeapon].SetActive(true);
-
-        m_LinkManager.m_UIManager.SetQuantityBullets();
-        m_LinkManager.m_UIManager.SetWeaponIcon(weapon.Icon);
+        bulletsQuantity.m_CurrentWeapon = weapon;       
+    }
+    
+    private void SetUIWeaponParameters (LinkManager linkManager, BulletsQuantityUnit bulletsQuantity, DataWeapons weapon)
+    {
+        linkManager.m_UIManager.SetQuantityBullets(bulletsQuantity);
+        linkManager.m_UIManager.SetWeaponIcon(weapon.Icon);
     }
     
     private void NextWeapon(Unit unit)
     {
-        BulletsQuantity bulletsQuantity = unit.m_BulletsQuantity;
+        BulletsQuantityUnit bulletsQuantity = unit.m_BulletsQuantity;
         m_AudioSource.PlayOneShot(m_NextWeapon);
         bulletsQuantity.m_LastWeapon = bulletsQuantity.m_CurrentWeapon.IdWeapon;
         bulletsQuantity.m_NextWeapon = bulletsQuantity.m_CurrentWeapon.IdWeapon + 1;
@@ -42,7 +54,7 @@ public class WeaponController : MonoBehaviour
         if (bulletsQuantity.m_NextWeapon >= m_DataWeapons.Length)
             bulletsQuantity.m_NextWeapon = 0;
         
-        SetWeapon(bulletsQuantity.m_NextWeapon, bulletsQuantity);
+        SetWeaponParameters(bulletsQuantity.m_NextWeapon, unit);
     }
 
 }
