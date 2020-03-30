@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 
 namespace Unit
 {
@@ -11,7 +12,7 @@ namespace Unit
             NoAmmo
         }
     
-        public ModeCanShooting m_ModeCanShooting = ModeCanShooting.Shooting;
+        public ModeCanShooting CanShooting = ModeCanShooting.Shooting;
         public float SpeedMoveBullet = 100.0f;
         [HideInInspector] public bool isNoAmmo = false;
         [HideInInspector] public Vector3 BulletTargetPoint;
@@ -28,24 +29,24 @@ namespace Unit
         {
             if (!isNoAmmo)
             {
-                if (m_ModeCanShooting == ModeCanShooting.Shooting)
+                if (CanShooting == ModeCanShooting.Shooting)
                     StartCoroutine(m_LinkManager.ShootingController.Shooting(unit));
             }
             else
             {
-                if (m_ModeCanShooting == ModeCanShooting.NoAmmo)
+                if (CanShooting == ModeCanShooting.NoAmmo)
                     StartCoroutine(m_LinkManager.ShootingController.NoAmmo(unit));
             }
         }
     
         public void EnableShooting()
         {
-            m_ModeCanShooting = ModeCanShooting.Shooting;
+            CanShooting = ModeCanShooting.Shooting;
         }
     
         public void DisableShooting()
         {
-            m_ModeCanShooting = ModeCanShooting.NoShooting;
+            CanShooting = ModeCanShooting.NoShooting;
         }
     }
 }

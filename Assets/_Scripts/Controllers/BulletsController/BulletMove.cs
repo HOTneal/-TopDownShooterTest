@@ -1,35 +1,34 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
+﻿using UnityEngine;
 
-public class BulletMove : MonoBehaviour
+namespace Controllers.BulletsController
 {
-     public Vector3 m_TargetPos;
-     public float m_Speed;
-
-     private Transform m_BulletTransform;
-
-     private void Start()
-     {
-         m_BulletTransform = transform;
-     }
-
-    private void Update()
+    public class BulletMove : MonoBehaviour
     {
-        m_BulletTransform.position = Vector3.MoveTowards(m_BulletTransform.position, m_TargetPos, m_Speed * Time.deltaTime);
-        if (m_BulletTransform.position == m_TargetPos)
-            DestroyObj();
-    }
+        public Vector3 TargetPos;
+        public float Speed;
 
-    private void DestroyObj()
-    {
-        Destroy(gameObject);
-    }
+        private Transform m_BulletTransform;
+
+        private void Start()
+        {
+            m_BulletTransform = transform;
+        }
+
+        private void Update()
+        {
+            m_BulletTransform.position = Vector3.MoveTowards(m_BulletTransform.position, TargetPos, Speed * Time.deltaTime);
+            if (m_BulletTransform.position == TargetPos)
+                DestroyObj();
+        }
+
+        private void DestroyObj()
+        {
+            Destroy(gameObject);
+        }
     
-    private void OnBecameInvisible()
-    {
-        DestroyObj();
+        private void OnBecameInvisible()
+        {
+            DestroyObj();
+        }
     }
 }

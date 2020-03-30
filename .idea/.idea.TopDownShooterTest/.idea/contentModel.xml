@@ -24,6 +24,7 @@
             <e p="MobileControllers" t="Include">
               <e p="MobileInputController.cs" t="Include" />
             </e>
+            <e p="MovementController.cs" t="Include" />
             <e p="RespawnController" t="Include">
               <e p="RespawnController.cs" t="Include" />
               <e p="RespawnPlayer.cs" t="Include" />
@@ -41,7 +42,6 @@
           <e p="Managers" t="Include">
             <e p="EventsManager.cs" t="Include" />
             <e p="LinkManager.cs" t="Include" />
-            <e p="MovementController.cs" t="Include" />
           </e>
           <e p="Menu" t="Include">
             <e p="Menu.cs" t="Include" />

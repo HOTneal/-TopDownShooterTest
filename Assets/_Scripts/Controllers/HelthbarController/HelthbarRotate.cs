@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class HelthbarRotate : MonoBehaviour
+namespace Controllers.HelthbarController
 {
-    private Transform m_Transform;
-
-    private void Start()
+    public class HelthbarRotate : MonoBehaviour
     {
-        m_Transform = transform;
-    }
+        private Transform m_Transform;
 
-    private void LateUpdate()
-    {
-        m_Transform.LookAt(Camera.main.transform);
-        m_Transform.Rotate(0, 180, 0);
+        private void Start()
+        {
+            m_Transform = transform;
+        }
+
+        private void LateUpdate()
+        {
+            m_Transform.LookAt(Camera.main.transform);
+            m_Transform.Rotate(0, 180, 0);
+        }
     }
 }

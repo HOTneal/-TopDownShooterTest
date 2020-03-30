@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Managers;
 using UnityEngine;
 
-public class RespawnPlayer : MonoBehaviour
+namespace Controllers.RespawnController
 {
-    public void Respawn()
+    public class RespawnPlayer : MonoBehaviour
     {
-        LinkManager link = LinkManager.Instance;
+        public void Respawn()
+        {
+            LinkManager link = LinkManager.Instance;
             
-        link.RespawnController.StartCoroutine(link.RespawnController.Respawn(link.m_Player, 0));
-        link.UIManager.DarkPanel(0, false);
-        link.UIManager.DeadPanel(false);
-        link.UIManager.Interface(true);
+            link.RespawnController.StartCoroutine(link.RespawnController.Respawn(link.m_Player, 0));
+            link.UIManager.DarkPanel(0, false);
+            link.UIManager.DeadPanel(false);
+            link.UIManager.Interface(true);
+        }
     }
 }

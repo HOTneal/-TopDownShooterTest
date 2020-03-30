@@ -1,49 +1,50 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Managers;
 using UnityEngine;
 
-public class InputController : MonoBehaviour
+namespace Controllers
 {
-    private LinkManager m_LinkManager;
-
-    private void Start()
+    public class InputController : MonoBehaviour
     {
-        m_LinkManager = LinkManager.Instance;
-    }
+        private LinkManager m_LinkManager;
 
-    private void Update()
-    {
-        if (m_LinkManager.m_Player == null)
-            return;
+        private void Start()
+        {
+            m_LinkManager = LinkManager.Instance;
+        }
+
+        private void Update()
+        {
+            if (m_LinkManager.m_Player == null)
+                return;
         
-        PlayerShoot();
-        NextWeapon();
-    }
+            PlayerShoot();
+            NextWeapon();
+        }
 
-    public Vector2 MovePlayer()
-    {
-        Vector2 axis;
-        var horizontalKeyboard = Input.GetAxis("Horizontal");
-        var verticalKeyboard = Input.GetAxis("Vertical");
+        public Vector2 MovePlayer()
+        {
+            Vector2 axis;
+            var horizontalKeyboard = Input.GetAxis("Horizontal");
+            var verticalKeyboard = Input.GetAxis("Vertical");
         
-        var horizontalJoystick = m_LinkManager.MobilePlayerController.Horizontal();
-        var verticalJoystick = m_LinkManager.MobilePlayerController.Vertical();
+            var horizontalJoystick = m_LinkManager.MobilePlayerController.Horizontal();
+            var verticalJoystick = m_LinkManager.MobilePlayerController.Vertical();
         
-        axis.x = horizontalKeyboard != 0 ? horizontalKeyboard : horizontalJoystick;
-        axis.y = verticalKeyboard != 0 ? verticalKeyboard : verticalJoystick;
-        return axis;
-    }
+            axis.x = horizontalKeyboard != 0 ? horizontalKeyboard : horizontalJoystick;
+            axis.y = verticalKeyboard != 0 ? verticalKeyboard : verticalJoystick;
+            return axis;
+        }
 
-    private void PlayerShoot()
-    {
-        if (Input.GetMouseButton(0))
-            m_LinkManager.m_Player.Shoot(m_LinkManager.m_Player);
-    }
+        private void PlayerShoot()
+        {
+            if (Input.GetMouseButton(0))
+                m_LinkManager.m_Player.Shoot(m_LinkManager.m_Player);
+        }
 
-    private void NextWeapon()
-    {
-        if (Input.GetAxis("Mouse ScrollWheel") != 0) 
-            m_LinkManager.m_Player.NextWeapon();
+        private void NextWeapon()
+        {
+            if (Input.GetAxis("Mouse ScrollWheel") != 0) 
+                m_LinkManager.m_Player.NextWeapon();
+        }
     }
 }

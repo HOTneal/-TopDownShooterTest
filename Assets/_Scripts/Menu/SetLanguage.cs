@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Localization;
 using UnityEngine;
 
-public class SetLanguage : MonoBehaviour
+namespace Menu
 {
-    [SerializeField] private string m_Language;
-
-    public void Set()
+    public class SetLanguage : MonoBehaviour
     {
-        LocalizationManager.Instance.SetLanguage(m_Language);
+        [SerializeField] private string m_Language;
+
+        public void Set()
+        {
+            LocalizationManager.Instance.SetLanguage(m_Language);
+        }
     }
 }

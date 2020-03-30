@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unit;
 using UnityEngine;
 
-public class DamageController : MonoBehaviour
+namespace Controllers
 {
-    public void Damage(Unit.Unit unit, Unit.Unit damagedUnit)
+    public class DamageController : MonoBehaviour
     {
-        BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
+        public void Damage(Unit.Unit unit, Unit.Unit damagedUnit)
+        {
+            BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
         
-        damagedUnit.Helth -= Convert.ToInt32(bulletsQuantity.CurrentWeapon.Damage);
-        damagedUnit.HelthbarUnit.Helthbar.fillAmount -= unit.BulletsQuantity.CurrentWeapon.Damage / 100;
+            damagedUnit.Helth -= Convert.ToInt32(bulletsQuantity.CurrentWeapon.Damage);
+            damagedUnit.HelthbarUnit.Helthbar.fillAmount -= unit.BulletsQuantity.CurrentWeapon.Damage / 100;
+        }
     }
 }

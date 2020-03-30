@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 
 namespace Unit
 {
@@ -16,7 +17,7 @@ namespace Unit
             foreach (var value in LinkManager.Instance.UnitsHolder.Units)
             {
                 if (value.isBot)
-                    value.BotController.m_Target = transform;
+                    value.BotController.Target = transform;
             }
         }
     }

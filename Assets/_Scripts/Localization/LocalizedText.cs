@@ -1,20 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class LocalizedText : MonoBehaviour
+namespace Localization
 {
-    public Text m_Text;
-    public string m_KeyText;
-
-    private LocalizationManager link;
-    
-    void Start()
+    public class LocalizedText : MonoBehaviour
     {
-        link = LocalizationManager.Instance;
-        m_Text = GetComponent<Text>();
-        m_KeyText = m_Text.text;
-        m_Text.text = link.GetLocalizedValue(m_KeyText);
+        public Text Text;
+        public string KeyText;
+
+        private LocalizationManager link;
+    
+        void Start()
+        {
+            link = LocalizationManager.Instance;
+            Text = GetComponent<Text>();
+            KeyText = Text.text;
+            Text.text = link.GetLocalizedValue(KeyText);
+        }
     }
 }

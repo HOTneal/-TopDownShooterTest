@@ -1,11 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Localization;
 using UnityEngine;
 
-public class ReloadTextMenu : MonoBehaviour
+namespace Menu
 {
-    public void ReloadText()
+    public class ReloadTextMenu : MonoBehaviour
     {
-        LocalizationManager.Instance.Reload();
+        public void ReloadText()
+        {
+            LocalizationManager.Instance.Reload();
+        }
     }
 }

@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class EventsManager : MonoBehaviour
+namespace Managers
 {
-    public event Action<Unit.Unit> OnNextWeapon;
-
-    public void NextWeapon(Unit.Unit unit)
+    public class EventsManager : MonoBehaviour
     {
-        OnNextWeapon?.Invoke(unit);
+        public event Action<Unit.Unit> OnNextWeapon;
+
+        public void NextWeapon(Unit.Unit unit)
+        {
+            OnNextWeapon?.Invoke(unit);
+        }
     }
 }

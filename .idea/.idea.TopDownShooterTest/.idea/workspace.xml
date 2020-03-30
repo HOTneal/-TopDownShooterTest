@@ -12,6 +12,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarRotate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Arkanoid/Assets/_scripts/Menu/StartGame.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
@@ -23,15 +24,17 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/EventsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/HelthbarUnit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/BulletsQuantityUnit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Menu/ReloadTextMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileControllers/MobileInputController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Arkanoid/Assets/_scripts/Menu/ExitGame.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnPlayer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,40 +53,43 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ChoiceWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletsQuantity.cs" />
         <option value="$PROJECT_DIR$/Assets/_Shaders/Sprites.shader" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/ResetPlayerParameters.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/BulletsQuantityUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/CameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/HelthbarUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/UnitsHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/EventsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Menu/SetLanguage.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/ReloadText.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Menu/ReloadTextMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/UIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/EventsManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarRotate.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileControllers/MobileInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnPlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationData.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizedText.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Menu/Menu.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/MovementController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/UIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/SetTarget.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/ShootingCheckUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" />
       </list>
     </option>
   </component>
@@ -144,7 +150,7 @@
       <workItem from="1585464725679" duration="10161000" />
       <workItem from="1585476609030" duration="6280000" />
       <workItem from="1585488298231" duration="811000" />
-      <workItem from="1585527530129" duration="13349000" />
+      <workItem from="1585527530129" duration="14471000" />
     </task>
     <servers />
   </component>
