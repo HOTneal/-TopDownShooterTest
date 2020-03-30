@@ -13,12 +13,13 @@ namespace Controllers
             m_LinkManager = LinkManager.Instance;
         }
 
-        public void UnitDead(Unit.Unit unit)
+        public void UnitDead(Unit.Unit unit, Unit.Unit damagedUnit)
         {
-            if (!unit.isBot)
-                PlayerDead(unit);
+            m_LinkManager.KillListController.AddKillToList(unit, damagedUnit);
+            if (!damagedUnit.isBot)
+                PlayerDead(damagedUnit);
             else
-                BotDead(unit);
+                BotDead(damagedUnit);
         }
 
         private void Respawn(Unit.Unit unit)

@@ -1,6 +1,7 @@
 ﻿using Controllers;
 using Controllers.BulletsController;
 using Controllers.HelthbarController;
+using Controllers.KillListController;
 using Controllers.MobileControllers;
 using Controllers.RespawnController;
 using Controllers.ShootingController;
@@ -30,6 +31,7 @@ namespace Managers
 
         public Unit.Unit m_Player;
         public MobileInputController MobilePlayerController;
+        public KillListController KillListController;
         public ShootingController ShootingController;
         public RespawnController RespawnController;
         public BulletController BulletController;

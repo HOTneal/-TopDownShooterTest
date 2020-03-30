@@ -21,6 +21,11 @@
               <e p="HelthController.cs" t="Include" />
             </e>
             <e p="InputController.cs" t="Include" />
+            <e p="KillListController" t="Include">
+              <e p="DestoryEventMurder.cs" t="Include" />
+              <e p="EventMurderParameters.cs" t="Include" />
+              <e p="KillListController.cs" t="Include" />
+            </e>
             <e p="MobileControllers" t="Include">
               <e p="MobileButtons.cs" t="Include" />
               <e p="MobileInputController.cs" t="Include" />

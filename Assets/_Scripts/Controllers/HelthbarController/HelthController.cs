@@ -8,10 +8,10 @@ namespace Controllers.HelthbarController
         private Color m_Enemy = Color.red;
         private Color m_Friendly = Color.green;
     
-        public void CheckLiveUnit(Unit.Unit unit)
+        public void CheckLiveUnit(Unit.Unit unit, Unit.Unit damagedUnit)
         {
-            if (unit.Helth <= 0)
-                LinkManager.Instance.DeadController.UnitDead(unit);
+            if (damagedUnit.Helth <= 0)
+                LinkManager.Instance.DeadController.UnitDead(unit, damagedUnit);
         }
     
         public void SetColorBar(Unit.Unit unit)

@@ -31,7 +31,6 @@ namespace Unit
             BulletsQuantity = GetComponent<BulletsQuantityUnit>();
             Animator = GetComponent<Animator>();
             ChController = GetComponent<CharacterController>();
-            PointForGenerateBullets = transform.GetChild(0).GetComponent<Transform>();
             ShootingCheck = GetComponent<ShootingCheckUnit>();
             HelthbarUnit = GetComponent<HelthbarUnit>();
             m_MovementController = GetComponent<MovementController>();

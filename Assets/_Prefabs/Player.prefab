@@ -1267,7 +1267,7 @@ MonoBehaviour:
   Helth: 100
   isBot: 0
   isEnemy: 0
-  PointForGenerateBullets: {fileID: 0}
+  PointForGenerateBullets: {fileID: 3835113995903128372}
   BulletsQuantity: {fileID: 0}
   ShootingCheck: {fileID: 0}
   SpeedWalk: 10
@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088c6ff1ca2e678429ed9f68cfacf975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModeCanShooting: 0
+  CanShooting: 0
   SpeedMoveBullet: 100
   isNoAmmo: 0
   BulletTargetPoint: {x: 0, y: 0, z: 0}
@@ -1328,8 +1328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bb40ce1eb21c3449e4970bbcccf7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Helthbar: {fileID: 0}
-  Nickname: {fileID: 0}
+  Helthbar: {fileID: 5668638998405944781}
+  Nickname: {fileID: 1783956777}
 --- !u!114 &723956358613983695
 MonoBehaviour:
   m_ObjectHideFlags: 0

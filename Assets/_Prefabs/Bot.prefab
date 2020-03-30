@@ -167,21 +167,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c578fff1080494e8c7edb0146b42b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Nickname: Bot1
-  m_Helth: 100
+  Nickname: 
+  Helth: 100
   isBot: 1
   isEnemy: 1
-  isDead: 0
-  m_PointForGenerateBullets: {fileID: 0}
-  m_BulletsQuantity: {fileID: 0}
-  m_ShootingCheck: {fileID: 0}
-  m_SpeedWalk: 10
-  m_PointForSpawn: {fileID: 0}
-  m_Animator: {fileID: 0}
-  m_ChController: {fileID: 0}
-  m_IdDefaultWeaponAtStart: 0
-  m_HelthbarUnit: {fileID: 0}
-  m_BotController: {fileID: 0}
+  PointForGenerateBullets: {fileID: 4870465728778269307}
+  BulletsQuantity: {fileID: 0}
+  ShootingCheck: {fileID: 0}
+  SpeedWalk: 0
+  PointForSpawn: {fileID: 0}
+  Animator: {fileID: 0}
+  ChController: {fileID: 0}
+  IdDefaultWeaponAtStart: 0
+  HelthbarUnit: {fileID: 0}
+  BotController: {fileID: 0}
+  SetTarget: {fileID: 0}
 --- !u!114 &4207883778890434413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,10 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088c6ff1ca2e678429ed9f68cfacf975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModeCanShooting: 0
-  m_SpeedMoveBullet: 100
+  CanShooting: 0
+  SpeedMoveBullet: 100
   isNoAmmo: 0
-  m_BulletTargetPoint: {x: 0, y: 0, z: 0}
+  BulletTargetPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &4207883778890434412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,14 +210,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac31bf2a24138114d9ef7e071cb2136b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CurrentWeapon: {fileID: 0}
-  m_AllWeaponUnit:
-  - {fileID: 7222343716270016556}
-  m_QuantityBulletsInClip: 0
-  m_AllBulletsWeapon: 0
-  m_NextWeapon: 0
-  m_LastWeapon: 0
-  m_DefaultBulletsInClip: 0
+  CurrentWeapon: {fileID: 0}
+  AllWeaponUnit: []
+  QuantityBulletsInClip: 0
+  AllBulletsWeapon: 0
+  NextWeapon: 0
+  LastWeapon: 0
+  DefaultBulletsInClip: 0
 --- !u!114 &8551861916845032904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DistanceLookAt: 100
   m_DistanceAttack: 20
-  m_Target: {fileID: 0}
+  Target: {fileID: 0}
   isAttack: 1
 --- !u!114 &1045122874216075042
 MonoBehaviour:
@@ -246,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bb40ce1eb21c3449e4970bbcccf7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Helthbar: {fileID: 0}
-  m_Nickname: {fileID: 0}
+  Helthbar: {fileID: 4036734036654961794}
+  Nickname: {fileID: 2034498391}
 --- !u!1 &125403475638431602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,12 +1526,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c6b2355e9d7a4846bf68c6ec51dd748, type: 3}
---- !u!1 &7222343716270016556 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 7c6b2355e9d7a4846bf68c6ec51dd748,
-    type: 3}
-  m_PrefabInstance: {fileID: 1664931420528955685}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5936222050058926655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7c6b2355e9d7a4846bf68c6ec51dd748,
