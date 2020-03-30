@@ -37,7 +37,9 @@ namespace Controllers
 
         private void PlayerShoot()
         {
-            if (Input.GetMouseButton(0))
+//            if (Input.GetMouseButton(0))
+//                m_LinkManager.m_Player.Shoot(m_LinkManager.m_Player);
+             if (m_LinkManager.MobileButtons.Shooting())
                 m_LinkManager.m_Player.Shoot(m_LinkManager.m_Player);
         }
 

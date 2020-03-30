@@ -38,6 +38,7 @@ namespace Managers
         public HelthController HelthController;
         public DeadController DeadController;
         public EventsManager EventsManager;
+        public MobileButtons MobileButtons;
         public UnitsHolder UnitsHolder;
         public UIManager UIManager;
     }
