@@ -11,8 +11,8 @@ public class BotController : MonoBehaviour
     public Transform m_Target;
     public bool isAttack = true;
     
-    private Unit m_TargetUnit;
-    private Unit m_BotUnit;
+    private Unit.Unit m_TargetUnit;
+    private Unit.Unit m_BotUnit;
     private Transform m_BotTransform;
     private LinkManager m_LinkManager;
 
@@ -23,7 +23,7 @@ public class BotController : MonoBehaviour
         if (m_LinkManager.m_Player != null && m_Target == null)
             m_Target = m_LinkManager.m_Player.transform;
         
-        m_BotUnit = GetComponent<Unit>();
+        m_BotUnit = GetComponent<Unit.Unit>();
         m_BotTransform = transform;
     }
 

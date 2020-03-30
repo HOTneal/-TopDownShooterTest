@@ -6,17 +6,18 @@ public class HelthController : MonoBehaviour
 {
     private Color m_Enemy = Color.red;
     private Color m_Friendly = Color.green;
-    public void CheckLiveUnit(Unit unit)
+    
+    public void CheckLiveUnit(Unit.Unit unit)
     {
-        if (unit.m_Helth <= 0)
-            LinkManager.Instance.m_DeadController.UnitDead(unit);
+        if (unit.Helth <= 0)
+            LinkManager.Instance.DeadController.UnitDead(unit);
     }
     
-    public void SetColorBar(Unit unit)
+    public void SetColorBar(Unit.Unit unit)
     {
         if (unit.isEnemy)
-            unit.m_HelthbarUnit.m_Helthbar.color = m_Enemy;
+            unit.HelthbarUnit.Helthbar.color = m_Enemy;
         else
-            unit.m_HelthbarUnit.m_Helthbar.color = m_Friendly;
+            unit.HelthbarUnit.Helthbar.color = m_Friendly;
     }
 }

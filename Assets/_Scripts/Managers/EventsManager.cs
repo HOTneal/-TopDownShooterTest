@@ -6,9 +6,9 @@ using UnityEngine.Serialization;
 
 public class EventsManager : MonoBehaviour
 {
-    public event Action<Unit> OnNextWeapon;
+    public event Action<Unit.Unit> OnNextWeapon;
 
-    public void NextWeapon(Unit unit)
+    public void NextWeapon(Unit.Unit unit)
     {
         OnNextWeapon?.Invoke(unit);
     }

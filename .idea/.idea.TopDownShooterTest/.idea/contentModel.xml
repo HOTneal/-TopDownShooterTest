@@ -33,11 +33,20 @@
               <e p="WeaponController.cs" t="Include" />
             </e>
           </e>
+          <e p="Localization" t="Include">
+            <e p="LocalizationData.cs" t="Include" />
+            <e p="LocalizationManager.cs" t="Include" />
+            <e p="LocalizedText.cs" t="Include" />
+          </e>
           <e p="Managers" t="Include">
             <e p="EventsManager.cs" t="Include" />
             <e p="LinkManager.cs" t="Include" />
             <e p="MovementController.cs" t="Include" />
-            <e p="UIManager.cs" t="Include" />
+          </e>
+          <e p="Menu" t="Include">
+            <e p="Menu.cs" t="Include" />
+            <e p="ReloadTextMenu.cs" t="Include" />
+            <e p="SetLanguage.cs" t="Include" />
           </e>
           <e p="ScriptableObjects" t="Include">
             <e p="DataWeapons.cs" t="Include" />
@@ -47,6 +56,7 @@
             <e p="HelthbarUnit.cs" t="Include" />
             <e p="SetTarget.cs" t="Include" />
             <e p="ShootingCheckUnit.cs" t="Include" />
+            <e p="UIManager.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitsHolder.cs" t="Include" />
           </e>

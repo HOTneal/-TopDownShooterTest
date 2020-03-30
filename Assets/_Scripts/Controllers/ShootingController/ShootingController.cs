@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unit;
 using UnityEngine;
 
 public class ShootingController : MonoBehaviour
@@ -17,12 +18,12 @@ public class ShootingController : MonoBehaviour
         m_LinkManager = LinkManager.Instance;
     }
 
-    public IEnumerator Shooting(Unit unit)
+    public IEnumerator Shooting(Unit.Unit unit)
     {
-        DataWeapons weapon = unit.m_BulletsQuantity.m_CurrentWeapon;
+        DataWeapons weapon = unit.BulletsQuantity.CurrentWeapon;
         
-        unit.m_ShootingCheck.DisableShooting();
-        m_LinkManager.m_BulletController.BulletsCount(unit);
+        unit.ShootingCheck.DisableShooting();
+        m_LinkManager.BulletController.BulletsCount(unit);
         StartRaycast(unit);
         GenerateBullets(weapon, unit);
         AnimShooting(unit,true);
@@ -30,64 +31,64 @@ public class ShootingController : MonoBehaviour
 
         yield return new WaitForSeconds(weapon.SpeedShoot);
         
-        unit.m_ShootingCheck.EnableShooting();
+        unit.ShootingCheck.EnableShooting();
         EndShooting(unit);
     }
 
-    private void EndShooting(Unit unit)
+    private void EndShooting(Unit.Unit unit)
     {
         AnimShooting(unit,false);
     }
     
-    private void StartRaycast(Unit unit)
+    private void StartRaycast(Unit.Unit unit)
     {
-        if (Physics.Raycast(unit.m_PointForGenerateBullets.position, unit.m_PointForGenerateBullets.forward, out m_Hit))
+        if (Physics.Raycast(unit.PointForGenerateBullets.position, unit.PointForGenerateBullets.forward, out m_Hit))
         {
-            unit.m_ShootingCheck.m_BulletTargetPoint = m_Hit.point;
+            unit.ShootingCheck.BulletTargetPoint = m_Hit.point;
 
-            if (m_Hit.transform.TryGetComponent(out Unit damagedUnit))
+            if (m_Hit.transform.TryGetComponent(out Unit.Unit damagedUnit))
                 Damage(unit, damagedUnit);
         }
     }
 
-    private void GenerateBullets(DataWeapons weapon, Unit unit)
+    private void GenerateBullets(DataWeapons weapon, Unit.Unit unit)
     {
         var offsetBulletPos = 0.0f;
         var marginBetweenBullets = 0.3f;
-        ShootingCheckUnit shootingCheck = unit.m_ShootingCheck;
+        ShootingCheckUnit shootingCheck = unit.ShootingCheck;
         
         for (int i = 0; i < weapon.QuantityBulletsPerShot; i++)
         {
-            var bullet = Instantiate(m_Bullet, unit.m_PointForGenerateBullets.position, Quaternion.identity);
+            var bullet = Instantiate(m_Bullet, unit.PointForGenerateBullets.position, Quaternion.identity);
             var bulletPos = bullet.transform.position;
             var bulletMove = bullet.GetComponent<BulletMove>();
             
             bullet.transform.position = new Vector3(bulletPos.x - offsetBulletPos, bulletPos.y, bulletPos.z);
-            bulletMove.m_TargetPos = new Vector3(shootingCheck.m_BulletTargetPoint.x - offsetBulletPos, shootingCheck.m_BulletTargetPoint.y, shootingCheck.m_BulletTargetPoint.z);
-            bulletMove.m_Speed = shootingCheck.m_SpeedMoveBullet;
+            bulletMove.m_TargetPos = new Vector3(shootingCheck.BulletTargetPoint.x - offsetBulletPos, shootingCheck.BulletTargetPoint.y, shootingCheck.BulletTargetPoint.z);
+            bulletMove.m_Speed = shootingCheck.SpeedMoveBullet;
 
             offsetBulletPos -= marginBetweenBullets;
         }
     }
 
-    public IEnumerator NoAmmo(Unit unit)
+    public IEnumerator NoAmmo(Unit.Unit unit)
     {
-        unit.m_ShootingCheck.DisableShooting();
+        unit.ShootingCheck.DisableShooting();
         m_AudioSourceShooting.PlayOneShot(m_SoundNoAmmo);
         
         yield return new WaitForSeconds(0.3f);
         
-        unit.m_ShootingCheck.m_ModeCanShooting = ShootingCheckUnit.ModeCanShooting.NoAmmo;
+        unit.ShootingCheck.m_ModeCanShooting = ShootingCheckUnit.ModeCanShooting.NoAmmo;
     }
 
-    private void AnimShooting(Unit unit, bool value)
+    private void AnimShooting(Unit.Unit unit, bool value)
     {
-        unit.m_Animator.SetBool(unit.m_BulletsQuantity.m_CurrentWeapon.NameAnim, value);
+        unit.Animator.SetBool(unit.BulletsQuantity.CurrentWeapon.NameAnim, value);
     }
 
-    private void Damage(Unit unit, Unit damagedUnit)
+    private void Damage(Unit.Unit unit, Unit.Unit damagedUnit)
     {
-        m_LinkManager.m_DamageController.Damage(unit, damagedUnit);
-        m_LinkManager.m_HelthController.CheckLiveUnit(damagedUnit);
+        m_LinkManager.DamageController.Damage(unit, damagedUnit);
+        m_LinkManager.HelthController.CheckLiveUnit(damagedUnit);
     }
 }

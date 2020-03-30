@@ -1,35 +1,35 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class HelthbarUnit : MonoBehaviour
+namespace Unit
 {
-    public Image m_Helthbar;
-    public Text m_Nickname;
+    public class HelthbarUnit : MonoBehaviour
+    {
+        public Image Helthbar;
+        public Text Nickname;
 
-    private Unit m_Unit;
-    private LinkManager m_LinkManager;
+        private Unit Unit;
+        private LinkManager LinkManager;
     
-    private void Start()
-    {
-        m_Helthbar = transform.GetChild(3).GetChild(0).GetComponent<Image>();
-        m_Nickname = transform.GetChild(3).GetChild(1).GetComponent<Text>();
-        m_Unit = GetComponent<Unit>();
-        m_LinkManager = LinkManager.Instance;
+        private void Start()
+        {
+            Helthbar = transform.GetChild(3).GetChild(0).GetComponent<Image>();
+            Nickname = transform.GetChild(3).GetChild(1).GetComponent<Text>();
+            Unit = GetComponent<Unit>();
+            LinkManager = LinkManager.Instance;
         
-        SetColorBar();
-        SetNickname();
-    }
+            SetColorBar();
+            SetNickname();
+        }
 
-    private void SetColorBar()
-    {
-        m_LinkManager.m_HelthController.SetColorBar(m_Unit);
-    }
+        private void SetColorBar()
+        {
+            LinkManager.HelthController.SetColorBar(Unit);
+        }
 
-    private void SetNickname()
-    {
-        m_Nickname.text = m_Unit.m_Nickname;
+        private void SetNickname()
+        {
+            Nickname.text = Unit.Nickname;
+        }
     }
 }

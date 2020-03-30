@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SetTarget : MonoBehaviour
+namespace Unit
 {
-    private LinkManager m_LinkManager;
-
-    private void Start()
+    public class SetTarget : MonoBehaviour
     {
-        m_LinkManager = LinkManager.Instance;
-    }
+        private LinkManager m_LinkManager;
 
-    public void SetTargetForBotAttack()
-    {
-        foreach (var value in LinkManager.Instance.m_UnitsHolder.m_Units)
+        private void Start()
         {
-            if (value.isBot)
-                value.m_BotController.m_Target = transform;
+            m_LinkManager = LinkManager.Instance;
+        }
+
+        public void SetTargetForBotAttack()
+        {
+            foreach (var value in LinkManager.Instance.UnitsHolder.Units)
+            {
+                if (value.isBot)
+                    value.BotController.m_Target = transform;
+            }
         }
     }
 }

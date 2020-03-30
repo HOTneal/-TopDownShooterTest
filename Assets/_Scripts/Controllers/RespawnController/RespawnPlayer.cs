@@ -8,9 +8,9 @@ public class RespawnPlayer : MonoBehaviour
     {
         LinkManager link = LinkManager.Instance;
             
-        link.m_RespawnController.StartCoroutine(link.m_RespawnController.Respawn(link.m_Player, 0));
-        link.m_UIManager.DarkPanel(0, false);
-        link.m_UIManager.DeadPanel(false);
-        link.m_UIManager.Interface(true);
+        link.RespawnController.StartCoroutine(link.RespawnController.Respawn(link.m_Player, 0));
+        link.UIManager.DarkPanel(0, false);
+        link.UIManager.DeadPanel(false);
+        link.UIManager.Interface(true);
     }
 }

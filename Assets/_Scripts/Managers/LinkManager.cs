@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unit;
 using UnityEngine;
 
 public class LinkManager : MonoBehaviour
@@ -22,16 +23,16 @@ public class LinkManager : MonoBehaviour
     }
     #endregion
 
-    public Unit m_Player;
-    public MobileInputController m_MobilePlayerController;
-    public ShootingController m_ShootingController;
-    public RespawnController m_RespawnController;
-    public BulletController m_BulletController;
-    public WeaponController m_WeaponController;
-    public DamageController m_DamageController;
-    public HelthController m_HelthController;
-    public DeadController m_DeadController;
-    public EventsManager m_EventsManager;
-    public UnitsHolder m_UnitsHolder;
-    public UIManager m_UIManager;
+    public Unit.Unit m_Player;
+    public MobileInputController MobilePlayerController;
+    public ShootingController ShootingController;
+    public RespawnController RespawnController;
+    public BulletController BulletController;
+    public WeaponController WeaponController;
+    public DamageController DamageController;
+    public HelthController HelthController;
+    public DeadController DeadController;
+    public EventsManager EventsManager;
+    public UnitsHolder UnitsHolder;
+    public UIManager UIManager;
 }

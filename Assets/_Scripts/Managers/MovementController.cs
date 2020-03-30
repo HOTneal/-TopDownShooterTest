@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    public Animator Animator;
 
     private LinkManager m_LinkManager;
     private Transform m_PlayerTransform;
-    public Animator m_Animator;
     private CharacterController m_ChController;
     private float m_SpeedWalk;
     private float m_GravityForce;
@@ -30,12 +30,12 @@ public class MovementController : MonoBehaviour
         GravityPlayer();
     }
 
-    public void SetPlayerMoveSettings(Unit unit)
+    public void SetPlayerMoveSettings(Unit.Unit unit)
     {
         m_PlayerTransform = unit.transform;
-        m_Animator = unit.m_Animator;
-        m_ChController = unit.m_ChController;
-        m_SpeedWalk = unit.m_SpeedWalk;
+        Animator = unit.Animator;
+        m_ChController = unit.ChController;
+        m_SpeedWalk = unit.SpeedWalk;
     }
     
     private void MovePlayer()
@@ -57,9 +57,9 @@ public class MovementController : MonoBehaviour
     private void PlayerWalkAnim()
     {
         if (m_MoveVector.x != 0 || m_MoveVector.z != 0)
-            m_Animator.SetBool("Walk", true);
+            Animator.SetBool("Walk", true);
         else
-            m_Animator.SetBool("Walk", false);
+            Animator.SetBool("Walk", false);
     }
 
     private void PlayerRotate()

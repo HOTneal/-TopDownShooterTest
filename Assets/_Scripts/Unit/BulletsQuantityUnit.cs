@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BulletsQuantityUnit : MonoBehaviour
+namespace Unit
 {
-    [HideInInspector] public DataWeapons m_CurrentWeapon;
-    public GameObject[] m_AllWeaponUnit;
-    [HideInInspector] public int m_QuantityBulletsInClip;
-    [HideInInspector] public int m_AllBulletsWeapon;
-    [HideInInspector] public int m_NextWeapon;
-    [HideInInspector] public int m_LastWeapon;
-    [HideInInspector] public int m_DefaultBulletsInClip;
+    public class BulletsQuantityUnit : MonoBehaviour
+    {
+        [HideInInspector] public DataWeapons CurrentWeapon;
+        public GameObject[] AllWeaponUnit;
+        [HideInInspector] public int QuantityBulletsInClip;
+        [HideInInspector] public int AllBulletsWeapon;
+        [HideInInspector] public int NextWeapon;
+        [HideInInspector] public int LastWeapon;
+        [HideInInspector] public int DefaultBulletsInClip;
+    }
 }

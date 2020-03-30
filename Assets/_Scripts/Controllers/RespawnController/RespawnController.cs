@@ -16,7 +16,6 @@ public class RespawnController : MonoBehaviour
     private void Start()
     {
         m_LinkManager = LinkManager.Instance;
-
         SortPoints(m_SpawnPointsTeam1, m_Bot);
         SortPoints(m_SpawnPointsTeam2, m_Player);
     }
@@ -30,23 +29,23 @@ public class RespawnController : MonoBehaviour
     private void SpawnUnit(Transform point, GameObject unitObj)
     {
         GameObject spawnedUnit = Instantiate(unitObj, point.position, Quaternion.identity) as GameObject;
-        Unit unit = spawnedUnit.GetComponent<Unit>();
+        Unit.Unit unit = spawnedUnit.GetComponent<Unit.Unit>();
 
-        unit.m_PointForSpawn = point;
+        unit.PointForSpawn = point;
 
         if (unit.isBot)
-            unit.m_Nickname = GenerateBotNickname();
+            unit.Nickname = GenerateBotNickname();
 
-        m_LinkManager.m_UnitsHolder.AddUnitInHolder(unit);
+        m_LinkManager.UnitsHolder.AddUnitInHolder(unit);
     }
     
-    public IEnumerator Respawn(Unit unit, float timeRespawn)
+    public IEnumerator Respawn(Unit.Unit unit, float timeRespawn)
     {
         yield return new WaitForSeconds(timeRespawn);
         if (unit.isBot)
-            SpawnUnit(unit.m_PointForSpawn, m_Bot);
+            SpawnUnit(unit.PointForSpawn, m_Bot);
         else
-            SpawnUnit(unit.m_PointForSpawn, m_Player);
+            SpawnUnit(unit.PointForSpawn, m_Player);
     }
 
     private string GenerateBotNickname()
@@ -57,7 +56,7 @@ public class RespawnController : MonoBehaviour
         
         for (int i = 0; i < arrayNicknamesBots.Length; i++)
         {
-            if (!m_LinkManager.m_UnitsHolder.m_Units.Exists(unit => unit.m_Nickname == arrayNicknamesBots[i]))
+            if (!m_LinkManager.UnitsHolder.Units.Exists(unit => unit.Nickname == arrayNicknamesBots[i]))
             {
                 nickname = arrayNicknamesBots[i];
                 break;

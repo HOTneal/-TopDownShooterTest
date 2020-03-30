@@ -27,8 +27,8 @@ public class InputController : MonoBehaviour
         var horizontalKeyboard = Input.GetAxis("Horizontal");
         var verticalKeyboard = Input.GetAxis("Vertical");
         
-        var horizontalJoystick = m_LinkManager.m_MobilePlayerController.Horizontal();
-        var verticalJoystick = m_LinkManager.m_MobilePlayerController.Vertical();
+        var horizontalJoystick = m_LinkManager.MobilePlayerController.Horizontal();
+        var verticalJoystick = m_LinkManager.MobilePlayerController.Vertical();
         
         axis.x = horizontalKeyboard != 0 ? horizontalKeyboard : horizontalJoystick;
         axis.y = verticalKeyboard != 0 ? verticalKeyboard : verticalJoystick;

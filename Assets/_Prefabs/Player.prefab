@@ -1263,21 +1263,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c578fff1080494e8c7edb0146b42b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Nickname: iRom
-  m_Helth: 100
+  Nickname: iRom
+  Helth: 100
   isBot: 0
   isEnemy: 0
-  m_PointForGenerateBullets: {fileID: 0}
-  m_BulletsQuantity: {fileID: 0}
-  m_ShootingCheck: {fileID: 0}
-  m_SpeedWalk: 10
-  m_PointForSpawn: {fileID: 0}
-  m_Animator: {fileID: 0}
-  m_ChController: {fileID: 0}
-  m_IdDefaultWeaponAtStart: 0
-  m_HelthbarUnit: {fileID: 0}
-  m_BotController: {fileID: 0}
-  m_SetTarget: {fileID: 0}
+  PointForGenerateBullets: {fileID: 0}
+  BulletsQuantity: {fileID: 0}
+  ShootingCheck: {fileID: 0}
+  SpeedWalk: 10
+  PointForSpawn: {fileID: 0}
+  Animator: {fileID: 0}
+  ChController: {fileID: 0}
+  IdDefaultWeaponAtStart: 0
+  HelthbarUnit: {fileID: 0}
+  BotController: {fileID: 0}
+  SetTarget: {fileID: 0}
 --- !u!114 &5955215099167960832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,16 +1290,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac31bf2a24138114d9ef7e071cb2136b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CurrentWeapon: {fileID: 0}
-  m_AllWeaponUnit:
+  CurrentWeapon: {fileID: 0}
+  AllWeaponUnit:
   - {fileID: 5223231074595530639}
   - {fileID: 4277656495857255904}
   - {fileID: 4277656496390749983}
-  m_QuantityBulletsInClip: 0
-  m_AllBulletsWeapon: 0
-  m_NextWeapon: 0
-  m_LastWeapon: 0
-  m_DefaultBulletsInClip: 0
+  QuantityBulletsInClip: 0
+  AllBulletsWeapon: 0
+  NextWeapon: 0
+  LastWeapon: 0
+  DefaultBulletsInClip: 0
 --- !u!114 &5533579351129400866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1313,9 +1313,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ModeCanShooting: 0
-  m_SpeedMoveBullet: 100
+  SpeedMoveBullet: 100
   isNoAmmo: 0
-  m_BulletTargetPoint: {x: 0, y: 0, z: 0}
+  BulletTargetPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &2100988639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,8 +1328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bb40ce1eb21c3449e4970bbcccf7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Helthbar: {fileID: 0}
-  m_Nickname: {fileID: 0}
+  Helthbar: {fileID: 0}
+  Nickname: {fileID: 0}
 --- !u!114 &723956358613983695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9c67da94f94054c99fc532437e38cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Animator: {fileID: 0}
+  Animator: {fileID: 0}
 --- !u!114 &2048061379
 MonoBehaviour:
   m_ObjectHideFlags: 0

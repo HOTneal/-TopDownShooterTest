@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unit;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
@@ -11,50 +12,50 @@ public class WeaponController : MonoBehaviour
 
     private void Start()
     {
-        LinkManager.Instance.m_EventsManager.OnNextWeapon += NextWeapon;
+        LinkManager.Instance.EventsManager.OnNextWeapon += NextWeapon;
     }
 
-    public void SetWeaponParameters(int idWeapon, Unit unit)
+    public void SetWeaponParameters(int idWeapon, Unit.Unit unit)
     {
-        DataWeapons weapon = m_DataWeapons[idWeapon];
         LinkManager linkManager = LinkManager.Instance;
-        BulletsQuantityUnit bulletsQuantity = unit.m_BulletsQuantity;
-
+        DataWeapons weapon = m_DataWeapons[idWeapon];
+        BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
+        
         SetBullets(bulletsQuantity, weapon);
 
         if (unit.isBot) 
             return;
         
         SetUIWeaponParameters(linkManager, bulletsQuantity, weapon);
-        bulletsQuantity.m_AllWeaponUnit[bulletsQuantity.m_LastWeapon].SetActive(false);
-        bulletsQuantity.m_AllWeaponUnit[bulletsQuantity.m_CurrentWeapon.IdWeapon].SetActive(true);
+        bulletsQuantity.AllWeaponUnit[bulletsQuantity.LastWeapon].SetActive(false);
+        bulletsQuantity.AllWeaponUnit[bulletsQuantity.CurrentWeapon.IdWeapon].SetActive(true);
     }
 
     private void SetBullets(BulletsQuantityUnit bulletsQuantity, DataWeapons weapon)
     {
-        bulletsQuantity.m_AllBulletsWeapon = weapon.QuantityAllBulletsWeapon;
-        bulletsQuantity.m_QuantityBulletsInClip = weapon.QuantityBulletsInClip;
-        bulletsQuantity.m_DefaultBulletsInClip = weapon.QuantityBulletsInClip;
-        bulletsQuantity.m_CurrentWeapon = weapon;       
+        bulletsQuantity.AllBulletsWeapon = weapon.QuantityAllBulletsWeapon;
+        bulletsQuantity.QuantityBulletsInClip = weapon.QuantityBulletsInClip;
+        bulletsQuantity.DefaultBulletsInClip = weapon.QuantityBulletsInClip;
+        bulletsQuantity.CurrentWeapon = weapon;
     }
     
     private void SetUIWeaponParameters (LinkManager linkManager, BulletsQuantityUnit bulletsQuantity, DataWeapons weapon)
     {
-        linkManager.m_UIManager.SetQuantityBullets(bulletsQuantity);
-        linkManager.m_UIManager.SetWeaponIcon(weapon.Icon);
+        linkManager.UIManager.SetQuantityBullets(bulletsQuantity);
+        linkManager.UIManager.SetWeaponIcon(weapon.Icon);
     }
     
-    private void NextWeapon(Unit unit)
+    private void NextWeapon(Unit.Unit unit)
     {
-        BulletsQuantityUnit bulletsQuantity = unit.m_BulletsQuantity;
+        BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
         m_AudioSource.PlayOneShot(m_NextWeapon);
-        bulletsQuantity.m_LastWeapon = bulletsQuantity.m_CurrentWeapon.IdWeapon;
-        bulletsQuantity.m_NextWeapon = bulletsQuantity.m_CurrentWeapon.IdWeapon + 1;
+        bulletsQuantity.LastWeapon = bulletsQuantity.CurrentWeapon.IdWeapon;
+        bulletsQuantity.NextWeapon = bulletsQuantity.CurrentWeapon.IdWeapon + 1;
         
-        if (bulletsQuantity.m_NextWeapon >= m_DataWeapons.Length)
-            bulletsQuantity.m_NextWeapon = 0;
+        if (bulletsQuantity.NextWeapon >= m_DataWeapons.Length)
+            bulletsQuantity.NextWeapon = 0;
         
-        SetWeaponParameters(bulletsQuantity.m_NextWeapon, unit);
+        SetWeaponParameters(bulletsQuantity.NextWeapon, unit);
     }
 
 }

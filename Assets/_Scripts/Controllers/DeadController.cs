@@ -13,7 +13,7 @@ public class DeadController : MonoBehaviour
         m_LinkManager = LinkManager.Instance;
     }
 
-    public void UnitDead(Unit unit)
+    public void UnitDead(Unit.Unit unit)
     {
         if (!unit.isBot)
             PlayerDead(unit);
@@ -21,24 +21,24 @@ public class DeadController : MonoBehaviour
             BotDead(unit);
     }
 
-    private void Respawn(Unit unit)
+    private void Respawn(Unit.Unit unit)
     {
-        StartCoroutine(m_LinkManager.m_RespawnController.Respawn(unit, m_DefalutTimeRespawn));
+        StartCoroutine(m_LinkManager.RespawnController.Respawn(unit, m_DefalutTimeRespawn));
     }
     
-    private void PlayerDead(Unit unit)
+    private void PlayerDead(Unit.Unit unit)
     {
-        m_LinkManager.m_UIManager.DeadPanel(true);
-        m_LinkManager.m_UIManager.DarkPanel(0.8f, true);
-        m_LinkManager.m_UIManager.Interface(false);
-        m_LinkManager.m_UnitsHolder.DeleteUnitFromHolder(unit);
+        m_LinkManager.UIManager.DeadPanel(true);
+        m_LinkManager.UIManager.DarkPanel(0.8f, true);
+        m_LinkManager.UIManager.Interface(false);
+        m_LinkManager.UnitsHolder.DeleteUnitFromHolder(unit);
         Destroy(unit.gameObject);
     }
 
-    private void BotDead(Unit unit)
+    private void BotDead(Unit.Unit unit)
     {
         Respawn(unit);
-        m_LinkManager.m_UnitsHolder.DeleteUnitFromHolder(unit);
+        m_LinkManager.UnitsHolder.DeleteUnitFromHolder(unit);
         Destroy(unit.gameObject);
     }
 }

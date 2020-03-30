@@ -1,0 +1,24 @@
+{
+  "items": [
+	{
+      "key": "k_start_game",
+      "value": "Start game"
+    },
+	{
+      "key": "k_settings",
+      "value": "Settings"
+    },
+	{
+      "key": "k_exit_game",
+      "value": "Exit"
+    },
+    {
+      "key": "k_message_dead",
+      "value": "You are dead!"
+    },
+    {
+      "key": "k_respawn",
+      "value": "Respawn"
+    }
+  ]
+}

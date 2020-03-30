@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unit;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
@@ -15,55 +16,55 @@ public class BulletController : MonoBehaviour
         m_LinkManager = LinkManager.Instance;
     }
 
-    public void BulletsCount(Unit unit)
+    public void BulletsCount(Unit.Unit unit)
     {
-        BulletsQuantityUnit bulletsQuantity = unit.m_BulletsQuantity;
-        if (bulletsQuantity.m_QuantityBulletsInClip == 0) return;
+        BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
+        if (bulletsQuantity.QuantityBulletsInClip == 0) return;
         
-        bulletsQuantity.m_QuantityBulletsInClip--;
+        bulletsQuantity.QuantityBulletsInClip--;
         
-        if (bulletsQuantity.m_QuantityBulletsInClip == 0 & bulletsQuantity.m_AllBulletsWeapon != 0)
+        if (bulletsQuantity.QuantityBulletsInClip == 0 & bulletsQuantity.AllBulletsWeapon != 0)
             StartCoroutine(ReloadWeapon(unit));
             
-        if (bulletsQuantity.m_QuantityBulletsInClip == 0 & bulletsQuantity.m_AllBulletsWeapon == 0)
+        if (bulletsQuantity.QuantityBulletsInClip == 0 & bulletsQuantity.AllBulletsWeapon == 0)
             NoBullets(unit);
         
         SetUIWeaponParameters(unit);
     }
 
-    private IEnumerator ReloadWeapon(Unit unit)
+    private IEnumerator ReloadWeapon(Unit.Unit unit)
     {
-        BulletsQuantityUnit bulletsQuantity = unit.m_BulletsQuantity;
-        ShootingCheckUnit shootingCheck = unit.m_ShootingCheck;
-        Animator animator = unit.m_Animator;
+        BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
+        ShootingCheckUnit shootingCheck = unit.ShootingCheck;
+        Animator animator = unit.Animator;
         
-        m_LinkManager.m_ShootingController.StopAllCoroutines();
+        m_LinkManager.ShootingController.StopAllCoroutines();
         shootingCheck.StopAllCoroutines();
         shootingCheck.DisableShooting();
         animator.SetTrigger("ReloadGun");
         m_AudioSource.PlayOneShot(m_SoundReload);
         
-        yield return new WaitForSeconds(bulletsQuantity.m_CurrentWeapon.ReloadTime);
+        yield return new WaitForSeconds(bulletsQuantity.CurrentWeapon.ReloadTime);
         
-        if (!bulletsQuantity.m_CurrentWeapon.InfinityBullets)
-            bulletsQuantity.m_AllBulletsWeapon -= bulletsQuantity.m_DefaultBulletsInClip;
+        if (!bulletsQuantity.CurrentWeapon.InfinityBullets)
+            bulletsQuantity.AllBulletsWeapon -= bulletsQuantity.DefaultBulletsInClip;
         
         m_AudioSource.Stop();
-        bulletsQuantity.m_QuantityBulletsInClip = bulletsQuantity.m_DefaultBulletsInClip;
+        bulletsQuantity.QuantityBulletsInClip = bulletsQuantity.DefaultBulletsInClip;
         shootingCheck.EnableShooting();
 
         SetUIWeaponParameters(unit);
     }
 
-    private void NoBullets(Unit unit)
+    private void NoBullets(Unit.Unit unit)
     {
-        unit.m_ShootingCheck.isNoAmmo = true;
-        unit.m_ShootingCheck.m_ModeCanShooting = ShootingCheckUnit.ModeCanShooting.NoAmmo;
+        unit.ShootingCheck.isNoAmmo = true;
+        unit.ShootingCheck.m_ModeCanShooting = ShootingCheckUnit.ModeCanShooting.NoAmmo;
     }
     
-    private void SetUIWeaponParameters(Unit unit)
+    private void SetUIWeaponParameters(Unit.Unit unit)
     {
         if (!unit.isBot)
-            m_LinkManager.m_UIManager.SetQuantityBullets(unit.m_BulletsQuantity);
+            m_LinkManager.UIManager.SetQuantityBullets(unit.BulletsQuantity);
     }
 }

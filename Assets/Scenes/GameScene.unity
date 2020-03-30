@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ed40cd7e8a72f4da052d559caac8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Units: []
+  Units: []
 --- !u!114 &717035723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,6 +1031,7 @@ GameObject:
   - component: {fileID: 982050900}
   - component: {fileID: 982050902}
   - component: {fileID: 982050901}
+  - component: {fileID: 982050903}
   m_Layer: 5
   m_Name: DeadText
   m_TagString: Untagged
@@ -1088,7 +1089,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You are dead!
+  m_Text: k_message_dead
 --- !u!222 &982050902
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1097,6 +1098,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982050899}
   m_CullTransparentMesh: 0
+--- !u!114 &982050903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982050899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419c971f9db1e6c41b996d385aabffb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Text: {fileID: 0}
+  m_KeyText: 
 --- !u!1 &1034253001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,6 +1407,7 @@ GameObject:
   - component: {fileID: 1151998169}
   - component: {fileID: 1151998171}
   - component: {fileID: 1151998170}
+  - component: {fileID: 1151998172}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1449,7 +1465,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Respawn
+  m_Text: k_respawn
 --- !u!222 &1151998171
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1458,6 +1474,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151998168}
   m_CullTransparentMesh: 0
+--- !u!114 &1151998172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151998168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419c971f9db1e6c41b996d385aabffb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Text: {fileID: 0}
+  m_KeyText: 
 --- !u!1 &1317664683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2259,17 +2289,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Player: {fileID: 0}
-  m_MobilePlayerController: {fileID: 837045321}
-  m_ShootingController: {fileID: 717035720}
-  m_RespawnController: {fileID: 717035729}
-  m_BulletController: {fileID: 717035724}
-  m_WeaponController: {fileID: 717035723}
-  m_DamageController: {fileID: 717035726}
-  m_HelthController: {fileID: 717035728}
-  m_DeadController: {fileID: 717035727}
-  m_EventsManager: {fileID: 2010730852}
-  m_UnitsHolder: {fileID: 717035722}
-  m_UIManager: {fileID: 2010730854}
+  MobilePlayerController: {fileID: 837045321}
+  ShootingController: {fileID: 717035720}
+  RespawnController: {fileID: 717035729}
+  BulletController: {fileID: 717035724}
+  WeaponController: {fileID: 717035723}
+  DamageController: {fileID: 717035726}
+  HelthController: {fileID: 717035728}
+  DeadController: {fileID: 717035727}
+  EventsManager: {fileID: 2010730852}
+  UnitsHolder: {fileID: 717035722}
+  UIManager: {fileID: 2010730854}
 --- !u!114 &2010730852
 MonoBehaviour:
   m_ObjectHideFlags: 0
