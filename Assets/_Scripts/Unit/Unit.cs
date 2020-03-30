@@ -55,7 +55,6 @@ public class Unit : MonoBehaviour
     
     public void Shoot(Unit unit)
     {
-        //m_LinkManager.m_EventsManager.StartShoot(unit);
         m_ShootingCheck.StartShooting(unit);
     }
     

@@ -1267,7 +1267,6 @@ MonoBehaviour:
   m_Helth: 100
   isBot: 0
   isEnemy: 0
-  isDead: 0
   m_PointForGenerateBullets: {fileID: 0}
   m_BulletsQuantity: {fileID: 0}
   m_ShootingCheck: {fileID: 0}

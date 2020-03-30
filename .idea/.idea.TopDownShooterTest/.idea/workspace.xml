@@ -48,7 +48,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/ResetPlayerParameters.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/ShootingCheckUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/BulletsQuantityUnit.cs" />
@@ -61,14 +60,15 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/HelthbarUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/UnitsHolder.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnPlayer.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/SetTarget.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/ShootingCheckUnit.cs" />
       </list>
     </option>
   </component>
@@ -128,6 +128,8 @@
       <workItem from="1585449398283" duration="11340000" />
       <workItem from="1585464725679" duration="10161000" />
       <workItem from="1585476609030" duration="6280000" />
+      <workItem from="1585488298231" duration="811000" />
+      <workItem from="1585527530129" duration="347000" />
     </task>
     <servers />
   </component>

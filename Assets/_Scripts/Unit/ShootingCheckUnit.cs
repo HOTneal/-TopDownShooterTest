@@ -23,7 +23,6 @@ public class ShootingCheckUnit : MonoBehaviour
     private void Start()
     {
         m_LinkManager = LinkManager.Instance;
-        //m_LinkManager.m_EventsManager.OnStartShooting += StartShooting;
     }
 
     public void StartShooting(Unit unit)

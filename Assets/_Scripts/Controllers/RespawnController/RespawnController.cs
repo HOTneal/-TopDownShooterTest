@@ -15,10 +15,10 @@ public class RespawnController : MonoBehaviour
 
     private void Start()
     {
+        m_LinkManager = LinkManager.Instance;
+
         SortPoints(m_SpawnPointsTeam1, m_Bot);
         SortPoints(m_SpawnPointsTeam2, m_Player);
-        
-        m_LinkManager = LinkManager.Instance;
     }
 
     private void SortPoints(Transform[] points, GameObject unit)
@@ -37,7 +37,7 @@ public class RespawnController : MonoBehaviour
         if (unit.isBot)
             unit.m_Nickname = GenerateBotNickname();
 
-        LinkManager.Instance.m_UnitsHolder.AddUnitInHolder(unit);
+        m_LinkManager.m_UnitsHolder.AddUnitInHolder(unit);
     }
     
     public IEnumerator Respawn(Unit unit, float timeRespawn)
@@ -57,7 +57,7 @@ public class RespawnController : MonoBehaviour
         
         for (int i = 0; i < arrayNicknamesBots.Length; i++)
         {
-            if (!LinkManager.Instance.m_UnitsHolder.m_Units.Exists(unit => unit.m_Nickname == arrayNicknamesBots[i]))
+            if (!m_LinkManager.m_UnitsHolder.m_Units.Exists(unit => unit.m_Nickname == arrayNicknamesBots[i]))
             {
                 nickname = arrayNicknamesBots[i];
                 break;
