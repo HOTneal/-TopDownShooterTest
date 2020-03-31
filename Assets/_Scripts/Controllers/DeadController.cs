@@ -1,4 +1,5 @@
 ﻿using Managers;
+using ScriptableObjects;
 using UnityEngine;
 
 namespace Controllers
@@ -13,9 +14,9 @@ namespace Controllers
             m_LinkManager = LinkManager.Instance;
         }
 
-        public void UnitDead(Unit.Unit unit, Unit.Unit damagedUnit)
+        public void UnitDead(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
         {
-            m_LinkManager.KillListController.AddKillToList(unit, damagedUnit);
+            m_LinkManager.KillListController.AddKillToList(unit, damagedUnit, weapon);
             if (!damagedUnit.isBot)
                 PlayerDead(damagedUnit);
             else

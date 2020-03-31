@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &559504953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559504954}
+  m_Layer: 0
+  m_Name: pointForDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &559504954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559504953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3991165856292487061}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2034498389
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +125,7 @@ GameObject:
   - component: {fileID: 1045122874216075042}
   m_Layer: 0
   m_Name: Bot
-  m_TagString: Untagged
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +145,7 @@ Transform:
   - {fileID: 850461890300294171}
   - {fileID: 1709698645084381552}
   - {fileID: 6122998049057850249}
+  - {fileID: 559504954}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -172,16 +203,17 @@ MonoBehaviour:
   isBot: 1
   isEnemy: 1
   PointForGenerateBullets: {fileID: 4870465728778269307}
-  BulletsQuantity: {fileID: 0}
-  ShootingCheck: {fileID: 0}
   SpeedWalk: 0
-  PointForSpawn: {fileID: 0}
+  PointForDamage: {fileID: 559504954}
   Animator: {fileID: 0}
   ChController: {fileID: 0}
   IdDefaultWeaponAtStart: 0
   HelthbarUnit: {fileID: 0}
   BotController: {fileID: 0}
   SetTarget: {fileID: 0}
+  BulletsQuantity: {fileID: 0}
+  ShootingCheck: {fileID: 0}
+  PointForSpawn: {fileID: 0}
 --- !u!114 &4207883778890434413
 MonoBehaviour:
   m_ObjectHideFlags: 0

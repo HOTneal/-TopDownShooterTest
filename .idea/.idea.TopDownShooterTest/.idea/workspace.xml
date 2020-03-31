@@ -15,12 +15,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarRotate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Arkanoid/Assets/_scripts/Menu/StartGame.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/EffectsController/DestroyEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Menu/Menu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/ShootingCheckUnit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Menu/SetLanguage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/Grenade.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/UnitsHolder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Managers/EventsManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -32,18 +34,21 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileControllers/MobileButtons.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/KillListController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/EventMurderParameters.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeActivate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Menu/ReloadTextMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileControllers/MobileInputController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Arkanoid/Assets/_scripts/Menu/ExitGame.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileButtons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/Arkanoid/Assets/_scripts/Localization/ReloadText.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileInputController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/SetTarget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizedText.cs" root0="FORCE_HIGHLIGHTING" />
@@ -51,9 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/BulletController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/BulletsQuantity.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheck.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ChoiceWeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletsQuantity.cs" />
         <option value="$PROJECT_DIR$/Assets/_Shaders/Sprites.shader" />
@@ -61,7 +63,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/ResetPlayerParameters.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/BulletsQuantityUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/HelthbarUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/UnitsHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Menu.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Menu/SetLanguage.cs" />
@@ -69,16 +70,13 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Menu/ReloadTextMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/UIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/EventsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletMove.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthbarRotate.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/CameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationData.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationManager.cs" />
@@ -92,12 +90,23 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileControllers/MobileButtons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/EventMurderParameters.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/DestoryEventMurder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/HelthbarUnit.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Grenade.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/KillListController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/DestoryEventMurder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeActivate.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeEffects.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileButtons.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileInputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/EffectsController/DestroyEffects.cs" />
       </list>
     </option>
   </component>
@@ -159,7 +168,9 @@
       <workItem from="1585476609030" duration="6280000" />
       <workItem from="1585488298231" duration="811000" />
       <workItem from="1585527530129" duration="21103000" />
-      <workItem from="1585561568700" duration="6789000" />
+      <workItem from="1585561568700" duration="7451000" />
+      <workItem from="1585622466724" duration="18295000" />
+      <workItem from="1585652171920" duration="8951000" />
     </task>
     <servers />
   </component>

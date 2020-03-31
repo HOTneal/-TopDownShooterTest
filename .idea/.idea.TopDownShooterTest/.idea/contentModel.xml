@@ -16,6 +16,14 @@
             <e p="CameraController.cs" t="Include" />
             <e p="DamageController.cs" t="Include" />
             <e p="DeadController.cs" t="Include" />
+            <e p="EffectsController" t="Include">
+              <e p="DestroyEffects.cs" t="Include" />
+            </e>
+            <e p="GrenadeController" t="Include">
+              <e p="GrenadeActivate.cs" t="Include" />
+              <e p="GrenadeController.cs" t="Include" />
+              <e p="GrenadeEffects.cs" t="Include" />
+            </e>
             <e p="HelthbarController" t="Include">
               <e p="HelthbarRotate.cs" t="Include" />
               <e p="HelthController.cs" t="Include" />
@@ -26,7 +34,7 @@
               <e p="EventMurderParameters.cs" t="Include" />
               <e p="KillListController.cs" t="Include" />
             </e>
-            <e p="MobileControllers" t="Include">
+            <e p="MobileController" t="Include">
               <e p="MobileButtons.cs" t="Include" />
               <e p="MobileInputController.cs" t="Include" />
             </e>

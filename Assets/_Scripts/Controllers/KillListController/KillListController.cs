@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEngine;
 
 namespace Controllers.KillListController
@@ -9,15 +10,15 @@ namespace Controllers.KillListController
         [SerializeField] private GameObject m_EventMurder;
         [SerializeField] private Transform m_ParrentForEventMurder;
 
-        public void AddKillToList(Unit.Unit unit, Unit.Unit damagedUnit)
+        public void AddKillToList(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
         {
             EventMurderParameters parameters;
-            
             GameObject createdMurederEvent = Instantiate(m_EventMurder, m_ParrentForEventMurder) as GameObject;
+            
             parameters = createdMurederEvent.GetComponent<EventMurderParameters>();
             parameters.NameUnit1.text = unit.Nickname;
             parameters.NameUnit2.text = damagedUnit.Nickname;
-            parameters.IconWeapon.sprite = unit.BulletsQuantity.CurrentWeapon.Icon;
+            parameters.IconWeapon.sprite = weapon.Icon;
         }
 
         public IEnumerator DeleteKillFromList(DestoryEventMurder deleteEventMurder)

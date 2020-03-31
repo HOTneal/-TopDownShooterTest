@@ -11,17 +11,19 @@ namespace Unit
         public bool isBot = false;
         public bool isEnemy = false;
         public Transform PointForGenerateBullets;
-        public BulletsQuantityUnit BulletsQuantity;
-        public ShootingCheckUnit ShootingCheck;
         public float SpeedWalk;
-        public Transform PointForSpawn;
+        public Transform PointForDamage;
         [HideInInspector] public Animator Animator;
         [HideInInspector] public CharacterController ChController;
         [HideInInspector] public int IdDefaultWeaponAtStart = 0;
         [HideInInspector] public HelthbarUnit HelthbarUnit;
         [HideInInspector] public BotController BotController;
         [HideInInspector] public SetTarget SetTarget;
+        [HideInInspector] public BulletsQuantityUnit BulletsQuantity;
+        [HideInInspector] public ShootingCheckUnit ShootingCheck;
+        [HideInInspector] public Transform PointForSpawn;
 
+        
         private LinkManager m_LinkManager;
         private MovementController m_MovementController;
 

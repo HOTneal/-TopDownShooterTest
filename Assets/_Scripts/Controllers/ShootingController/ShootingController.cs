@@ -91,8 +91,8 @@ namespace Controllers.ShootingController
 
         private void Damage(Unit.Unit unit, Unit.Unit damagedUnit)
         {
-            m_LinkManager.DamageController.Damage(unit, damagedUnit);
-            m_LinkManager.HelthController.CheckLiveUnit(unit, damagedUnit);
+            m_LinkManager.DamageController.Damage(unit, damagedUnit, unit.BulletsQuantity.CurrentWeapon);
+            m_LinkManager.HelthController.CheckLiveUnit(unit, damagedUnit, unit.BulletsQuantity.CurrentWeapon);
         }
     }
 }
