@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class GrenadeActivate : MonoBehaviour
+namespace Controllers.GrenadeController
 {
+    public class GrenadeActivate : MonoBehaviour
+    {
     
+    }
 }

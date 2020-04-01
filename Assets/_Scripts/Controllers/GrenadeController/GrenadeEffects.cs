@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
-public class GrenadeEffects : MonoBehaviour
+namespace Controllers.GrenadeController
 {
-    [SerializeField] private GameObject m_Effect;
-
-    public void GenerateEffects(Transform grenade)
+    public class GrenadeEffects : MonoBehaviour
     {
-        Instantiate(m_Effect, grenade.position, Quaternion.identity);
+        [SerializeField] private GameObject m_Effect;
+
+        public void GenerateEffects(Transform grenade)
+        {
+            Instantiate(m_Effect, grenade.position, Quaternion.identity);
+        }
     }
 }

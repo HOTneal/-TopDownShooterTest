@@ -34,6 +34,7 @@ namespace Controllers
             m_LinkManager.UIManager.DarkPanel(0.8f, true);
             m_LinkManager.UIManager.Interface(false);
             m_LinkManager.UnitsHolder.DeleteUnitFromHolder(unit);
+            m_LinkManager.MobileGrenadeController.isCanMove = false;
             Destroy(unit.gameObject);
         }
 

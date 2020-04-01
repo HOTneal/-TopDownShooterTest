@@ -9,9 +9,6 @@ namespace Controllers.MobileController
         private Image m_BgJoystick;
         private Image m_MoveStick;
         private Vector2 m_InputVector;
-        private float m_MaxJoyMoveAway = 2.0f;
-        private Vector2 m_Pos;
-        private Vector2 m_JoystickPos;
 
         private void Start()
         {
@@ -32,18 +29,21 @@ namespace Controllers.MobileController
 
         public virtual void OnDrag(PointerEventData eventData)
         {
-            m_JoystickPos = m_BgJoystick.rectTransform.position;
-        
+            Vector2 m_Pos;
+
             if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_BgJoystick.rectTransform, eventData.position,
                 eventData.pressEventCamera, out m_Pos)) return;
         
-            m_Pos.x = (m_Pos.x / m_JoystickPos.x);
-            m_Pos.y = (m_Pos.y / m_JoystickPos.y);
+            m_Pos.x = (m_Pos.x / m_BgJoystick.rectTransform.sizeDelta.x);
+            m_Pos.y = (m_Pos.y / m_BgJoystick.rectTransform.sizeDelta.y);
 
-            m_InputVector = new Vector2(m_Pos.x * m_MaxJoyMoveAway, m_Pos.y * m_MaxJoyMoveAway);
+            m_InputVector = new Vector2(m_Pos.x * 2 , m_Pos.y * 2);
+            
+            print(m_InputVector.magnitude);
+
             m_InputVector = (m_InputVector.magnitude > 1.0f) ? m_InputVector.normalized : m_InputVector;
 
-            m_MoveStick.rectTransform.anchoredPosition = new Vector2(m_InputVector.x * (m_JoystickPos.x / m_MaxJoyMoveAway), m_InputVector.y * (m_JoystickPos.y / m_MaxJoyMoveAway));
+            m_MoveStick.rectTransform.anchoredPosition = new Vector2(m_InputVector.x * (m_BgJoystick.rectTransform.sizeDelta.x / 2), m_InputVector.y * (m_BgJoystick.rectTransform.sizeDelta.y / 2));
         }
 
         public virtual void OnEndDrag(PointerEventData eventData)

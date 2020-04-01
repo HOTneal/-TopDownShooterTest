@@ -10,19 +10,19 @@ namespace Unit
         public int Helth = 100;
         public bool isBot = false;
         public bool isEnemy = false;
-        public Transform PointForGenerateBullets;
         public float SpeedWalk;
+        public Transform PointForGenerateBullets;
         public Transform PointForDamage;
+        public Transform[] PointsForGrenade;
+        [HideInInspector] public int IdDefaultWeaponAtStart = 0;
         [HideInInspector] public Animator Animator;
         [HideInInspector] public CharacterController ChController;
-        [HideInInspector] public int IdDefaultWeaponAtStart = 0;
         [HideInInspector] public HelthbarUnit HelthbarUnit;
         [HideInInspector] public BotController BotController;
         [HideInInspector] public SetTarget SetTarget;
         [HideInInspector] public BulletsQuantityUnit BulletsQuantity;
         [HideInInspector] public ShootingCheckUnit ShootingCheck;
         [HideInInspector] public Transform PointForSpawn;
-
         
         private LinkManager m_LinkManager;
         private MovementController m_MovementController;
@@ -43,6 +43,7 @@ namespace Unit
                 SetPlayerMoveSettings();
                 SetTarget = GetComponent<SetTarget>();
                 SetTarget.SetTargetForBotAttack();
+                SetMobileGrenadeSettings();
             }
             else
                 BotController = GetComponent<BotController>();
@@ -68,6 +69,16 @@ namespace Unit
         public void NextWeapon()
         {
             m_LinkManager.EventsManager.NextWeapon(this);
+        }
+
+        private void SetMobileGrenadeSettings()
+        {
+            m_LinkManager.MobileGrenadeController.SetValues(PointsForGrenade);
+            m_LinkManager.MobileGrenadeController.isCanMove = true;
+            
+            m_LinkManager.LineRendererController.PointStartLine = PointsForGrenade[0];
+            m_LinkManager.LineRendererController.PointCenterLine = PointsForGrenade[1];
+            m_LinkManager.LineRendererController.PointEndLine = PointsForGrenade[2];
         }
     }
 }

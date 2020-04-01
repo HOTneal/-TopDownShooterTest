@@ -23,6 +23,8 @@
               <e p="GrenadeActivate.cs" t="Include" />
               <e p="GrenadeController.cs" t="Include" />
               <e p="GrenadeEffects.cs" t="Include" />
+              <e p="GrenadeFlight.cs" t="Include" />
+              <e p="GrenadeInstantiateController.cs" t="Include" />
             </e>
             <e p="HelthbarController" t="Include">
               <e p="HelthbarRotate.cs" t="Include" />
@@ -34,8 +36,12 @@
               <e p="EventMurderParameters.cs" t="Include" />
               <e p="KillListController.cs" t="Include" />
             </e>
+            <e p="LineRendererController" t="Include">
+              <e p="LineRendererController.cs" t="Include" />
+            </e>
             <e p="MobileController" t="Include">
               <e p="MobileButtons.cs" t="Include" />
+              <e p="MobileGrenadeController.cs" t="Include" />
               <e p="MobileInputController.cs" t="Include" />
             </e>
             <e p="MovementController.cs" t="Include" />
@@ -57,6 +63,7 @@
             <e p="EventsManager.cs" t="Include" />
             <e p="LinkManager.cs" t="Include" />
           </e>
+          <e p="MathParabola.cs" t="Include" />
           <e p="Menu" t="Include">
             <e p="Menu.cs" t="Include" />
             <e p="ReloadTextMenu.cs" t="Include" />
