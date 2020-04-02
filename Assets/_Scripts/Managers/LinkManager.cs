@@ -39,6 +39,7 @@ namespace Managers
         public KillListController KillListController;
         public ShootingController ShootingController;
         public RespawnController RespawnController;
+        public GrenadeController GrenadeController;
         public BulletController BulletController;
         public WeaponController WeaponController;
         public DamageController DamageController;
