@@ -21,7 +21,7 @@ namespace Controllers
             m_LinkManager = LinkManager.Instance;
 
             if (m_LinkManager.m_Player != null && Target == null)
-                Target = m_LinkManager.m_Player.transform;
+                Target = m_LinkManager.m_Player.PointForDamage.transform;
         
             m_BotUnit = GetComponent<Unit.Unit>();
             m_BotTransform = transform;
@@ -35,9 +35,9 @@ namespace Controllers
             if (m_LinkManager.m_Player == null || Target == null)
                 return;
 
-            if (Vector3.Distance(m_BotTransform.position, Target.position) <= m_DistanceLookAt)
+            if (Vector3.Distance(m_BotTransform.position, Target.localPosition) <= m_DistanceLookAt)
             {
-                if (Vector3.Distance(m_BotTransform.position, Target.position) <= m_DistanceAttack)
+                if (Vector3.Distance(m_BotTransform.position, Target.localPosition) <= m_DistanceAttack)
                     Attack();
             }
         }

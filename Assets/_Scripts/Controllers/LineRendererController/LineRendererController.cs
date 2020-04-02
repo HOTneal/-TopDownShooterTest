@@ -46,5 +46,12 @@ namespace Controllers.LineRendererController
             LineRenderer.positionCount = pointList.Count;
             LineRenderer.SetPositions(pointList.ToArray());
         }
+
+        public void SetValues(Transform[] points)
+        {
+            PointStartLine = points[0];
+            PointCenterLine = points[1];
+            PointEndLine = points[2];
+        }
     }
 }

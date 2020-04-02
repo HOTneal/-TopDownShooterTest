@@ -12,6 +12,7 @@ namespace Controllers.MobileController
     public class MobileGrenadeController : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler
     {
         [SerializeField] private float m_SpeedMoveEndPointGrenade = 10.0f;
+        [SerializeField] private float DistanceTarget = 15.0f;
 
         public bool isCanMove = false;
         public Transform PointStartGrenade;
@@ -21,8 +22,8 @@ namespace Controllers.MobileController
         [HideInInspector] public Vector3 m_LastPositionPointEnd;
         [HideInInspector] public Vector3 DefaultPosPointEndGrenade;
         [HideInInspector] public Vector3 DefaultPosPointCenterGrenade;
-
-        private GameObject m_TargetIcon;
+        
+        [SerializeField] private GameObject m_TargetIcon;
         private Image m_BgGrenade;
         private Image m_GrenadeStick;
         private Vector2 m_InputVector;
@@ -40,19 +41,31 @@ namespace Controllers.MobileController
             if (!isCanMove)
                 return;
 
+            PointStartGrenade = m_LinkManager.m_Player.PointsForGrenade[0];
+            PointCenterGrenade = m_LinkManager.m_Player.PointsForGrenade[1];
+            PointEndGrenade = m_LinkManager.m_Player.PointsForGrenade[2];
+            
+            ClampMovePoints(PointCenterGrenade, DistanceTarget / 2);
+            ClampMovePoints(PointEndGrenade, DistanceTarget);
+            
             MoveEndPoint(PointEndGrenade, 2);
             MoveEndPoint(PointCenterGrenade, 1);
         }
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
-            OnDrag(eventData);
+            isCanMove = true;
             m_LinkManager.LineRendererController.isCanDrawLine = true;
+
+            OnDrag(eventData);
             m_TargetIcon.SetActive(true);
         }
 
         public virtual void OnPointerUp(PointerEventData eventData)
         {
+            isCanMove = false;
+            m_LinkManager.LineRendererController.isCanDrawLine = false;
+
             m_InputVector = Vector2.zero;
             m_GrenadeStick.rectTransform.anchoredPosition = Vector2.zero;
 
@@ -89,39 +102,38 @@ namespace Controllers.MobileController
         private void MoveEndPoint(Transform pointGrenade, int numberPointInArray)
         {
             var point = pointGrenade.localPosition;
-            var x = point.x - m_InputVector.x * m_SpeedMoveEndPointGrenade * Time.deltaTime;
+            var x = point.x;
             var y = point.y;
             var z = point.z - m_InputVector.y * m_SpeedMoveEndPointGrenade * Time.deltaTime;
-
-            float param = 10f;
-
-            Vector3 worldDir = pointGrenade.InverseTransformDirection(m_LinkManager.m_Player.transform.position);
-
-//            var xClamp = Mathf.Clamp(worldDir.x, worldDir.x - param, worldDir.x + param);
-//            var zClamp = Mathf.Clamp(worldDir.z, worldDir.z - param, worldDir.z + param);
-
+            
             m_LinkManager.m_Player.PointsForGrenade[numberPointInArray].localPosition = new Vector3(x, y, z);
         }
 
         public void SetValues(Transform[] points)
         {
-            PointStartGrenade = points[0];
-            PointEndGrenade = points[2];
-            PointCenterGrenade = points[1];
-            
             DefaultPosPointEndGrenade = points[2].localPosition;
             DefaultPosPointCenterGrenade = points[1].localPosition;
             
-            m_TargetIcon = PointEndGrenade.transform.GetChild(0).gameObject;
+            m_TargetIcon = points[2].GetChild(0).gameObject;
         }
         
         private void DefaultValues()
         {
-            m_LinkManager.m_Player.PointsForGrenade[1].localPosition = DefaultPosPointCenterGrenade;
-            m_LinkManager.m_Player.PointsForGrenade[2].localPosition = DefaultPosPointEndGrenade;
+            PointCenterGrenade.localPosition = DefaultPosPointCenterGrenade;
+            PointEndGrenade.localPosition = DefaultPosPointEndGrenade;
             
             m_LinkManager.LineRendererController.LineRenderer.SetVertexCount(0);
             m_LinkManager.LineRendererController.isCanDrawLine = false;
+        }
+
+        private void ClampMovePoints(Transform point, float distanceTarget)
+        {
+            var pointPos = point.position;
+            var startPointPos = PointStartGrenade.position;
+            var clampX = Mathf.Clamp(pointPos.x, startPointPos.x - distanceTarget, startPointPos.x + distanceTarget);
+            var clampZ = Mathf.Clamp(pointPos.z, startPointPos.z - distanceTarget, startPointPos.z + distanceTarget);
+
+            point.position = new Vector3(clampX, PointEndGrenade.position.y, clampZ);
         }
     }
 }

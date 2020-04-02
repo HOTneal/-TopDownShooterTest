@@ -9,6 +9,7 @@ namespace Controllers.GrenadeController
         [HideInInspector] public Vector3 EndPoint;
         public float SpeedFlight;
         public bool isActive = false;
+        public float m_Height;
 
         private float m_Animation;
         private Transform m_Transform;
@@ -26,7 +27,7 @@ namespace Controllers.GrenadeController
             m_Animation += Time.deltaTime;
             m_Animation %= SpeedFlight;
 
-            m_Transform.position = MathParabola.Parabola(StartPoint, EndPoint, 2f, m_Animation / SpeedFlight);
+            m_Transform.position = MathParabola.Parabola(StartPoint, EndPoint, m_Height, m_Animation / SpeedFlight);
 
             if (Vector3.Distance(m_Transform.position, EndPoint) < 0.1f)
                 isActive = false;
