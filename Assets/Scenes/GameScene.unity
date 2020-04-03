@@ -391,12 +391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37d181108b9c5447ba34b67980ce701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Point1: {fileID: 1737094686}
-  m_Point2: {fileID: 2008216916}
-  m_Point3: {fileID: 907615427}
-  m_Point4: {fileID: 1802571823}
   minPos: {x: 0, y: 0, z: 0}
   maxPos: {fileID: 1016063706}
+  distance: 15
 --- !u!23 &216124175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -839,7 +836,7 @@ GameObject:
   - component: {fileID: 531042827}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1820,7 +1817,7 @@ GameObject:
   - component: {fileID: 1034253003}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2532,7 +2529,7 @@ GameObject:
   - component: {fileID: 1401055363}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2708,7 +2705,6 @@ MonoBehaviour:
   m_LastPositionPointEnd: {x: 0, y: 0, z: 0}
   DefaultPosPointEndGrenade: {x: 0, y: 0, z: 0}
   DefaultPosPointCenterGrenade: {x: 0, y: 0, z: 0}
-  m_TargetIcon: {fileID: 0}
 --- !u!1 &1699623465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2850,7 +2846,7 @@ GameObject:
   - component: {fileID: 1723081174}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
