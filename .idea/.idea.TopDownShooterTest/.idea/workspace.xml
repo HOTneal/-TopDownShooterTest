@@ -45,7 +45,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/HelthbarUnit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Unit/BulletsQuantityUnit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/CheckWall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/KillListController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/EventMurderParameters.cs" root0="FORCE_HIGHLIGHTING" />
@@ -74,7 +73,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/CameraController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationData.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizationManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizedText.cs" />
@@ -109,11 +107,12 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController.cs" />
         <option value="$PROJECT_DIR$/Assets/textLinecast.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeFlight.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/CheckWall.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileGrenadeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/LineRendererController/LineRendererController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileGrenadeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeFlight.cs" />
       </list>
     </option>
   </component>
@@ -185,7 +184,7 @@
       <workItem from="1585736458932" duration="14271000" />
       <workItem from="1585785336229" duration="32300000" />
       <workItem from="1585872926450" duration="819000" />
-      <workItem from="1585875380725" duration="10731000" />
+      <workItem from="1585875380725" duration="20080000" />
     </task>
     <servers />
   </component>

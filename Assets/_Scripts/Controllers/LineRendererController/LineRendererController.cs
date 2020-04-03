@@ -7,15 +7,15 @@ namespace Controllers.LineRendererController
 {
     public class LineRendererController : MonoBehaviour
     {
-        [SerializeField] private float m_VertexCount = 12;
         [SerializeField] private float m_OffsetY;
 
-        public LineRenderer LineRenderer;
-        public Transform PointStartLine;
-        public Transform PointCenterLine;
-        public Transform PointEndLine;
+        public float VertexCount = 12.0f;
         public bool isCanDrawLine = false;
-    
+        [HideInInspector] public LineRenderer LineRenderer;
+        [HideInInspector] public Vector3 PointStartLine;
+        [HideInInspector] public Vector3 PointCenterLine;
+        public Vector3 PointEndLine;
+
         private LinkManager m_LinkManager;
     
         private void Start()
@@ -30,14 +30,14 @@ namespace Controllers.LineRendererController
             if (!isCanDrawLine)
                 return;
 
-            PointCenterLine.position = new Vector3((PointCenterLine.position.x), (m_OffsetY), (PointCenterLine.position.z));
+            PointCenterLine = new Vector3((PointCenterLine.x), (m_OffsetY), (PointCenterLine.z));
 
             var pointList = new List<Vector3>();
         
-            for (float i = 0; i <= 1; i+= 1/m_VertexCount)
+            for (float i = 0; i <= 1; i+= 1/VertexCount)
             {
-                var tangent1 = Vector3.Lerp(PointStartLine.position, PointCenterLine.position, i);
-                var tangent2 = Vector3.Lerp(PointCenterLine.position, PointEndLine.position, i);
+                var tangent1 = Vector3.Lerp(PointStartLine, PointCenterLine, i);
+                var tangent2 = Vector3.Lerp(PointCenterLine, PointEndLine, i);
                 var curve = Vector3.Lerp(tangent1, tangent2, i);
             
                 pointList.Add(curve);
@@ -47,11 +47,11 @@ namespace Controllers.LineRendererController
             LineRenderer.SetPositions(pointList.ToArray());
         }
 
-        public void SetValues(Transform[] points)
+        public void SetValues(Vector3[] point)
         {
-            PointStartLine = points[0];
-            PointCenterLine = points[1];
-            PointEndLine = points[2];
+            PointStartLine = point[0];
+            PointCenterLine = point[1];
+            PointEndLine = point[2];
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Controllers.GrenadeController
 
             m_Transform.position = MathParabola.Parabola(StartPoint, EndPoint, m_Height, m_Animation / SpeedFlight);
 
-            if (Vector3.Distance(m_Transform.position, EndPoint) < 0.1f)
+            if (Vector3.Distance(m_Transform.position, EndPoint) < 0.5f)
                 isActive = false;
         }
     }

@@ -74,8 +74,6 @@ namespace Unit
         private void SetMobileGrenadeSettings()
         {
             m_LinkManager.MobileGrenadeController.SetValues(PointsForGrenade);
-
-            m_LinkManager.LineRendererController.SetValues(PointsForGrenade);
         }
     }
 }

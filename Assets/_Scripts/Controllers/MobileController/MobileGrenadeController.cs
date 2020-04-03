@@ -18,14 +18,14 @@ namespace Controllers.MobileController
         public Transform PointStartGrenade;
         public Transform PointCenterGrenade;
         public Transform PointEndGrenade;
-        [HideInInspector] public Vector3 m_LastPositionPointEnd;
+        public Vector3 m_LastPositionPointEnd;
         [HideInInspector] public Vector3 DefaultPosPointEndGrenade;
         [HideInInspector] public Vector3 DefaultPosPointCenterGrenade;
 
         private LinkManager m_LinkManager;
+        private Vector2 m_InputVector;
         private Image m_BgGrenade;
         private Image m_GrenadeStick;
-        private Vector2 m_InputVector;
         private RaycastHit m_Hit;
         private GameObject m_TargetIcon;
 
@@ -42,15 +42,15 @@ namespace Controllers.MobileController
                 return;
             
             GetValuesForPointsGrenade(m_LinkManager.m_Player.PointsForGrenade);
-            
+
             ClampMovePoints(PointCenterGrenade, DistanceTarget / 2);
             ClampMovePoints(PointEndGrenade, DistanceTarget);
             
             MoveEndPoint(PointEndGrenade, 2);
             MoveEndPoint(PointCenterGrenade, 1);
             
-            SetValueLineRenderer(PointStartGrenade, PointCenterGrenade, PointEndGrenade);
             CheckWalls();
+            SetValueLineRenderer(PointStartGrenade.position, PointCenterGrenade.position, m_LastPositionPointEnd);
         }
 
         public virtual void OnPointerDown(PointerEventData eventData)
@@ -119,6 +119,9 @@ namespace Controllers.MobileController
             
             m_LinkManager.LineRendererController.LineRenderer.SetVertexCount(0);
             m_LinkManager.LineRendererController.isCanDrawLine = false;
+            m_LinkManager.LineRendererController.PointStartLine = Vector3.zero;
+            m_LinkManager.LineRendererController.PointCenterLine = Vector3.zero;
+            m_LinkManager.LineRendererController.PointEndLine = Vector3.zero;
         }
 
         private void ClampMovePoints(Transform point, float distanceTarget)
@@ -144,9 +147,9 @@ namespace Controllers.MobileController
             PointEndGrenade = point[2];      
         }
 
-        private void SetValueLineRenderer(Transform startPoint, Transform centerPoint, Transform endPoint)
+        private void SetValueLineRenderer(Vector3 startPoint, Vector3 centerPoint, Vector3 endPoint)
         {
-            Transform[] points = new Transform[] {startPoint, centerPoint, endPoint};
+            var points = new Vector3[] {startPoint, centerPoint, endPoint};
             m_LinkManager.LineRendererController.SetValues(points);
         }
         

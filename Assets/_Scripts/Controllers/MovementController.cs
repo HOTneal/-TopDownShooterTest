@@ -61,7 +61,8 @@ namespace Controllers
             else
                 Animator.SetBool("Walk", false);
         }
-
+        
+        
         private void PlayerRotate()
         {
             if (!(Vector3.Angle(Vector3.forward, m_MoveVector) > 1.0f) &&
