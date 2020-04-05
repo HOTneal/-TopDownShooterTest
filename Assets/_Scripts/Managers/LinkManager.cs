@@ -16,11 +16,11 @@ namespace Managers
     {
         #region Singltone
         private static LinkManager _instance;
-        public static LinkManager Instance => _instance;
+        public static LinkManager instance => _instance;
 
         private void Awake()
         {
-            if (_instance != null)
+            if (instance != null)
             {
                 Destroy(gameObject);
             }
@@ -31,23 +31,23 @@ namespace Managers
         }
         #endregion
 
-        public Unit.Unit m_Player;
-        public GrenadeInstantiateController GrenadeInstantiateController;
-        public MobileGrenadeController MobileGrenadeController;
-        public LineRendererController LineRendererController;
-        public MobileInputController MobilePlayerController;
-        public KillListController KillListController;
-        public ShootingController ShootingController;
-        public RespawnController RespawnController;
-        public GrenadeController GrenadeController;
-        public BulletController BulletController;
-        public WeaponController WeaponController;
-        public DamageController DamageController;
-        public HelthController HelthController;
-        public DeadController DeadController;
-        public EventsManager EventsManager;
-        public MobileButtons MobileButtons;
-        public UnitsHolder UnitsHolder;
-        public UIManager UIManager;
+        public Unit.Unit player;
+        public GrenadeInstantiateController grenadeInstantiateController;
+        public MobileGrenadeController mobileGrenadeController;
+        public LineRendererController lineRendererController;
+        public MobileInputController mobilePlayerController;
+        public KillListController killListController;
+        public ShootingController shootingController;
+        public RespawnController respawnController;
+        public GrenadeController grenadeController;
+        public BulletController bulletController;
+        public WeaponController weaponController;
+        public DamageController damageController;
+        public HelthController helthController;
+        public DeadController deadController;
+        public EventsManager eventsManager;
+        public MobileButtons mobileButtons;
+        public UnitsHolder unitsHolder;
+        public UIManager uiManager;
     }
 }

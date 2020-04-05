@@ -5,12 +5,12 @@ namespace Unit
 {
     public class BulletsQuantityUnit : MonoBehaviour
     {
-        [HideInInspector] public DataWeapons CurrentWeapon;
-        public GameObject[] AllWeaponUnit;
-        [HideInInspector] public int QuantityBulletsInClip;
-        [HideInInspector] public int AllBulletsWeapon;
-        [HideInInspector] public int NextWeapon;
-        [HideInInspector] public int LastWeapon;
-        [HideInInspector] public int DefaultBulletsInClip;
+        [HideInInspector] public DataWeapons currentWeapon;
+        public GameObject[] allWeaponUnit;
+        [HideInInspector] public int quantityBulletsInClip;
+        [HideInInspector] public int allBulletsWeapon;
+        [HideInInspector] public int nextWeapon;
+        [HideInInspector] public int lastWeapon;
+        [HideInInspector] public int defaultBulletsInClip;
     }
 }

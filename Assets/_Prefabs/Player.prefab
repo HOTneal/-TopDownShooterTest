@@ -1702,26 +1702,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c578fff1080494e8c7edb0146b42b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Nickname: iRom
-  Helth: 100
+  nickname: iRom
+  helth: 100
   isBot: 0
   isEnemy: 0
-  SpeedWalk: 10
-  PointForGenerateBullets: {fileID: 3835113995903128372}
-  PointForDamage: {fileID: 1332883669692680962}
-  PointsForGrenade:
+  speedWalk: 10
+  pointForGenerateBullets: {fileID: 3835113995903128372}
+  pointForDamage: {fileID: 1332883669692680962}
+  pointsForGrenade:
   - {fileID: 3421156180056181244}
   - {fileID: 2811992024887648651}
   - {fileID: 8848185377050652019}
-  IdDefaultWeaponAtStart: 0
-  Animator: {fileID: 0}
-  ChController: {fileID: 0}
-  HelthbarUnit: {fileID: 0}
-  BotController: {fileID: 0}
-  SetTarget: {fileID: 0}
-  BulletsQuantity: {fileID: 0}
-  ShootingCheck: {fileID: 0}
-  PointForSpawn: {fileID: 0}
+  idDefaultWeaponAtStart: 0
+  animator: {fileID: 0}
+  chController: {fileID: 0}
+  helthbarUnit: {fileID: 0}
+  botController: {fileID: 0}
+  setTarget: {fileID: 0}
+  bulletsQuantity: {fileID: 0}
+  shootingCheck: {fileID: 0}
+  pointForSpawn: {fileID: 0}
 --- !u!114 &5955215099167960832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1734,16 +1734,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac31bf2a24138114d9ef7e071cb2136b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentWeapon: {fileID: 0}
-  AllWeaponUnit:
+  currentWeapon: {fileID: 0}
+  allWeaponUnit:
   - {fileID: 5223231074595530639}
   - {fileID: 4277656495857255904}
   - {fileID: 4277656496390749983}
-  QuantityBulletsInClip: 0
-  AllBulletsWeapon: 0
-  NextWeapon: 0
-  LastWeapon: 0
-  DefaultBulletsInClip: 0
+  quantityBulletsInClip: 0
+  allBulletsWeapon: 0
+  nextWeapon: 0
+  lastWeapon: 0
+  defaultBulletsInClip: 0
 --- !u!114 &5533579351129400866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1798,7 +1798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9c67da94f94054c99fc532437e38cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Animator: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &2048061379
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -16,14 +15,14 @@ namespace Controllers.KillListController
             GameObject createdMurederEvent = Instantiate(m_EventMurder, m_ParrentForEventMurder) as GameObject;
             
             parameters = createdMurederEvent.GetComponent<EventMurderParameters>();
-            parameters.NameUnit1.text = unit.Nickname;
-            parameters.NameUnit2.text = damagedUnit.Nickname;
-            parameters.IconWeapon.sprite = weapon.Icon;
+            parameters.nameUnit1.text = unit.nickname;
+            parameters.nameUnit2.text = damagedUnit.nickname;
+            parameters.iconWeapon.sprite = weapon.Icon;
         }
 
         public IEnumerator DeleteKillFromList(DestoryEventMurder deleteEventMurder)
         {
-            yield return new WaitForSeconds(deleteEventMurder.TimeStartFadeOut);
+            yield return new WaitForSeconds(deleteEventMurder.timeStartFadeOut);
             deleteEventMurder.isFadeOut = true;
         }
     }

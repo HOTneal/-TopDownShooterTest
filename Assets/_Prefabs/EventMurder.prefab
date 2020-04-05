@@ -168,9 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ef228241e1d3c41a8a5b55714674be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameUnit1: {fileID: 6420148360632463706}
-  NameUnit2: {fileID: 6420148361011766529}
-  IconWeapon: {fileID: 6420148361124049515}
+  nameUnit1: {fileID: 6420148360632463706}
+  nameUnit2: {fileID: 6420148361011766529}
+  iconWeapon: {fileID: 6420148361124049515}
 --- !u!114 &1009905574566119635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,9 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f8ab355e359d9428cf80a17619a743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CanvasGroup: {fileID: 0}
-  m_TimeStartFadeOut: 3
-  m_SpeedFadeOut: 1.5
+  timeStartFadeOut: 3
+  speedFadeOut: 1.5
+  isFadeOut: 0
 --- !u!225 &5393447632345708135
 CanvasGroup:
   m_ObjectHideFlags: 0

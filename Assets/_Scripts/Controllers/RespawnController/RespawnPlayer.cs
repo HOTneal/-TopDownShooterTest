@@ -7,12 +7,12 @@ namespace Controllers.RespawnController
     {
         public void Respawn()
         {
-            LinkManager link = LinkManager.Instance;
+            LinkManager link = LinkManager.instance;
             
-            link.RespawnController.StartCoroutine(link.RespawnController.Respawn(link.m_Player, 0));
-            link.UIManager.DarkPanel(0, false);
-            link.UIManager.DeadPanel(false);
-            link.UIManager.Interface(true);
+            link.respawnController.StartCoroutine(link.respawnController.Respawn(link.player, 0));
+            link.uiManager.DarkPanel(0, false);
+            link.uiManager.DeadPanel(false);
+            link.uiManager.Interface(true);
         }
     }
 }

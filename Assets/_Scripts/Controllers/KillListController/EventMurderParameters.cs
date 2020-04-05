@@ -5,8 +5,8 @@ namespace Controllers.KillListController
 {
     public class EventMurderParameters : MonoBehaviour
     {
-        public Text NameUnit1;
-        public Text NameUnit2;
-        public Image IconWeapon;
+        public Text nameUnit1;
+        public Text nameUnit2;
+        public Image iconWeapon;
     }
 }

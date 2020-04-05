@@ -9,20 +9,20 @@ namespace Controllers.LineRendererController
     {
         [SerializeField] private float m_OffsetY;
 
-        public float VertexCount = 12.0f;
+        public float vertexCount = 12.0f;
         public bool isCanDrawLine = false;
-        [HideInInspector] public LineRenderer LineRenderer;
-        [HideInInspector] public Vector3 PointStartLine;
-        [HideInInspector] public Vector3 PointCenterLine;
-        public Vector3 PointEndLine;
+        public LineRenderer lineRenderer;
+        [HideInInspector] public Vector3 pointStartLine;
+        [HideInInspector] public Vector3 pointCenterLine;
+        [HideInInspector] public Vector3 pointEndLine;
 
         private LinkManager m_LinkManager;
     
         private void Start()
         {
-            m_LinkManager = LinkManager.Instance;
-            LineRenderer.startWidth = 0.15f;
-            LineRenderer.endWidth = 0.15f;
+            m_LinkManager = LinkManager.instance;
+            lineRenderer.startWidth = 0.15f;
+            lineRenderer.endWidth = 0.15f;
         }
 
         void Update()
@@ -30,28 +30,28 @@ namespace Controllers.LineRendererController
             if (!isCanDrawLine)
                 return;
 
-            PointCenterLine = new Vector3((PointCenterLine.x), (m_OffsetY), (PointCenterLine.z));
+            pointCenterLine = new Vector3((pointCenterLine.x), (m_OffsetY), (pointCenterLine.z));
 
             var pointList = new List<Vector3>();
         
-            for (float i = 0; i <= 1; i+= 1/VertexCount)
+            for (float i = 0; i <= 1; i+= 1/vertexCount)
             {
-                var tangent1 = Vector3.Lerp(PointStartLine, PointCenterLine, i);
-                var tangent2 = Vector3.Lerp(PointCenterLine, PointEndLine, i);
+                var tangent1 = Vector3.Lerp(pointStartLine, pointCenterLine, i);
+                var tangent2 = Vector3.Lerp(pointCenterLine, pointEndLine, i);
                 var curve = Vector3.Lerp(tangent1, tangent2, i);
             
                 pointList.Add(curve);
             }
 
-            LineRenderer.positionCount = pointList.Count;
-            LineRenderer.SetPositions(pointList.ToArray());
+            lineRenderer.positionCount = pointList.Count;
+            lineRenderer.SetPositions(pointList.ToArray());
         }
 
         public void SetValues(Vector3[] point)
         {
-            PointStartLine = point[0];
-            PointCenterLine = point[1];
-            PointEndLine = point[2];
+            pointStartLine = point[0];
+            pointCenterLine = point[1];
+            pointEndLine = point[2];
         }
     }
 }

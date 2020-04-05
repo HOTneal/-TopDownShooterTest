@@ -15,7 +15,7 @@ namespace Unit
         private void Start()
         {
             Unit = GetComponent<Unit>();
-            LinkManager = LinkManager.Instance;
+            LinkManager = LinkManager.instance;
         
             SetColorBar();
             SetNickname();
@@ -23,12 +23,12 @@ namespace Unit
 
         private void SetColorBar()
         {
-            LinkManager.HelthController.SetColorBar(Unit);
+            LinkManager.helthController.SetColorBar(Unit);
         }
 
         private void SetNickname()
         {
-            Nickname.text = Unit.Nickname;
+            Nickname.text = Unit.nickname;
         }
     }
 }

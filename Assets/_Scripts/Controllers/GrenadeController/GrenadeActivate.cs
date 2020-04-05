@@ -8,7 +8,7 @@ namespace Controllers.GrenadeController
     {
         private void Start()
         {
-            StartCoroutine(LinkManager.Instance.GrenadeController.ExplodeGrenade(transform));
+            StartCoroutine(LinkManager.instance.grenadeController.ExplodeGrenade(transform));
         }
     }
 }

@@ -6,8 +6,8 @@ namespace ScriptableObjects
     public class DataWeapons : ScriptableObject {
         public enum ChoiceTypeShooting
         {
-            Automatic,
-            Shotgun
+            Automatic = 1,
+            Shotgun = 2
         }
         [SerializeField] private int m_IdWeapon;
         [SerializeField] private float m_SpeedShoot;

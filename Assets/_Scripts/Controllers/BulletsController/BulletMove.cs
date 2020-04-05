@@ -4,8 +4,8 @@ namespace Controllers.BulletsController
 {
     public class BulletMove : MonoBehaviour
     {
-        public Vector3 TargetPos;
-        public float Speed;
+        public Vector3 targetPos;
+        public float speed;
 
         private Transform m_BulletTransform;
 
@@ -16,8 +16,8 @@ namespace Controllers.BulletsController
 
         private void Update()
         {
-            m_BulletTransform.position = Vector3.MoveTowards(m_BulletTransform.position, TargetPos, Speed * Time.deltaTime);
-            if (m_BulletTransform.position == TargetPos)
+            m_BulletTransform.position = Vector3.MoveTowards(m_BulletTransform.position, targetPos, speed * Time.deltaTime);
+            if (m_BulletTransform.position == targetPos)
                 DestroyObj();
         }
 

@@ -16,7 +16,7 @@ namespace Controllers.GrenadeController
     
         private void Start()
         {
-            m_LinkManager = LinkManager.Instance;
+            m_LinkManager = LinkManager.instance;
         }
     
         public IEnumerator ExplodeGrenade(Transform grenade)
@@ -38,22 +38,21 @@ namespace Controllers.GrenadeController
         private void RayCastForDamage(Unit.Unit nearbyUnit, Transform grenade)
         {
             RaycastHit hit;
-            Transform nearbyUnitTarget = nearbyUnit.PointForDamage;
+            Transform nearbyUnitTarget = nearbyUnit.pointForDamage;
             Vector3 pos = nearbyUnitTarget.position - grenade.position;
             float distance = pos.magnitude;
             Vector3 targetDirection = pos / distance;
-        
-            if (Physics.Raycast(grenade.position, targetDirection, out hit))
-            {
-                if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("Bot"))
-                    Damage(m_LinkManager.m_Player, nearbyUnit, m_Grenade);
-            }
+
+            if (!Physics.Raycast(grenade.position, targetDirection, out hit)) return;
+            
+            if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("Bot"))
+                Damage(m_LinkManager.player, nearbyUnit, m_Grenade);
         }
 
         private void Damage(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
         {
-            m_LinkManager.DamageController.Damage(unit, damagedUnit, weapon);
-            m_LinkManager.HelthController.CheckLiveUnit(unit, damagedUnit, weapon);
+            m_LinkManager.damageController.Damage(unit, damagedUnit, weapon);
+            m_LinkManager.helthController.CheckLiveUnit(unit, damagedUnit, weapon);
         }
     }
 }

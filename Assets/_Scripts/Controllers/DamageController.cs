@@ -9,10 +9,10 @@ namespace Controllers
     {
         public void Damage(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
         {
-            BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
+            BulletsQuantityUnit bulletsQuantity = unit.bulletsQuantity;
         
-            damagedUnit.Helth -= Convert.ToInt32(weapon.Damage);
-            damagedUnit.HelthbarUnit.Helthbar.fillAmount -= weapon.Damage / 100;
+            damagedUnit.helth -= Convert.ToInt32(weapon.Damage);
+            damagedUnit.helthbarUnit.Helthbar.fillAmount -= weapon.Damage / 100;
         }
     }
 }

@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 4207883778890434412}
   - component: {fileID: 8551861916845032904}
   - component: {fileID: 1045122874216075042}
+  - component: {fileID: 6335467843085720420}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Bot
@@ -198,22 +199,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c578fff1080494e8c7edb0146b42b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Nickname: 
-  Helth: 100
+  nickname: 
+  helth: 100
+  idWeaponAtStart: 0
   isBot: 1
   isEnemy: 1
-  PointForGenerateBullets: {fileID: 4870465728778269307}
-  SpeedWalk: 0
-  PointForDamage: {fileID: 559504954}
-  Animator: {fileID: 0}
-  ChController: {fileID: 0}
-  IdDefaultWeaponAtStart: 0
-  HelthbarUnit: {fileID: 0}
-  BotController: {fileID: 0}
-  SetTarget: {fileID: 0}
-  BulletsQuantity: {fileID: 0}
-  ShootingCheck: {fileID: 0}
-  PointForSpawn: {fileID: 0}
+  speedWalk: 0
+  pointForGenerateBullets: {fileID: 4870465728778269307}
+  pointForDamage: {fileID: 559504954}
+  pointsForGrenade: []
+  bulletsQuantity: {fileID: 0}
+  chController: {fileID: 0}
+  shootingCheck: {fileID: 0}
+  botController: {fileID: 0}
+  helthbarUnit: {fileID: 0}
+  pointForSpawn: {fileID: 0}
+  setTarget: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &4207883778890434413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,13 +244,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac31bf2a24138114d9ef7e071cb2136b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentWeapon: {fileID: 0}
-  AllWeaponUnit: []
-  QuantityBulletsInClip: 0
-  AllBulletsWeapon: 0
-  NextWeapon: 0
-  LastWeapon: 0
-  DefaultBulletsInClip: 0
+  currentWeapon: {fileID: 0}
+  allWeaponUnit:
+  - {fileID: 4526950950856410816}
+  - {fileID: 5616860587432830127}
+  - {fileID: 5616860586897219152}
+  quantityBulletsInClip: 0
+  allBulletsWeapon: 0
+  nextWeapon: 0
+  lastWeapon: 0
+  defaultBulletsInClip: 0
 --- !u!114 &8551861916845032904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DistanceLookAt: 100
   m_DistanceAttack: 20
-  Target: {fileID: 0}
+  target: {fileID: 0}
   isAttack: 1
 --- !u!114 &1045122874216075042
 MonoBehaviour:
@@ -279,6 +284,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Helthbar: {fileID: 4036734036654961794}
   Nickname: {fileID: 2034498391}
+--- !u!114 &6335467843085720420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87857489431612806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0165b74f9557d2e4794e626f2f51ce4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &125403475638431602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,6 +1660,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5616860586897250556}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5616860586897219152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100012, guid: dd0b1cd0b4bb71c429dd9a664e3d60d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 5616860586897250556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5616860586905608137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1768,6 +1791,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5616860586905608137}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4526950950856410816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 7c6b2355e9d7a4846bf68c6ec51dd748,
+    type: 3}
+  m_PrefabInstance: {fileID: 5616860586905608137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5616860587432797081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1841,6 +1870,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d, type: 3}
+--- !u!1 &5616860587432830127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100150, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5616860587432797081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5616860587432933519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400150, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d,

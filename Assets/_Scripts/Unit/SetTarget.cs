@@ -9,15 +9,15 @@ namespace Unit
 
         private void Start()
         {
-            m_LinkManager = LinkManager.Instance;
+            m_LinkManager = LinkManager.instance;
         }
 
         public void SetTargetForBotAttack()
         {
-            foreach (var value in LinkManager.Instance.UnitsHolder.Units)
+            foreach (var value in LinkManager.instance.unitsHolder.Units)
             {
                 if (value.isBot)
-                    value.BotController.Target = transform;
+                    value.botController.target = transform;
             }
         }
     }

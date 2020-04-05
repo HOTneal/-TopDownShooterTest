@@ -8,14 +8,14 @@ namespace Controllers.MobileController
     {
         [SerializeField] private Image m_Shoot;
         [SerializeField] private Image m_Grenade;
-        [SerializeField] private bool isShooting = false;
+        [SerializeField] private bool m_IsShooting = false;
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             switch (eventData.pointerEnter.tag)
             {
                 case "MobileShootStick":
-                    isShooting = true;
+                    m_IsShooting = true;
                     break;
                 
                 case "MobileGrenadeStick":
@@ -26,12 +26,12 @@ namespace Controllers.MobileController
 
         public virtual void OnPointerUp(PointerEventData eventData)
         {
-            isShooting = false;
+            m_IsShooting = false;
         }
 
         public bool Shooting()
         {
-            return isShooting;
+            return m_IsShooting;
         }
 
         private void Grenade()

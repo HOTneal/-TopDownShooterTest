@@ -9,12 +9,12 @@ namespace Controllers
 
         private void Start()
         {
-            m_LinkManager = LinkManager.Instance;
+            m_LinkManager = LinkManager.instance;
         }
 
         private void Update()
         {
-            if (m_LinkManager.m_Player == null)
+            if (m_LinkManager.player == null)
                 return;
         
             PlayerShoot();
@@ -27,8 +27,8 @@ namespace Controllers
             var horizontalKeyboard = Input.GetAxis("Horizontal");
             var verticalKeyboard = Input.GetAxis("Vertical");
         
-            var horizontalJoystick = m_LinkManager.MobilePlayerController.Horizontal();
-            var verticalJoystick = m_LinkManager.MobilePlayerController.Vertical();
+            var horizontalJoystick = m_LinkManager.mobilePlayerController.Horizontal();
+            var verticalJoystick = m_LinkManager.mobilePlayerController.Vertical();
         
             axis.x = horizontalKeyboard != 0 ? horizontalKeyboard : horizontalJoystick;
             axis.y = verticalKeyboard != 0 ? verticalKeyboard : verticalJoystick;
@@ -37,14 +37,14 @@ namespace Controllers
 
         private void PlayerShoot()
         {
-            if (Input.GetMouseButton(0) || m_LinkManager.MobileButtons.Shooting())
-                m_LinkManager.m_Player.Shoot(m_LinkManager.m_Player);
+            if (Input.GetMouseButton(0) || m_LinkManager.mobileButtons.Shooting())
+                m_LinkManager.player.Shoot(m_LinkManager.player);
         }
 
         private void NextWeapon()
         {
             if (Input.GetAxis("Mouse ScrollWheel") != 0) 
-                m_LinkManager.m_Player.NextWeapon();
+                m_LinkManager.player.NextWeapon();
         }
     }
 }

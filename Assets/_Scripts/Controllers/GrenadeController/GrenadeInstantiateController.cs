@@ -12,8 +12,8 @@ namespace Controllers.GrenadeController
             GameObject createdGrenade = Instantiate(m_Grenade, Vector3.zero, Quaternion.identity) as GameObject;
             GrenadeFlight grenadeFlight = createdGrenade.GetComponent<GrenadeFlight>();
             
-            grenadeFlight.StartPoint = pointStart;
-            grenadeFlight.EndPoint = pointEnd;
+            grenadeFlight.startPoint = pointStart;
+            grenadeFlight.endPoint = pointEnd;
             grenadeFlight.isActive = true;
         }
     }

@@ -6,49 +6,54 @@ namespace Unit
 {
     public class Unit : MonoBehaviour
     {
-        public string Nickname;
-        public int Helth = 100;
+        public string nickname;
+        public int helth = 100;
+        public int idWeaponAtStart = 0;
         public bool isBot = false;
         public bool isEnemy = false;
-        public float SpeedWalk;
-        public Transform PointForGenerateBullets;
-        public Transform PointForDamage;
-        public Transform[] PointsForGrenade;
-        [HideInInspector] public int IdDefaultWeaponAtStart = 0;
-        [HideInInspector] public Animator Animator;
-        [HideInInspector] public CharacterController ChController;
-        [HideInInspector] public HelthbarUnit HelthbarUnit;
-        [HideInInspector] public BotController BotController;
-        [HideInInspector] public SetTarget SetTarget;
-        [HideInInspector] public BulletsQuantityUnit BulletsQuantity;
-        [HideInInspector] public ShootingCheckUnit ShootingCheck;
-        [HideInInspector] public Transform PointForSpawn;
+        public float speedWalk;
+        public Transform pointForGenerateBullets;
+        public Transform pointForDamage;
+        public Transform[] pointsForGrenade;
+        [HideInInspector] public BulletsQuantityUnit bulletsQuantity;
+        [HideInInspector] public CharacterController chController;
+        [HideInInspector] public ShootingCheckUnit shootingCheck;
+        [HideInInspector] public BotController botController;
+        [HideInInspector] public HelthbarUnit helthbarUnit;
+        [HideInInspector] public Transform pointForSpawn;
+        [HideInInspector] public SetTarget setTarget;
+        [HideInInspector] public Animator animator;
         
         private LinkManager m_LinkManager;
         private MovementController m_MovementController;
+        private RandomWeaponBot m_RandomWeaponBot;
 
         private void Start()
         {
-            m_LinkManager = LinkManager.Instance;
-            BulletsQuantity = GetComponent<BulletsQuantityUnit>();
-            Animator = GetComponent<Animator>();
-            ChController = GetComponent<CharacterController>();
-            ShootingCheck = GetComponent<ShootingCheckUnit>();
-            HelthbarUnit = GetComponent<HelthbarUnit>();
+            m_LinkManager = LinkManager.instance;
             m_MovementController = GetComponent<MovementController>();
+            bulletsQuantity = GetComponent<BulletsQuantityUnit>();
+            chController = GetComponent<CharacterController>();
+            shootingCheck = GetComponent<ShootingCheckUnit>();
+            helthbarUnit = GetComponent<HelthbarUnit>();
+            animator = GetComponent<Animator>();
 
             if (!isBot)
             {
-                m_LinkManager.m_Player = this;
+                m_LinkManager.player = this;
                 SetPlayerMoveSettings();
-                SetTarget = GetComponent<SetTarget>();
-                SetTarget.SetTargetForBotAttack();
+                setTarget = GetComponent<SetTarget>();
+                setTarget.SetTargetForBotAttack();
                 SetMobileGrenadeSettings();
             }
             else
-                BotController = GetComponent<BotController>();
+            {
+                m_RandomWeaponBot = GetComponent<RandomWeaponBot>();
+                botController = GetComponent<BotController>();
+                idWeaponAtStart = m_RandomWeaponBot.RandomIdWeapon();
+            }
 
-            SetWeapon();
+            SetWeapon(idWeaponAtStart);
         }
 
         private void SetPlayerMoveSettings()
@@ -58,22 +63,22 @@ namespace Unit
     
         public void Shoot(Unit unit)
         {
-            ShootingCheck.StartShooting(unit);
+            shootingCheck.StartShooting(unit);
         }
     
-        private void SetWeapon()
+        private void SetWeapon(int weaponId)
         {
-            m_LinkManager.WeaponController.SetWeaponParameters(IdDefaultWeaponAtStart, this);
+            m_LinkManager.weaponController.SetWeaponParameters(weaponId, this);
         }
 
         public void NextWeapon()
         {
-            m_LinkManager.EventsManager.NextWeapon(this);
+            m_LinkManager.eventsManager.NextWeapon(this);
         }
 
         private void SetMobileGrenadeSettings()
         {
-            m_LinkManager.MobileGrenadeController.SetValues(PointsForGrenade);
+            m_LinkManager.mobileGrenadeController.SetValues(pointsForGrenade);
         }
     }
 }

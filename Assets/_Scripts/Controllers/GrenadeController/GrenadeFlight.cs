@@ -5,11 +5,10 @@ namespace Controllers.GrenadeController
 {
     public class GrenadeFlight : MonoBehaviour
     {
-        [HideInInspector] public Vector3 StartPoint;
-        [HideInInspector] public Vector3 EndPoint;
-        public float SpeedFlight;
+        [HideInInspector] public Vector3 startPoint;
+        [HideInInspector] public Vector3 endPoint;
+        public float speedFlight, height;
         public bool isActive = false;
-        public float m_Height;
 
         private float m_Animation;
         private Transform m_Transform;
@@ -25,11 +24,11 @@ namespace Controllers.GrenadeController
                 return;
             
             m_Animation += Time.deltaTime;
-            m_Animation %= SpeedFlight;
+            m_Animation %= speedFlight;
 
-            m_Transform.position = MathParabola.Parabola(StartPoint, EndPoint, m_Height, m_Animation / SpeedFlight);
+            m_Transform.position = MathParabola.Parabola(startPoint, endPoint, height, m_Animation / speedFlight);
 
-            if (Vector3.Distance(m_Transform.position, EndPoint) < 0.5f)
+            if (Vector3.Distance(m_Transform.position, endPoint) < 0.5f)
                 isActive = false;
         }
     }

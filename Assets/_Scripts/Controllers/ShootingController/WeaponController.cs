@@ -13,14 +13,14 @@ namespace Controllers.ShootingController
 
         private void Start()
         {
-            LinkManager.Instance.EventsManager.OnNextWeapon += NextWeapon;
+            LinkManager.instance.eventsManager.OnNextWeapon += NextWeapon;
         }
 
         public void SetWeaponParameters(int idWeapon, Unit.Unit unit)
         {
-            LinkManager linkManager = LinkManager.Instance;
+            LinkManager linkManager = LinkManager.instance;
             DataWeapons weapon = m_DataWeapons[idWeapon];
-            BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
+            BulletsQuantityUnit bulletsQuantity = unit.bulletsQuantity;
         
             SetBullets(bulletsQuantity, weapon);
 
@@ -28,35 +28,35 @@ namespace Controllers.ShootingController
                 return;
         
             SetUIWeaponParameters(linkManager, bulletsQuantity, weapon);
-            bulletsQuantity.AllWeaponUnit[bulletsQuantity.LastWeapon].SetActive(false);
-            bulletsQuantity.AllWeaponUnit[bulletsQuantity.CurrentWeapon.IdWeapon].SetActive(true);
+            bulletsQuantity.allWeaponUnit[bulletsQuantity.lastWeapon].SetActive(false);
+            bulletsQuantity.allWeaponUnit[bulletsQuantity.currentWeapon.IdWeapon].SetActive(true);
         }
 
         private void SetBullets(BulletsQuantityUnit bulletsQuantity, DataWeapons weapon)
         {
-            bulletsQuantity.AllBulletsWeapon = weapon.QuantityAllBulletsWeapon;
-            bulletsQuantity.QuantityBulletsInClip = weapon.QuantityBulletsInClip;
-            bulletsQuantity.DefaultBulletsInClip = weapon.QuantityBulletsInClip;
-            bulletsQuantity.CurrentWeapon = weapon;
+            bulletsQuantity.allBulletsWeapon = weapon.QuantityAllBulletsWeapon;
+            bulletsQuantity.quantityBulletsInClip = weapon.QuantityBulletsInClip;
+            bulletsQuantity.defaultBulletsInClip = weapon.QuantityBulletsInClip;
+            bulletsQuantity.currentWeapon = weapon;
         }
     
         private void SetUIWeaponParameters (LinkManager linkManager, BulletsQuantityUnit bulletsQuantity, DataWeapons weapon)
         {
-            linkManager.UIManager.SetQuantityBullets(bulletsQuantity);
-            linkManager.UIManager.SetWeaponIcon(weapon.Icon);
+            linkManager.uiManager.SetQuantityBullets(bulletsQuantity);
+            linkManager.uiManager.SetWeaponIcon(weapon.Icon);
         }
     
         private void NextWeapon(Unit.Unit unit)
         {
-            BulletsQuantityUnit bulletsQuantity = unit.BulletsQuantity;
+            BulletsQuantityUnit bulletsQuantity = unit.bulletsQuantity;
             m_AudioSource.PlayOneShot(m_NextWeapon);
-            bulletsQuantity.LastWeapon = bulletsQuantity.CurrentWeapon.IdWeapon;
-            bulletsQuantity.NextWeapon = bulletsQuantity.CurrentWeapon.IdWeapon + 1;
+            bulletsQuantity.lastWeapon = bulletsQuantity.currentWeapon.IdWeapon;
+            bulletsQuantity.nextWeapon = bulletsQuantity.currentWeapon.IdWeapon + 1;
         
-            if (bulletsQuantity.NextWeapon >= m_DataWeapons.Length)
-                bulletsQuantity.NextWeapon = 0;
+            if (bulletsQuantity.nextWeapon >= m_DataWeapons.Length)
+                bulletsQuantity.nextWeapon = 0;
         
-            SetWeaponParameters(bulletsQuantity.NextWeapon, unit);
+            SetWeaponParameters(bulletsQuantity.nextWeapon, unit);
         }
 
     }

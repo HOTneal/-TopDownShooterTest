@@ -13,14 +13,15 @@ namespace Controllers.MobileController
     {
         [SerializeField] private float m_SpeedMoveEndPointGrenade = 10.0f;
         [SerializeField] private float DistanceTarget = 15.0f;
+        [SerializeField] private float m_MaxTargetMoveAway = 2.0f;
 
         public bool isCanMove = false;
-        public Transform PointStartGrenade;
-        public Transform PointCenterGrenade;
-        public Transform PointEndGrenade;
-        public Vector3 m_LastPositionPointEnd;
-        [HideInInspector] public Vector3 DefaultPosPointEndGrenade;
-        [HideInInspector] public Vector3 DefaultPosPointCenterGrenade;
+        [HideInInspector] public Transform pointStartGrenade;
+        [HideInInspector] public Transform pointCenterGrenade;
+        [HideInInspector] public Transform pointEndGrenade;
+        [HideInInspector] public Vector3 lastPositionPointEnd;
+        [HideInInspector] public Vector3 defaultPosPointEndGrenade;
+        [HideInInspector] public Vector3 defaultPosPointCenterGrenade;
 
         private LinkManager m_LinkManager;
         private Vector2 m_InputVector;
@@ -33,7 +34,7 @@ namespace Controllers.MobileController
         {
             m_BgGrenade = GetComponent<Image>();
             m_GrenadeStick = transform.GetChild(0).GetComponent<Image>();
-            m_LinkManager = LinkManager.Instance;
+            m_LinkManager = LinkManager.instance;
         }
 
         private void Update()
@@ -41,16 +42,16 @@ namespace Controllers.MobileController
             if (!isCanMove)
                 return;
             
-            GetValuesForPointsGrenade(m_LinkManager.m_Player.PointsForGrenade);
+            GetValuesForPointsGrenade(m_LinkManager.player.pointsForGrenade);
 
-            ClampMovePoints(PointCenterGrenade, DistanceTarget / 2);
-            ClampMovePoints(PointEndGrenade, DistanceTarget);
+            ClampMovePoints(pointCenterGrenade, DistanceTarget / 2);
+            ClampMovePoints(pointEndGrenade, DistanceTarget);
             
-            MoveEndPoint(PointEndGrenade, 2);
-            MoveEndPoint(PointCenterGrenade, 1);
+            MoveEndPoint(pointEndGrenade, 2);
+            MoveEndPoint(pointCenterGrenade, 1);
             
             CheckWalls();
-            SetValueLineRenderer(PointStartGrenade.position, PointCenterGrenade.position, m_LastPositionPointEnd);
+            SetValueLineRenderer(pointStartGrenade.position, pointCenterGrenade.position, lastPositionPointEnd);
         }
 
         public virtual void OnPointerDown(PointerEventData eventData)
@@ -66,7 +67,7 @@ namespace Controllers.MobileController
             m_InputVector = Vector2.zero;
             m_GrenadeStick.rectTransform.anchoredPosition = Vector2.zero;
             
-            m_LinkManager.GrenadeInstantiateController.GenerateGrenade(PointStartGrenade.position, m_LastPositionPointEnd);
+            m_LinkManager.grenadeInstantiateController.GenerateGrenade(pointStartGrenade.position, lastPositionPointEnd);
             
             DefaultValues();
             m_TargetIcon.SetActive(false);
@@ -83,10 +84,10 @@ namespace Controllers.MobileController
             pos.x = (pos.x / bgSizeDelta.x);
             pos.y = (pos.y / bgSizeDelta.y);
 
-            m_InputVector = new Vector2(pos.x * 2 , pos.y * 2);
+            m_InputVector = new Vector2(pos.x * m_MaxTargetMoveAway , pos.y * m_MaxTargetMoveAway);
             
             m_InputVector = (m_InputVector.magnitude > 1.0f) ? m_InputVector.normalized : m_InputVector;
-            m_GrenadeStick.rectTransform.anchoredPosition = new Vector2(m_InputVector.x * (bgSizeDelta.x / 2), m_InputVector.y * (bgSizeDelta.y / 2));
+            m_GrenadeStick.rectTransform.anchoredPosition = new Vector2(0, m_InputVector.y * (bgSizeDelta.y / m_MaxTargetMoveAway));
         }
 
         public virtual void OnEndDrag(PointerEventData eventData)
@@ -101,71 +102,71 @@ namespace Controllers.MobileController
             var y = point.y;
             var z = point.z - m_InputVector.y * m_SpeedMoveEndPointGrenade * Time.deltaTime;
             
-            m_LinkManager.m_Player.PointsForGrenade[numberPointInArray].localPosition = new Vector3(x, y, z);
+            m_LinkManager.player.pointsForGrenade[numberPointInArray].localPosition = new Vector3(x, y, z);
         }
 
         public void SetValues(Transform[] points)
         {
-            DefaultPosPointEndGrenade = points[2].localPosition;
-            DefaultPosPointCenterGrenade = points[1].localPosition;
+            defaultPosPointEndGrenade = points[2].localPosition;
+            defaultPosPointCenterGrenade = points[1].localPosition;
             
             m_TargetIcon = points[2].GetChild(0).gameObject;
         }
         
         private void DefaultValues()
         {
-            PointCenterGrenade.localPosition = DefaultPosPointCenterGrenade;
-            PointEndGrenade.localPosition = DefaultPosPointEndGrenade;
+            pointCenterGrenade.localPosition = defaultPosPointCenterGrenade;
+            pointEndGrenade.localPosition = defaultPosPointEndGrenade;
             
-            m_LinkManager.LineRendererController.LineRenderer.SetVertexCount(0);
-            m_LinkManager.LineRendererController.isCanDrawLine = false;
-            m_LinkManager.LineRendererController.PointStartLine = Vector3.zero;
-            m_LinkManager.LineRendererController.PointCenterLine = Vector3.zero;
-            m_LinkManager.LineRendererController.PointEndLine = Vector3.zero;
+            m_LinkManager.lineRendererController.lineRenderer.SetVertexCount(0);
+            m_LinkManager.lineRendererController.isCanDrawLine = false;
+            m_LinkManager.lineRendererController.pointStartLine = Vector3.zero;
+            m_LinkManager.lineRendererController.pointCenterLine = Vector3.zero;
+            m_LinkManager.lineRendererController.pointEndLine = Vector3.zero;
         }
 
         private void ClampMovePoints(Transform point, float distanceTarget)
         {
             var pointPos = point.position;
-            var startPointPos = PointStartGrenade.position;
+            var startPointPos = pointStartGrenade.position;
             var clampX = Mathf.Clamp(pointPos.x, startPointPos.x - distanceTarget, startPointPos.x + distanceTarget);
             var clampZ = Mathf.Clamp(pointPos.z, startPointPos.z - distanceTarget, startPointPos.z + distanceTarget);
 
-            point.position = new Vector3(clampX, PointEndGrenade.position.y, clampZ);
+            point.position = new Vector3(clampX, pointEndGrenade.position.y, clampZ);
         }
 
         private void ActiveMoveTargetAndDrawLine(bool isActive)
         {
             isCanMove = isActive;
-            m_LinkManager.LineRendererController.isCanDrawLine = isActive;
+            m_LinkManager.lineRendererController.isCanDrawLine = isActive;
         }
 
         private void GetValuesForPointsGrenade(Transform[] point)
         {
-            PointStartGrenade = point[0];
-            PointCenterGrenade = point[1];
-            PointEndGrenade = point[2];      
+            pointStartGrenade = point[0];
+            pointCenterGrenade = point[1];
+            pointEndGrenade = point[2];      
         }
 
         private void SetValueLineRenderer(Vector3 startPoint, Vector3 centerPoint, Vector3 endPoint)
         {
             var points = new Vector3[] {startPoint, centerPoint, endPoint};
-            m_LinkManager.LineRendererController.SetValues(points);
+            m_LinkManager.lineRendererController.SetValues(points);
         }
         
         private void CheckWalls()
         {
-            if (!Physics.Linecast(PointStartGrenade.position, PointEndGrenade.position, out m_Hit)) return;
-            var position = PointEndGrenade.position;
+            if (!Physics.Linecast(pointStartGrenade.position, pointEndGrenade.position, out m_Hit)) return;
+            var position = pointEndGrenade.position;
 
             if (m_Hit.collider.CompareTag("Wall"))
             {
-                m_LastPositionPointEnd = new Vector3(m_Hit.point.x, position.y, m_Hit.point.z);
+                lastPositionPointEnd = new Vector3(m_Hit.point.x, position.y, m_Hit.point.z);
                 m_TargetIcon.SetActive(false);
             }
             else
             {
-                m_LastPositionPointEnd = position;
+                lastPositionPointEnd = position;
                 m_TargetIcon.SetActive(true);
             }
         }

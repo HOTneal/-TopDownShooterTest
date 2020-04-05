@@ -7,46 +7,46 @@ namespace Unit
     {
         public enum ModeCanShooting
         {
-            Shooting,
-            NoShooting,
-            NoAmmo
+            Shooting = 1,
+            NoShooting = 2,
+            NoAmmo = 3
         }
     
-        public ModeCanShooting CanShooting = ModeCanShooting.Shooting;
-        public float SpeedMoveBullet = 100.0f;
+        public ModeCanShooting canShooting = ModeCanShooting.Shooting;
+        public float speedMoveBullet = 100.0f;
         [HideInInspector] public bool isNoAmmo = false;
-        [HideInInspector] public Vector3 BulletTargetPoint;
+        [HideInInspector] public Vector3 bulletTargetPoint;
     
         private RaycastHit m_Hit;
         private LinkManager m_LinkManager;
 
         private void Start()
         {
-            m_LinkManager = LinkManager.Instance;
+            m_LinkManager = LinkManager.instance;
         }
 
         public void StartShooting(Unit unit)
         {
             if (!isNoAmmo)
             {
-                if (CanShooting == ModeCanShooting.Shooting)
-                    StartCoroutine(m_LinkManager.ShootingController.Shooting(unit));
+                if (canShooting == ModeCanShooting.Shooting)
+                    StartCoroutine(m_LinkManager.shootingController.Shooting(unit));
             }
             else
             {
-                if (CanShooting == ModeCanShooting.NoAmmo)
-                    StartCoroutine(m_LinkManager.ShootingController.NoAmmo(unit));
+                if (canShooting == ModeCanShooting.NoAmmo)
+                    StartCoroutine(m_LinkManager.shootingController.NoAmmo(unit));
             }
         }
     
         public void EnableShooting()
         {
-            CanShooting = ModeCanShooting.Shooting;
+            canShooting = ModeCanShooting.Shooting;
         }
     
         public void DisableShooting()
         {
-            CanShooting = ModeCanShooting.NoShooting;
+            canShooting = ModeCanShooting.NoShooting;
         }
     }
 }

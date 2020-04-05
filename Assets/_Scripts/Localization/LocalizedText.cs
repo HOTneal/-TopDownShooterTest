@@ -5,17 +5,17 @@ namespace Localization
 {
     public class LocalizedText : MonoBehaviour
     {
-        public Text Text;
-        public string KeyText;
+        public Text text;
+        public string keyText;
 
-        private LocalizationManager link;
+        private LocalizationManager m_Link;
     
         void Start()
         {
-            link = LocalizationManager.Instance;
-            Text = GetComponent<Text>();
-            KeyText = Text.text;
-            Text.text = link.GetLocalizedValue(KeyText);
+            m_Link = LocalizationManager.Instance;
+            text = GetComponent<Text>();
+            keyText = text.text;
+            text.text = m_Link.GetLocalizedValue(keyText);
         }
     }
 }

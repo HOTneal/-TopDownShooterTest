@@ -8,7 +8,7 @@ namespace Controllers
         [SerializeField] private float m_DistanceLookAt = 100.0f;
         [SerializeField] private float m_DistanceAttack = 20.0f;
 
-        public Transform Target;
+        public Transform target;
         public bool isAttack = true;
     
         private Unit.Unit m_TargetUnit;
@@ -18,10 +18,10 @@ namespace Controllers
 
         private void Start()
         {
-            m_LinkManager = LinkManager.Instance;
+            m_LinkManager = LinkManager.instance;
 
-            if (m_LinkManager.m_Player != null && Target == null)
-                Target = m_LinkManager.m_Player.PointForDamage.transform;
+            if (m_LinkManager.player != null && target == null)
+                target = m_LinkManager.player.transform;
         
             m_BotUnit = GetComponent<Unit.Unit>();
             m_BotTransform = transform;
@@ -32,12 +32,12 @@ namespace Controllers
             if (!isAttack)
                 return;
 
-            if (m_LinkManager.m_Player == null || Target == null)
+            if (m_LinkManager.player == null || target == null)
                 return;
 
-            if (Vector3.Distance(m_BotTransform.position, Target.localPosition) <= m_DistanceLookAt)
+            if (Vector3.Distance(m_BotTransform.position, target.localPosition) <= m_DistanceLookAt)
             {
-                if (Vector3.Distance(m_BotTransform.position, Target.localPosition) <= m_DistanceAttack)
+                if (Vector3.Distance(m_BotTransform.position, target.localPosition) <= m_DistanceAttack)
                     Attack();
             }
         }
@@ -49,7 +49,7 @@ namespace Controllers
 
         public void SetTarget(Transform player)
         {
-            Target = player;
+            target = player;
         }
     }
 }

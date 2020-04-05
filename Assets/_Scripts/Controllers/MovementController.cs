@@ -5,7 +5,7 @@ namespace Controllers
 {
     public class MovementController : MonoBehaviour
     {
-        public Animator Animator;
+        public Animator animator;
 
         private LinkManager m_LinkManager;
         private Transform m_PlayerTransform;
@@ -17,13 +17,13 @@ namespace Controllers
 
         private void Start()
         {
-            m_LinkManager = LinkManager.Instance;
+            m_LinkManager = LinkManager.instance;
             m_InputController = GetComponent<InputController>();
         }
     
         private void Update()
         {
-            if (m_LinkManager.m_Player == null)
+            if (m_LinkManager.player == null)
                 return;
         
             MovePlayer();
@@ -33,9 +33,9 @@ namespace Controllers
         public void SetPlayerMoveSettings(Unit.Unit unit)
         {
             m_PlayerTransform = unit.transform;
-            Animator = unit.Animator;
-            m_ChController = unit.ChController;
-            m_SpeedWalk = unit.SpeedWalk;
+            animator = unit.animator;
+            m_ChController = unit.chController;
+            m_SpeedWalk = unit.speedWalk;
         }
     
         private void MovePlayer()
@@ -57,9 +57,9 @@ namespace Controllers
         private void PlayerWalkAnim()
         {
             if (m_MoveVector.x != 0 || m_MoveVector.z != 0)
-                Animator.SetBool("Walk", true);
+                animator.SetBool("Walk", true);
             else
-                Animator.SetBool("Walk", false);
+                animator.SetBool("Walk", false);
         }
         
         

@@ -5,15 +5,15 @@ namespace Controllers.KillListController
 {
     public class DestoryEventMurder : MonoBehaviour
     {
-        public float TimeStartFadeOut = 3.0f;
-        public float SpeedFadeOut = 1.5f;
+        public float timeStartFadeOut = 3.0f;
+        public float speedFadeOut = 1.5f;
         [HideInInspector] public bool isFadeOut = false;
         
         private CanvasGroup m_CanvasGroup;
 
         private void Start()
         {
-            StartCoroutine(LinkManager.Instance.KillListController.DeleteKillFromList(this));
+            StartCoroutine(LinkManager.instance.killListController.DeleteKillFromList(this));
             m_CanvasGroup = GetComponent<CanvasGroup>();
         }
 
@@ -29,7 +29,7 @@ namespace Controllers.KillListController
 
         private void FadeOut()
         {
-            m_CanvasGroup.alpha -= SpeedFadeOut * Time.deltaTime;
+            m_CanvasGroup.alpha -= speedFadeOut * Time.deltaTime;
         }
     }
 }

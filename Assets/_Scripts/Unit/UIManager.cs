@@ -20,8 +20,8 @@ namespace Unit
 
         public void SetQuantityBullets(BulletsQuantityUnit bulletsQuantity)
         {
-            var bulletsInClip = bulletsQuantity.QuantityBulletsInClip;
-            var allBullets = bulletsQuantity.AllBulletsWeapon;
+            var bulletsInClip = bulletsQuantity.quantityBulletsInClip;
+            var allBullets = bulletsQuantity.allBulletsWeapon;
             m_QuantityBullets.text = $"{bulletsInClip}/{allBullets}";
         }
     

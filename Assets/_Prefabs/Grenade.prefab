@@ -58,11 +58,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359ae3c646db9444cb0d36c4b1a82094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPoint: {x: 0, y: 0, z: 0}
-  EndPoint: {x: 0, y: 0, z: 0}
-  SpeedFlight: 1
+  startPoint: {x: 0, y: 0, z: 0}
+  endPoint: {x: 0, y: 0, z: 0}
+  speedFlight: 0.6
+  height: 4.5
   isActive: 0
-  m_Height: 5
 --- !u!1 &2789959990060589045
 GameObject:
   m_ObjectHideFlags: 0

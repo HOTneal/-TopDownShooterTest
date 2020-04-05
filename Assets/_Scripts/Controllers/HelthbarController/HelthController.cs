@@ -11,16 +11,16 @@ namespace Controllers.HelthbarController
     
         public void CheckLiveUnit(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
         {
-            if (damagedUnit.Helth <= 0)
-                LinkManager.Instance.DeadController.UnitDead(unit, damagedUnit, weapon);
+            if (damagedUnit.helth <= 0)
+                LinkManager.instance.deadController.UnitDead(unit, damagedUnit, weapon);
         }
     
         public void SetColorBar(Unit.Unit unit)
         {
             if (unit.isEnemy)
-                unit.HelthbarUnit.Helthbar.color = m_Enemy;
+                unit.helthbarUnit.Helthbar.color = m_Enemy;
             else
-                unit.HelthbarUnit.Helthbar.color = m_Friendly;
+                unit.helthbarUnit.Helthbar.color = m_Friendly;
         }
     }
 }
