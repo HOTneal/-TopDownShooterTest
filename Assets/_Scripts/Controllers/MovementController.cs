@@ -45,8 +45,9 @@ namespace Controllers
                 m_MoveVector = Vector3.zero;
                 m_MoveVector.x = m_InputController.MovePlayer().x * m_SpeedWalk;
                 m_MoveVector.z = m_InputController.MovePlayer().y * m_SpeedWalk;
-
+                
                 PlayerWalkAnim();
+                PlayerSpeedWalkAnim();
                 PlayerRotate();
             }
 
@@ -71,6 +72,12 @@ namespace Controllers
             var direct = Vector3.RotateTowards(m_PlayerTransform.forward, m_MoveVector, m_SpeedWalk * Time.deltaTime,
                 0.0f);
             m_PlayerTransform.rotation = Quaternion.LookRotation(direct);
+        }
+
+        private void PlayerSpeedWalkAnim()
+        {
+            var speedAnim = Mathf.Clamp(((Mathf.Abs(m_MoveVector.x) + Mathf.Abs(m_MoveVector.z)) / 5), 0.0f, 2.0f);
+            m_LinkManager.player.animator.SetFloat("SpeedAnim", speedAnim);
         }
 
         private void GravityPlayer()

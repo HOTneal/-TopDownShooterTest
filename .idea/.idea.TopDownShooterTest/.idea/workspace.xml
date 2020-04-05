@@ -106,7 +106,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/SetTarget.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/HelthbarUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
@@ -115,6 +114,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileGrenadeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
       </list>
     </option>
   </component>
@@ -192,6 +192,8 @@
       <workItem from="1585996819219" duration="10135000" />
       <workItem from="1586050495663" duration="2458000" />
       <workItem from="1586055385027" duration="142000" />
+      <workItem from="1586075350301" duration="1524000" />
+      <workItem from="1586081036857" duration="2443000" />
     </task>
     <servers />
   </component>
