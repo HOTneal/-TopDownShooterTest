@@ -95,7 +95,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/RandomWeaponBot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController/RandomWeaponBot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController/BotController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeActivate.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" />
@@ -115,6 +114,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileGrenadeController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController/BotController.cs" />
       </list>
     </option>
   </component>
@@ -194,6 +194,8 @@
       <workItem from="1586055385027" duration="142000" />
       <workItem from="1586075350301" duration="1524000" />
       <workItem from="1586081036857" duration="2443000" />
+      <workItem from="1586131858299" duration="2653000" />
+      <workItem from="1586143130696" duration="271000" />
     </task>
     <servers />
   </component>

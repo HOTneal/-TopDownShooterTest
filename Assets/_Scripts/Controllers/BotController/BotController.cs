@@ -5,13 +5,11 @@ namespace Controllers
 {
     public class BotController : MonoBehaviour
     {
-        [SerializeField] private float m_DistanceLookAt = 100.0f;
         [SerializeField] private float m_DistanceAttack = 20.0f;
 
         public Transform target;
         public bool isAttack = true;
-    
-        private Unit.Unit m_TargetUnit;
+        
         private Unit.Unit m_BotUnit;
         private Transform m_BotTransform;
         private LinkManager m_LinkManager;
@@ -29,17 +27,11 @@ namespace Controllers
 
         private void Update()
         {
-            if (!isAttack)
+            if (!isAttack || m_LinkManager.player == null || target == null)
                 return;
-
-            if (m_LinkManager.player == null || target == null)
-                return;
-
-            if (Vector3.Distance(m_BotTransform.position, target.localPosition) <= m_DistanceLookAt)
-            {
-                if (Vector3.Distance(m_BotTransform.position, target.localPosition) <= m_DistanceAttack)
-                    Attack();
-            }
+            
+            if (Vector3.Distance(m_BotTransform.position, target.localPosition) <= m_DistanceAttack)
+                Attack();
         }
 
         private void Attack()
