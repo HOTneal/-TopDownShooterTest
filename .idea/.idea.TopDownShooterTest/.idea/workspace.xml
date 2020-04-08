@@ -105,7 +105,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/TEST/WeaponLogic_AUTO.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/TEST/WeaponLogic_SEMI_AUTO.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/AutoWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController/BotController.cs" />
@@ -113,9 +112,10 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileButtons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheck.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotgunWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheck.cs" />
       </list>
     </option>
   </component>
@@ -200,7 +200,7 @@
       <workItem from="1586143130696" duration="271000" />
       <workItem from="1586225257950" duration="25866000" />
       <workItem from="1586272023662" duration="3083000" />
-      <workItem from="1586304887241" duration="9805000" />
+      <workItem from="1586304887241" duration="12545000" />
     </task>
     <servers />
   </component>

@@ -66,14 +66,17 @@ namespace Controllers.ShootingController
 
         public void SetShootLogic(Unit.UnitController unit)
         {
+            BulletsQuantityUnit bulletsQuantityUnit = unit.bulletsQuantity;
+            int currentWeaponId = bulletsQuantityUnit.currentWeapon.IdWeapon;
+
             switch (unit.bulletsQuantity.currentWeapon.TypeShooting)
             {
                 case DataWeapons.ChoiceTypeShooting.Automatic:
-                    m_ShotLogic = new AutoWeapon();
+                    m_ShotLogic = bulletsQuantityUnit.allWeaponUnit[currentWeaponId].GetComponent<AutoWeapon>();
                     break;
                 
                 case DataWeapons.ChoiceTypeShooting.Shotgun:
-                    m_ShotLogic = new ShotgunWeapon();
+                    m_ShotLogic = bulletsQuantityUnit.allWeaponUnit[currentWeaponId].GetComponent<ShotgunWeapon>();
                     break;
             }
 

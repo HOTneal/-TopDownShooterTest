@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 177477511572958004}
+  - component: {fileID: 4612020349722719773}
   m_Layer: 0
   m_Name: M4a1
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 266.143, y: 136.04599, z: -235.489}
+--- !u!114 &4612020349722719773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177477511572797204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd8729240be0694580ec30ec0119420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingCheck: {fileID: 0}
 --- !u!1 &177477511572797212
 GameObject:
   m_ObjectHideFlags: 0

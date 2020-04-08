@@ -233,6 +233,7 @@ MonoBehaviour:
   speedMoveBullet: 100
   m_ShotLogic: {fileID: 240210195726172857}
   isShoot: 1
+  isSemiGun: 0
   isNoAmmo: 0
   bulletTargetPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &4207883778890434412
@@ -1040,6 +1041,45 @@ Transform:
   m_Father: {fileID: 8879229093947573192}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5042508810172644253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4526950950856410816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd8729240be0694580ec30ec0119420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingCheck: {fileID: 0}
+--- !u!114 &4947018084990025919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616860586897219152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5845a4cf6f4af49843707c8651f248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingCheck: {fileID: 0}
+--- !u!114 &7194929624403366671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616860587432830127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd8729240be0694580ec30ec0119420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingCheck: {fileID: 0}
 --- !u!1 &5623424811388007308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,7 +1707,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.033090685
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: dd0b1cd0b4bb71c429dd9a664e3d60d5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd0b1cd0b4bb71c429dd9a664e3d60d5, type: 3}
 --- !u!4 &5616860586896851568 stripped
 Transform:
