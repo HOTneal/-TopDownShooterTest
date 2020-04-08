@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 8551861916845032904}
   - component: {fileID: 1045122874216075042}
   - component: {fileID: 6335467843085720420}
+  - component: {fileID: 240210195726172857}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Bot
@@ -200,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nickname: 
-  helth: 100
+  health: 100
   idWeaponAtStart: 0
   isBot: 1
   isEnemy: 1
@@ -228,10 +229,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088c6ff1ca2e678429ed9f68cfacf975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanShooting: 0
-  SpeedMoveBullet: 100
+  canShooting: 2
+  speedMoveBullet: 100
+  m_ShotLogic: {fileID: 240210195726172857}
+  isShoot: 1
   isNoAmmo: 0
-  BulletTargetPoint: {x: 0, y: 0, z: 0}
+  bulletTargetPoint: {x: 0, y: 0, z: 0}
 --- !u!114 &4207883778890434412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300a757ff2582a84493c2fe77af0c5b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DistanceLookAt: 100
   m_DistanceAttack: 20
   target: {fileID: 0}
   isAttack: 1
@@ -282,8 +284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38bb40ce1eb21c3449e4970bbcccf7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Helthbar: {fileID: 4036734036654961794}
-  Nickname: {fileID: 2034498391}
+  helthbar: {fileID: 4036734036654961794}
+  nickname: {fileID: 2034498391}
 --- !u!114 &6335467843085720420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +298,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0165b74f9557d2e4794e626f2f51ce4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &240210195726172857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87857489431612806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5fff132d4e33d489b71078c9973f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingCheck: {fileID: 0}
 --- !u!1 &125403475638431602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,15 +1885,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d, type: 3}
---- !u!1 &5616860587432830127 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100150, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d,
-    type: 3}
-  m_PrefabInstance: {fileID: 5616860587432797081}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5616860587432933519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400150, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5616860587432797081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5616860587432830127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100150, guid: 9da3a07e0450b5747ab5d0f2bf3fff2d,
     type: 3}
   m_PrefabInstance: {fileID: 5616860587432797081}
   m_PrefabAsset: {fileID: 0}

@@ -9,7 +9,7 @@ namespace Controllers.KillListController
         [SerializeField] private GameObject m_EventMurder;
         [SerializeField] private Transform m_ParrentForEventMurder;
 
-        public void AddKillToList(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
+        public void AddKillToList(Unit.UnitController unit, Unit.UnitController damagedUnit, DataWeapons weapon)
         {
             EventMurderParameters parameters;
             GameObject createdMurederEvent = Instantiate(m_EventMurder, m_ParrentForEventMurder) as GameObject;

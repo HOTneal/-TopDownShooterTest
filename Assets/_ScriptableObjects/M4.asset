@@ -19,7 +19,7 @@ MonoBehaviour:
   m_QuantityBulletsPerShot: 1
   m_QuantityBulletsInClip: 48
   m_QuantityAllBulletsWeapon: 144
-  m_TypeShooting: 0
+  m_TypeShooting: 1
   m_Icon: {fileID: 21300000, guid: b23c239ece1e9054f8c79f51f9778607, type: 3}
   m_SoundShot: {fileID: 8300000, guid: 4e227fc79764f0e4b97f6d84b0a493a8, type: 3}
   m_NameAnim: Shooting

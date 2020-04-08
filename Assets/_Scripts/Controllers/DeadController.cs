@@ -14,7 +14,7 @@ namespace Controllers
             m_LinkManager = LinkManager.instance;
         }
 
-        public void UnitDead(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
+        public void UnitDead(Unit.UnitController unit, Unit.UnitController damagedUnit, DataWeapons weapon)
         {
             m_LinkManager.killListController.AddKillToList(unit, damagedUnit, weapon);
             if (!damagedUnit.isBot)
@@ -23,12 +23,12 @@ namespace Controllers
                 BotDead(damagedUnit);
         }
 
-        private void Respawn(Unit.Unit unit)
+        private void Respawn(Unit.UnitController unit)
         {
             StartCoroutine(m_LinkManager.respawnController.Respawn(unit, m_DefalutTimeRespawn));
         }
     
-        private void PlayerDead(Unit.Unit unit)
+        private void PlayerDead(Unit.UnitController unit)
         {
             m_LinkManager.uiManager.DeadPanel(true);
             m_LinkManager.uiManager.DarkPanel(0.8f, true);
@@ -38,7 +38,7 @@ namespace Controllers
             Destroy(unit.gameObject);
         }
 
-        private void BotDead(Unit.Unit unit)
+        private void BotDead(Unit.UnitController unit)
         {
             Respawn(unit);
             m_LinkManager.unitsHolder.DeleteUnitFromHolder(unit);

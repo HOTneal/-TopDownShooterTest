@@ -16,15 +16,16 @@ namespace Controllers.ShootingController
             LinkManager.instance.eventsManager.OnNextWeapon += NextWeapon;
         }
 
-        public void SetWeaponParameters(int idWeapon, Unit.Unit unit)
+        public void SetWeaponParameters(int idWeapon, Unit.UnitController unit)
         {
             LinkManager linkManager = LinkManager.instance;
             DataWeapons weapon = m_DataWeapons[idWeapon];
             BulletsQuantityUnit bulletsQuantity = unit.bulletsQuantity;
-        
+            
             SetBullets(bulletsQuantity, weapon);
+            unit.shootingCheck.SetShootLogic(unit);
 
-            if (unit.isBot) 
+            if (unit.isBot)
                 return;
         
             SetUIWeaponParameters(linkManager, bulletsQuantity, weapon);
@@ -46,9 +47,10 @@ namespace Controllers.ShootingController
             linkManager.uiManager.SetWeaponIcon(weapon.Icon);
         }
     
-        private void NextWeapon(Unit.Unit unit)
+        private void NextWeapon(Unit.UnitController unit)
         {
             BulletsQuantityUnit bulletsQuantity = unit.bulletsQuantity;
+            
             m_AudioSource.PlayOneShot(m_NextWeapon);
             bulletsQuantity.lastWeapon = bulletsQuantity.currentWeapon.IdWeapon;
             bulletsQuantity.nextWeapon = bulletsQuantity.currentWeapon.IdWeapon + 1;

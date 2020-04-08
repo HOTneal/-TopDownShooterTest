@@ -3,7 +3,6 @@ using Controllers.BulletsController;
 using Controllers.GrenadeController;
 using Controllers.HelthbarController;
 using Controllers.KillListController;
-using Controllers.LineRendererController;
 using Controllers.MobileController;
 using Controllers.RespawnController;
 using Controllers.ShootingController;
@@ -31,10 +30,8 @@ namespace Managers
         }
         #endregion
 
-        public Unit.Unit player;
-        public GrenadeInstantiateController grenadeInstantiateController;
+        public Unit.UnitController player;
         public MobileGrenadeController mobileGrenadeController;
-        public LineRendererController lineRendererController;
         public MobileInputController mobilePlayerController;
         public KillListController killListController;
         public ShootingController shootingController;

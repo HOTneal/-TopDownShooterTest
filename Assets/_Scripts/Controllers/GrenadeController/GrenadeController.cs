@@ -27,7 +27,7 @@ namespace Controllers.GrenadeController
         
             foreach (var nearbyObj in allUnitsInRadius)
             {
-                if (nearbyObj.TryGetComponent(out Unit.Unit unit))
+                if (nearbyObj.TryGetComponent(out Unit.UnitController unit))
                     RayCastForDamage(unit, grenade);
             }
         
@@ -35,7 +35,7 @@ namespace Controllers.GrenadeController
             Destroy(grenade.gameObject);
         }
 
-        private void RayCastForDamage(Unit.Unit nearbyUnit, Transform grenade)
+        private void RayCastForDamage(Unit.UnitController nearbyUnit, Transform grenade)
         {
             RaycastHit hit;
             Transform nearbyUnitTarget = nearbyUnit.pointForDamage;
@@ -49,7 +49,7 @@ namespace Controllers.GrenadeController
                 Damage(m_LinkManager.player, nearbyUnit, m_Grenade);
         }
 
-        private void Damage(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
+        private void Damage(Unit.UnitController unit, Unit.UnitController damagedUnit, DataWeapons weapon)
         {
             m_LinkManager.damageController.Damage(unit, damagedUnit, weapon);
             m_LinkManager.helthController.CheckLiveUnit(unit, damagedUnit, weapon);

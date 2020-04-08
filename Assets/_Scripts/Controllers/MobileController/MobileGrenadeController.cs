@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using Controllers.GrenadeController;
 using Managers;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,6 +15,8 @@ namespace Controllers.MobileController
         [SerializeField] private float m_SpeedMoveEndPointGrenade = 10.0f;
         [SerializeField] private float DistanceTarget = 15.0f;
         [SerializeField] private float m_MaxTargetMoveAway = 2.0f;
+        [SerializeField] private GrenadeInstantiate m_GrenadeInstantiate;
+        [SerializeField] private LineRendererController.LineRendererController m_LineRenderer;
 
         public bool isCanMove = false;
         [HideInInspector] public Transform pointStartGrenade;
@@ -67,7 +70,7 @@ namespace Controllers.MobileController
             m_InputVector = Vector2.zero;
             m_GrenadeStick.rectTransform.anchoredPosition = Vector2.zero;
             
-            m_LinkManager.grenadeInstantiateController.GenerateGrenade(pointStartGrenade.position, lastPositionPointEnd);
+            m_GrenadeInstantiate.GenerateGrenade(pointStartGrenade.position, lastPositionPointEnd);
             
             DefaultValues();
             m_TargetIcon.SetActive(false);
@@ -118,11 +121,11 @@ namespace Controllers.MobileController
             pointCenterGrenade.localPosition = defaultPosPointCenterGrenade;
             pointEndGrenade.localPosition = defaultPosPointEndGrenade;
             
-            m_LinkManager.lineRendererController.lineRenderer.SetVertexCount(0);
-            m_LinkManager.lineRendererController.isCanDrawLine = false;
-            m_LinkManager.lineRendererController.pointStartLine = Vector3.zero;
-            m_LinkManager.lineRendererController.pointCenterLine = Vector3.zero;
-            m_LinkManager.lineRendererController.pointEndLine = Vector3.zero;
+            m_LineRenderer.lineRenderer.SetVertexCount(0);
+            m_LineRenderer.isCanDrawLine = false;
+            m_LineRenderer.pointStartLine = Vector3.zero;
+            m_LineRenderer.pointCenterLine = Vector3.zero;
+            m_LineRenderer.pointEndLine = Vector3.zero;
         }
 
         private void ClampMovePoints(Transform point, float distanceTarget)
@@ -138,7 +141,7 @@ namespace Controllers.MobileController
         private void ActiveMoveTargetAndDrawLine(bool isActive)
         {
             isCanMove = isActive;
-            m_LinkManager.lineRendererController.isCanDrawLine = isActive;
+            m_LineRenderer.isCanDrawLine = isActive;
         }
 
         private void GetValuesForPointsGrenade(Transform[] point)
@@ -151,7 +154,7 @@ namespace Controllers.MobileController
         private void SetValueLineRenderer(Vector3 startPoint, Vector3 centerPoint, Vector3 endPoint)
         {
             var points = new Vector3[] {startPoint, centerPoint, endPoint};
-            m_LinkManager.lineRendererController.SetValues(points);
+            m_LineRenderer.SetValues(points);
         }
         
         private void CheckWalls()

@@ -1,13 +1,15 @@
 ﻿using Controllers;
+using Controllers.BotController;
+using Controllers.ShootingController;
 using Managers;
 using UnityEngine;
 
 namespace Unit
 {
-    public class Unit : MonoBehaviour
+    public class UnitController : MonoBehaviour
     {
         public string nickname;
-        public int helth = 100;
+        public int health = 100;
         public int idWeaponAtStart = 0;
         public bool isBot = false;
         public bool isEnemy = false;
@@ -17,7 +19,7 @@ namespace Unit
         public Transform[] pointsForGrenade;
         [HideInInspector] public BulletsQuantityUnit bulletsQuantity;
         [HideInInspector] public CharacterController chController;
-        [HideInInspector] public ShootingCheckUnit shootingCheck;
+        [HideInInspector] public ShootingCheck shootingCheck;
         [HideInInspector] public BotController botController;
         [HideInInspector] public HelthbarUnit helthbarUnit;
         [HideInInspector] public Transform pointForSpawn;
@@ -34,7 +36,7 @@ namespace Unit
             m_MovementController = GetComponent<MovementController>();
             bulletsQuantity = GetComponent<BulletsQuantityUnit>();
             chController = GetComponent<CharacterController>();
-            shootingCheck = GetComponent<ShootingCheckUnit>();
+            shootingCheck = GetComponent<ShootingCheck>();
             helthbarUnit = GetComponent<HelthbarUnit>();
             animator = GetComponent<Animator>();
 
@@ -47,11 +49,7 @@ namespace Unit
                 SetMobileGrenadeSettings();
             }
             else
-            {
-                m_RandomWeaponBot = GetComponent<RandomWeaponBot>();
                 botController = GetComponent<BotController>();
-                idWeaponAtStart = m_RandomWeaponBot.RandomIdWeapon();
-            }
 
             SetWeapon(idWeaponAtStart);
         }
@@ -61,9 +59,14 @@ namespace Unit
             m_MovementController.SetPlayerMoveSettings(this);
         }
     
-        public void Shoot(Unit unit)
+        public void Shoot()
         {
-            shootingCheck.StartShooting(unit);
+            shootingCheck.EnableShooting();
+        }
+        
+        public void ShootEnd()
+        {
+            shootingCheck.DisableShooting();
         }
     
         private void SetWeapon(int weaponId)

@@ -34,5 +34,10 @@ namespace ScriptableObjects
         public AudioClip SoundShot { get { return m_SoundShot; } }
         public string NameAnim { get { return m_NameAnim; } }
         public bool InfinityBullets { get { return m_InfinityBullets; } }
+
+        void Start()
+        {
+            
+        }
     }
 }

@@ -27,7 +27,7 @@
               <e p="GrenadeController.cs" t="Include" />
               <e p="GrenadeEffects.cs" t="Include" />
               <e p="GrenadeFlight.cs" t="Include" />
-              <e p="GrenadeInstantiateController.cs" t="Include" />
+              <e p="GrenadeInstantiate.cs" t="Include" />
             </e>
             <e p="HelthbarController" t="Include">
               <e p="HelthbarRotate.cs" t="Include" />
@@ -53,7 +53,13 @@
               <e p="RespawnPlayer.cs" t="Include" />
             </e>
             <e p="ShootingController" t="Include">
+              <e p="ShootingCheck.cs" t="Include" />
               <e p="ShootingController.cs" t="Include" />
+              <e p="TypeOfWeapons" t="Include">
+                <e p="AutoWeapon.cs" t="Include" />
+                <e p="ShotgunWeapon.cs" t="Include" />
+                <e p="ShotLogic.cs" t="Include" />
+              </e>
               <e p="WeaponController.cs" t="Include" />
             </e>
           </e>
@@ -79,16 +85,14 @@
             <e p="BulletsQuantityUnit.cs" t="Include" />
             <e p="HelthbarUnit.cs" t="Include" />
             <e p="SetTarget.cs" t="Include" />
-            <e p="ShootingCheckUnit.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
-            <e p="Unit.cs" t="Include" />
+            <e p="UnitController.cs" t="Include" />
             <e p="UnitsHolder.cs" t="Include" />
           </e>
         </e>
         <e p="Resources" t="Include">
           <e p="BotsName.txt" t="Include" />
         </e>
-        <e p="textLinecast.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

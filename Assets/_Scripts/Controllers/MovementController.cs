@@ -30,7 +30,7 @@ namespace Controllers
             GravityPlayer();
         }
 
-        public void SetPlayerMoveSettings(Unit.Unit unit)
+        public void SetPlayerMoveSettings(Unit.UnitController unit)
         {
             m_PlayerTransform = unit.transform;
             animator = unit.animator;

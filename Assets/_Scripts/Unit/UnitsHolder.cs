@@ -5,14 +5,14 @@ namespace Unit
 {
     public class UnitsHolder : MonoBehaviour
     {
-        public List<Unit> Units = new List<Unit>();
+        public List<UnitController> Units = new List<UnitController>();
 
-        public void AddUnitInHolder(Unit unit)
+        public void AddUnitInHolder(UnitController unit)
         {
             Units.Add(unit);
         }
 
-        public void DeleteUnitFromHolder(Unit unitDelete)
+        public void DeleteUnitFromHolder(UnitController unitDelete)
         {
             var find = Units.Find(unit => unit == unitDelete);
             Units.Remove(find);

@@ -6,15 +6,15 @@ namespace Unit
 {
     public class HelthbarUnit : MonoBehaviour
     {
-        public Image Helthbar;
-        public Text Nickname;
+        public Image helthbar;
+        public Text nickname;
 
-        private Unit Unit;
+        private UnitController Unit;
         private LinkManager LinkManager;
     
         private void Start()
         {
-            Unit = GetComponent<Unit>();
+            Unit = GetComponent<UnitController>();
             LinkManager = LinkManager.instance;
         
             SetColorBar();
@@ -28,7 +28,7 @@ namespace Unit
 
         private void SetNickname()
         {
-            Nickname.text = Unit.nickname;
+            nickname.text = Unit.nickname;
         }
     }
 }

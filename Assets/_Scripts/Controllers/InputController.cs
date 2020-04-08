@@ -38,7 +38,10 @@ namespace Controllers
         private void PlayerShoot()
         {
             if (Input.GetMouseButton(0) || m_LinkManager.mobileButtons.Shooting())
-                m_LinkManager.player.Shoot(m_LinkManager.player);
+                m_LinkManager.player.Shoot();
+            
+            else if (Input.GetMouseButtonUp(0) || m_LinkManager.mobileButtons.EndShoot())
+                m_LinkManager.player.ShootEnd();
         }
 
         private void NextWeapon()

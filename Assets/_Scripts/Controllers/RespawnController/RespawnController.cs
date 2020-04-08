@@ -29,7 +29,7 @@ namespace Controllers.RespawnController
         private void SpawnUnit(Transform point, GameObject unitObj)
         {
             GameObject spawnedUnit = Instantiate(unitObj, point.position, Quaternion.identity) as GameObject;
-            Unit.Unit unit = spawnedUnit.GetComponent<Unit.Unit>();
+            Unit.UnitController unit = spawnedUnit.GetComponent<Unit.UnitController>();
 
             unit.pointForSpawn = point;
 
@@ -39,7 +39,7 @@ namespace Controllers.RespawnController
             m_LinkManager.unitsHolder.AddUnitInHolder(unit);
         }
     
-        public IEnumerator Respawn(Unit.Unit unit, float timeRespawn)
+        public IEnumerator Respawn(Unit.UnitController unit, float timeRespawn)
         {
             yield return new WaitForSeconds(timeRespawn);
             if (unit.isBot)

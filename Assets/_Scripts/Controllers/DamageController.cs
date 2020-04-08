@@ -7,12 +7,12 @@ namespace Controllers
 {
     public class DamageController : MonoBehaviour
     {
-        public void Damage(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
+        public void Damage(Unit.UnitController unit, Unit.UnitController damagedUnit, DataWeapons weapon)
         {
             BulletsQuantityUnit bulletsQuantity = unit.bulletsQuantity;
         
-            damagedUnit.helth -= Convert.ToInt32(weapon.Damage);
-            damagedUnit.helthbarUnit.Helthbar.fillAmount -= weapon.Damage / 100;
+            damagedUnit.health -= Convert.ToInt32(weapon.Damage);
+            damagedUnit.helthbarUnit.helthbar.fillAmount -= weapon.Damage / 100;
         }
     }
 }

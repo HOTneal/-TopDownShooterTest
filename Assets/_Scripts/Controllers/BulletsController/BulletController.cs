@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Controllers.ShootingController;
 using Managers;
 using Unit;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace Controllers.BulletsController
             m_LinkManager = LinkManager.instance;
         }
 
-        public void BulletsCount(Unit.Unit unit)
+        public void BulletsCount(Unit.UnitController unit)
         {
             BulletsQuantityUnit bulletsQuantity = unit.bulletsQuantity;
             if (bulletsQuantity.quantityBulletsInClip == 0) return;
@@ -33,16 +34,18 @@ namespace Controllers.BulletsController
             SetUIWeaponParameters(unit);
         }
 
-        private IEnumerator ReloadWeapon(Unit.Unit unit)
+        private IEnumerator ReloadWeapon(Unit.UnitController unit)
         {
             BulletsQuantityUnit bulletsQuantity = unit.bulletsQuantity;
-            ShootingCheckUnit shootingCheck = unit.shootingCheck;
+            ShootingCheck shootingCheck = unit.shootingCheck;
             Animator animator = unit.animator;
         
             m_LinkManager.shootingController.StopAllCoroutines();
-            
-            shootingCheck.StopAllCoroutines();
+
             shootingCheck.DisableShooting();
+            shootingCheck.isShoot = false;
+            shootingCheck.isNoAmmo = true;
+            shootingCheck.StopAllCoroutines();
             
             animator.SetTrigger("ReloadGun");
             
@@ -59,15 +62,17 @@ namespace Controllers.BulletsController
             shootingCheck.EnableShooting();
 
             SetUIWeaponParameters(unit);
+            shootingCheck.isNoAmmo = false;
+            shootingCheck.isShoot = true;
         }
 
-        private void NoBullets(Unit.Unit unit)
+        private void NoBullets(Unit.UnitController unit)
         {
             unit.shootingCheck.isNoAmmo = true;
-            unit.shootingCheck.canShooting = ShootingCheckUnit.ModeCanShooting.NoAmmo;
+            unit.shootingCheck.NoAmmo();
         }
     
-        private void SetUIWeaponParameters(Unit.Unit unit)
+        private void SetUIWeaponParameters(Unit.UnitController unit)
         {
             if (!unit.isBot)
                 m_LinkManager.uiManager.SetQuantityBullets(unit.bulletsQuantity);

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Controllers.GrenadeController
 {
-    public class GrenadeInstantiateController : MonoBehaviour
+    public class GrenadeInstantiate : MonoBehaviour
     {
         [SerializeField] private GameObject m_Grenade;
 

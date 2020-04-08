@@ -5,9 +5,9 @@ namespace Managers
 {
     public class EventsManager : MonoBehaviour
     {
-        public event Action<Unit.Unit> OnNextWeapon;
+        public event Action<Unit.UnitController> OnNextWeapon;
 
-        public void NextWeapon(Unit.Unit unit)
+        public void NextWeapon(Unit.UnitController unit)
         {
             OnNextWeapon?.Invoke(unit);
         }

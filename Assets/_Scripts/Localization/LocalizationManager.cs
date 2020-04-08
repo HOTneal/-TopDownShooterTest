@@ -20,53 +20,36 @@ namespace Localization
         private void Awake()
         {
             Instance = this;
-            SetLanguage("English");
+            SetLanguage("Russian");
+            DontDestroyOnLoad(gameObject);
         }
 
         public void SetLanguage(string language)
         {
             PlayerPrefs.DeleteAll();
-            string languageData = PlayerPrefs.GetString(language, $"{language}.json");
-        
-            LoadLocalizedText(languageData);
-            DontDestroyOnLoad(gameObject);
+            TextAsset languageData = Resources.Load<TextAsset>($"Language/{language}") as TextAsset;
+
+            LoadLocalizedText(language, languageData.ToString());
         }
 
-        public void LoadLocalizedText(string fileName)
+        public void LoadLocalizedText(string language, string loadKeys)
         {
-            PlayerPrefs.SetString("language", fileName);
+            PlayerPrefs.SetString("language", $"{language}.json");
             PlayerPrefs.Save();
-        
+   
             m_LocalizedText = new Dictionary<string, string>();
-
-#if UNITY_ANDROID && !UNITY_EDITOR
-        string path = Path.Combine(Application.streamingAssetsPath, fileName);
-        WWW reader = new WWW(path);
-        while (!reader.isDone) { }
-        if (reader.error != null) { Debug.Log("error:" + reader.error); }
-        filePath = Application.persistentDataPath + fileName;
-        File.WriteAllBytes(filePath, reader.bytes);
-
-#else
-            m_FilePath = Path.Combine(Application.streamingAssetsPath, fileName);
-#endif
-            if (File.Exists(m_FilePath))
-            {
-                string dataAsJson = File.ReadAllText(m_FilePath);
-                LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(dataAsJson);
-
-                for (int i = 0; i < loadedData.items.Length; i++)
-                    m_LocalizedText.Add(loadedData.items[i].key, loadedData.items[i].value);
-            }
-            else
-                Debug.LogError("Cannot find file!");
             
+            LocalizationData loadedData = JsonUtility.FromJson<LocalizationData>(loadKeys);
+                
+            for (int i = 0; i < loadedData.items.Length; i++)
+                m_LocalizedText.Add(loadedData.items[i].key, loadedData.items[i].value);
+
             m_IsReady = true;
         }
 
         public string GetLocalizedValue(string key)
         {
-            string result = m_MissingTextString;
+            var result = m_MissingTextString;
             if (m_LocalizedText.ContainsKey(key))
                 result = m_LocalizedText[key];
 

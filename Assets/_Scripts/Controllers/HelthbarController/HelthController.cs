@@ -9,18 +9,18 @@ namespace Controllers.HelthbarController
         private Color m_Enemy = Color.red;
         private Color m_Friendly = Color.green;
     
-        public void CheckLiveUnit(Unit.Unit unit, Unit.Unit damagedUnit, DataWeapons weapon)
+        public void CheckLiveUnit(Unit.UnitController unit, Unit.UnitController damagedUnit, DataWeapons weapon)
         {
-            if (damagedUnit.helth <= 0)
+            if (damagedUnit.health <= 0)
                 LinkManager.instance.deadController.UnitDead(unit, damagedUnit, weapon);
         }
     
-        public void SetColorBar(Unit.Unit unit)
+        public void SetColorBar(Unit.UnitController unit)
         {
             if (unit.isEnemy)
-                unit.helthbarUnit.Helthbar.color = m_Enemy;
+                unit.helthbarUnit.helthbar.color = m_Enemy;
             else
-                unit.helthbarUnit.Helthbar.color = m_Friendly;
+                unit.helthbarUnit.helthbar.color = m_Friendly;
         }
     }
 }
