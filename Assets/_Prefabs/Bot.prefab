@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 8551861916845032904}
   - component: {fileID: 1045122874216075042}
   - component: {fileID: 6335467843085720420}
-  - component: {fileID: 240210195726172857}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Bot
@@ -231,7 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShooting: 2
   speedMoveBullet: 100
-  m_ShotLogic: {fileID: 240210195726172857}
+  m_ShotLogic: {fileID: 0}
   isShoot: 1
   isSemiGun: 0
   isNoAmmo: 0
@@ -299,19 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0165b74f9557d2e4794e626f2f51ce4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &240210195726172857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87857489431612806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e5fff132d4e33d489b71078c9973f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingCheck: {fileID: 0}
 --- !u!1 &125403475638431602
 GameObject:
   m_ObjectHideFlags: 0

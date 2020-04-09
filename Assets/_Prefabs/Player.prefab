@@ -1626,7 +1626,6 @@ GameObject:
   - component: {fileID: 2048061379}
   - component: {fileID: 1146759527920024252}
   - component: {fileID: 2617695857481570792}
-  - component: {fileID: 1335176677699900137}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1824,24 +1823,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShooting: 2
   speedMoveBullet: 100
-  m_ShotLogic: {fileID: 1335176677699900137}
+  m_ShotLogic: {fileID: 0}
   isShoot: 1
   isSemiGun: 0
   isNoAmmo: 0
   bulletTargetPoint: {x: 0, y: 0, z: 0}
---- !u!114 &1335176677699900137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8617199119289052361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e5fff132d4e33d489b71078c9973f94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingCheck: {fileID: 0}
 --- !u!1 &8786897367546406582
 GameObject:
   m_ObjectHideFlags: 0

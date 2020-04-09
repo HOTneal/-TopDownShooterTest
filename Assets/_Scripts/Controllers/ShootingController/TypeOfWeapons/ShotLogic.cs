@@ -2,9 +2,9 @@
 
 namespace Controllers.ShootingController.TypeOfWeapons
 {
-    public class ShotLogic : MonoBehaviour
+    public abstract class ShotLogic : MonoBehaviour
     {
         [HideInInspector] public ShootingCheck shootingCheck;
-        public virtual void Logic() {}
+        public abstract void Logic();
     }
 }
