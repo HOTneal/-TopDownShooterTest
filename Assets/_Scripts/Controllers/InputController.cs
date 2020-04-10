@@ -5,6 +5,8 @@ namespace Controllers
 {
     public class InputController : MonoBehaviour
     {
+        public bool isCanShootMouse = true;
+        
         private LinkManager m_LinkManager;
 
         private void Start()
@@ -37,10 +39,13 @@ namespace Controllers
 
         private void PlayerShoot()
         {
-            if (Input.GetMouseButton(0) || m_LinkManager.mobileButtons.Shooting())
+            if (m_LinkManager.mobileShooting.Shooting())
                 m_LinkManager.player.Shoot();
             
-            else if (Input.GetMouseButtonUp(0) || m_LinkManager.mobileButtons.EndShoot())
+            else if (Input.GetMouseButton(0) && isCanShootMouse)
+                m_LinkManager.player.Shoot();
+
+            else if (Input.GetMouseButtonUp(0) || m_LinkManager.mobileShooting.EndShoot())
                 m_LinkManager.player.ShootEnd();
         }
 

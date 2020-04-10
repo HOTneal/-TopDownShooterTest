@@ -17,7 +17,9 @@ namespace Unit
         public Transform pointForGenerateBullets;
         public Transform pointForDamage;
         public Transform[] pointsForGrenade;
+        [HideInInspector] public MovementController movementController;
         [HideInInspector] public BulletsQuantityUnit bulletsQuantity;
+        [HideInInspector] public InputController inputController;
         [HideInInspector] public CharacterController chController;
         [HideInInspector] public ShootingCheck shootingCheck;
         [HideInInspector] public BotController botController;
@@ -42,9 +44,11 @@ namespace Unit
 
             if (!isBot)
             {
+                movementController = GetComponent<MovementController>();
+                inputController = GetComponent<InputController>();
+                setTarget = GetComponent<SetTarget>();
                 m_LinkManager.player = this;
                 SetPlayerMoveSettings();
-                setTarget = GetComponent<SetTarget>();
                 setTarget.SetTargetForBotAttack();
                 SetMobileGrenadeSettings();
             }

@@ -1264,7 +1264,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 859449475}
-  - component: {fileID: 859449476}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -1293,21 +1292,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.5, y: 0.5}
   m_SizeDelta: {x: -2.7000122, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &859449476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 859449474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b14d460bce26c3e4983c53eeebd60726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Shoot: {fileID: 1016593837}
-  m_Grenade: {fileID: 1454489113}
-  m_IsShooting: 0
 --- !u!1 &939611190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,6 +1468,7 @@ GameObject:
   - component: {fileID: 1016593836}
   - component: {fileID: 1016593838}
   - component: {fileID: 1016593837}
+  - component: {fileID: 1016593839}
   m_Layer: 5
   m_Name: ShootStick
   m_TagString: MobileShootStick
@@ -1501,14 +1486,15 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1653595607}
   m_Father: {fileID: 859449475}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.18741888, y: 0.027506933}
-  m_AnchorMax: {x: 0.585453, y: 0.5674931}
-  m_AnchoredPosition: {x: -0.099998474, y: -0.099990845}
-  m_SizeDelta: {x: -0.069999695, y: 0.27999878}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -184.1, y: 65.40001}
+  m_SizeDelta: {x: 119.92999, y: 119.28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016593837
 MonoBehaviour:
@@ -1528,7 +1514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 25fb70bbc0c391e459add854752f1ba6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c353bc2fb4d88b4ebc242618bb409ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1546,6 +1532,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016593835}
   m_CullTransparentMesh: 0
+--- !u!114 &1016593839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016593835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14d460bce26c3e4983c53eeebd60726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputVector: {x: 0, y: 0}
+  m_BgShootStick: {fileID: 0}
+  m_ShootStick: {fileID: 0}
+  m_IsShooting: 0
+  m_IsEndShooting: 0
+  m_MaxJoyMoveAway: 2
+  m_SpeedRotate: 3
 --- !u!1 &1034253001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,17 +2444,92 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpeedMoveEndPointGrenade: 20
-  DistanceTarget: 15
+  DistanceThrowGrenade: 20
   m_MaxTargetMoveAway: 2
+  m_SpeedRotate: 3
   m_GrenadeInstantiate: {fileID: 717035731}
   m_LineRenderer: {fileID: 717035730}
   isCanMove: 0
+  inputVector: {x: 0, y: 0}
   pointStartGrenade: {fileID: 0}
   pointCenterGrenade: {fileID: 0}
   pointEndGrenade: {fileID: 0}
   lastPositionPointEnd: {x: 0, y: 0, z: 0}
   defaultPosPointEndGrenade: {x: 0, y: 0, z: 0}
   defaultPosPointCenterGrenade: {x: 0, y: 0, z: 0}
+--- !u!1 &1653595606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653595607}
+  - component: {fileID: 1653595609}
+  - component: {fileID: 1653595608}
+  m_Layer: 5
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1653595607
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653595606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1016593836}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 57.36, y: 57.68}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1653595608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653595606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: bc0443b7dad2f824188e189c18131f2f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1653595609
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653595606}
+  m_CullTransparentMesh: 0
 --- !u!1 &1699623465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,7 +3187,7 @@ MonoBehaviour:
   helthController: {fileID: 717035728}
   deadController: {fileID: 717035727}
   eventsManager: {fileID: 2010730852}
-  mobileButtons: {fileID: 859449476}
+  mobileShooting: {fileID: 1016593839}
   unitsHolder: {fileID: 717035722}
   uiManager: {fileID: 2010730854}
 --- !u!114 &2010730852

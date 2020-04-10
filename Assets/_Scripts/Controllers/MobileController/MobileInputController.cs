@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -7,13 +8,15 @@ namespace Controllers.MobileController
     public class MobileInputController : MonoBehaviour, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler
     {
         [SerializeField] private float m_MaxJoyMoveAway = 2.0f;
-        
+
+        private LinkManager m_LinkManager;
         private Image m_BgJoystick;
         private Image m_MoveStick;
         private Vector2 m_InputVector;
 
         private void Start()
         {
+            m_LinkManager = LinkManager.instance;
             m_BgJoystick = GetComponent<Image>();
             m_MoveStick = transform.GetChild(0).GetComponent<Image>();
         }
@@ -21,12 +24,14 @@ namespace Controllers.MobileController
         public virtual void OnPointerDown(PointerEventData eventData)
         {
             OnDrag(eventData);
+            m_LinkManager.player.inputController.isCanShootMouse = false;
         }
 
         public virtual void OnPointerUp(PointerEventData eventData)
         {
             m_InputVector = Vector2.zero;
             m_MoveStick.rectTransform.anchoredPosition = Vector2.zero;
+            m_LinkManager.player.inputController.isCanShootMouse = true;
         }
 
         public virtual void OnDrag(PointerEventData eventData)

@@ -43,7 +43,7 @@ namespace Managers
         public HelthController helthController;
         public DeadController deadController;
         public EventsManager eventsManager;
-        public MobileButtons mobileButtons;
+        public MobileShooting mobileShooting;
         public UnitsHolder unitsHolder;
         public UIManager uiManager;
     }

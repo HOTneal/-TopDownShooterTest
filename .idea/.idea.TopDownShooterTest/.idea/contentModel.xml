@@ -43,9 +43,9 @@
               <e p="LineRendererController.cs" t="Include" />
             </e>
             <e p="MobileController" t="Include">
-              <e p="MobileButtons.cs" t="Include" />
               <e p="MobileGrenadeController.cs" t="Include" />
               <e p="MobileInputController.cs" t="Include" />
+              <e p="MobileShooting.cs" t="Include" />
             </e>
             <e p="MovementController.cs" t="Include" />
             <e p="RespawnController" t="Include">
@@ -53,6 +53,7 @@
               <e p="RespawnPlayer.cs" t="Include" />
             </e>
             <e p="ShootingController" t="Include">
+              <e p="LaserWeapon.cs" t="Include" />
               <e p="ShootingCheck.cs" t="Include" />
               <e p="ShootingController.cs" t="Include" />
               <e p="TypeOfWeapons" t="Include">
