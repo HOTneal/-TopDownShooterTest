@@ -426,8 +426,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419c971f9db1e6c41b996d385aabffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: {fileID: 0}
-  KeyText: 
+  text: {fileID: 0}
+  keyText: 
 --- !u!1 &547457587
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,8 +891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419c971f9db1e6c41b996d385aabffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: {fileID: 0}
-  KeyText: 
+  text: {fileID: 0}
+  keyText: 
 --- !u!1 &914431488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1312,8 @@ PrefabInstance:
     - {fileID: 3494839541404166976, guid: 185ac1515623ce647afeb7b0ce4890fb, type: 3}
     - {fileID: 2048061379, guid: 185ac1515623ce647afeb7b0ce4890fb, type: 3}
     - {fileID: 1146759527920024252, guid: 185ac1515623ce647afeb7b0ce4890fb, type: 3}
+    - {fileID: 9129469060079243165, guid: 185ac1515623ce647afeb7b0ce4890fb, type: 3}
+    - {fileID: 2617695857481570792, guid: 185ac1515623ce647afeb7b0ce4890fb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 185ac1515623ce647afeb7b0ce4890fb, type: 3}
 --- !u!1 &1601227822
 GameObject:
@@ -1403,8 +1405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419c971f9db1e6c41b996d385aabffb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: {fileID: 0}
-  KeyText: 
+  text: {fileID: 0}
+  keyText: 
 --- !u!1 &1635816848
 GameObject:
   m_ObjectHideFlags: 0

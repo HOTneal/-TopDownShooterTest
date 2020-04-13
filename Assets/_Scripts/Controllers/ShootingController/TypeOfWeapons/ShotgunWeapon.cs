@@ -16,11 +16,6 @@ namespace Controllers.ShootingController.TypeOfWeapons
                 shootingCheck.isSemiGun = true;
             }
         }
-        
-        private void StartRaycast(Unit.UnitController unit, float offsetBulletPos)
-        {
-            LinkManager.instance.shootingController.StartRaycast(unit, offsetBulletPos);
-        }
 
         public override void GenerateBullets(Unit.UnitController unit)
         {
@@ -28,7 +23,7 @@ namespace Controllers.ShootingController.TypeOfWeapons
             for (int i = 1; i <= unit.bulletsQuantity.currentWeapon.QuantityBulletsPerShot; i++)
             {
                 StartRaycast(unit, offsetBulletPos);
-                LinkManager.instance.shootingController.GenerateBullets(unit, offsetBulletPos);
+                GenerateBullets(unit, offsetBulletPos);
                 offsetBulletPos = IdentifyMultipleBullets(unit, i, offsetBulletPos);
             }
         }

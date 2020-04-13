@@ -10,15 +10,10 @@ namespace Controllers.ShootingController.TypeOfWeapons
             shootingCheck.StartCoroutine(shootingCheck.NextShot());
         }
 
-        private void StartRaycast(Unit.UnitController unit)
-        {
-            LinkManager.instance.shootingController.StartRaycast(unit, 0);
-        }
-
         public override void GenerateBullets(Unit.UnitController unit)
         {
-            StartRaycast(unit);
-            LinkManager.instance.shootingController.GenerateBullets(unit, 0);
+            StartRaycast(unit, 0);
+            GenerateBullets(unit, 0);
         }
     }
 }

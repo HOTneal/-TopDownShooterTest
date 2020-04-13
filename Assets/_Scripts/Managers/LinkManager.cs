@@ -34,7 +34,6 @@ namespace Managers
         public MobileGrenadeController mobileGrenadeController;
         public MobileInputController mobilePlayerController;
         public KillListController killListController;
-        public ShootingController shootingController;
         public RespawnController respawnController;
         public GrenadeController grenadeController;
         public BulletController bulletController;

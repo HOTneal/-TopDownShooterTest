@@ -56,7 +56,6 @@
             <e p="ShootingController" t="Include">
               <e p="LaserWeapon.cs" t="Include" />
               <e p="ShootingCheck.cs" t="Include" />
-              <e p="ShootingController.cs" t="Include" />
               <e p="TypeOfWeapons" t="Include">
                 <e p="AutoWeapon.cs" t="Include" />
                 <e p="ShotgunWeapon.cs" t="Include" />

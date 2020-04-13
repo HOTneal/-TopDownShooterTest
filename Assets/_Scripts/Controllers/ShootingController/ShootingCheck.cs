@@ -49,8 +49,7 @@ namespace Controllers.ShootingController
             {
                 if (canShooting == ModeCanShooting.Shooting)
                 {
-                    m_LinkManager.shootingController.Shooting(unit);
-                    
+                    m_ShotLogic.Shooting(unit);
                     m_ShotLogic.GenerateBullets(unit);
                     m_ShotLogic.DelayForNextShot();
                 }
@@ -59,7 +58,7 @@ namespace Controllers.ShootingController
             {
                 if (canShooting == ModeCanShooting.NoAmmo)
                 {
-                    StartCoroutine(m_LinkManager.shootingController.NoAmmo(unit));
+                    StartCoroutine(m_ShotLogic.NoAmmo(unit));
                     isShoot = false;
                 }
             }
@@ -68,7 +67,7 @@ namespace Controllers.ShootingController
         public void SetShootLogic(Unit.UnitController unit)
         {
             BulletsQuantityUnit bulletsQuantityUnit = unit.bulletsQuantity;
-            int currentWeaponId = bulletsQuantityUnit.currentWeapon.IdWeapon;
+            var currentWeaponId = bulletsQuantityUnit.currentWeapon.IdWeapon;
 
             switch (unit.bulletsQuantity.currentWeapon.TypeShooting)
             {
@@ -90,7 +89,7 @@ namespace Controllers.ShootingController
             yield return new WaitForSeconds(m_Unit.bulletsQuantity.currentWeapon.SpeedShoot);
             EnableShooting();
             isShoot = true;
-            m_LinkManager.shootingController.EndShooting(m_Unit);
+            m_ShotLogic.EndShooting(m_Unit);
         }
     
         public void EnableShooting()

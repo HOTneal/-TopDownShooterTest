@@ -40,7 +40,7 @@ namespace Controllers.BulletsController
             ShootingCheck shootingCheck = unit.shootingCheck;
             Animator animator = unit.animator;
         
-            m_LinkManager.shootingController.StopAllCoroutines();
+            //m_LinkManager.shootingController.StopAllCoroutines();
 
             shootingCheck.DisableShooting();
             shootingCheck.isShoot = false;

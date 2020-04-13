@@ -2041,6 +2041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whoShoot: {fileID: 0}
+  damagedWeapon: {fileID: 0}
 --- !u!1 &8786897367546406582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,6 +2116,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6279827511942655527}
     m_Modifications:
+    - target: {fileID: 3858391749748390738, guid: 7cda6aa5224372f47ba1bcb515a8daba,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.73
+      objectReference: {fileID: 0}
     - target: {fileID: 6480507193962074542, guid: 7cda6aa5224372f47ba1bcb515a8daba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2197,6 +2203,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6279827511942655527}
     m_Modifications:
+    - target: {fileID: -6408739120913461646, guid: f92d18df48b33534497388b8f2da299a,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.73
+      objectReference: {fileID: 0}
     - target: {fileID: 177477511572797204, guid: f92d18df48b33534497388b8f2da299a,
         type: 3}
       propertyPath: m_Name
@@ -2279,6 +2290,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6279827511942655527}
     m_Modifications:
+    - target: {fileID: 4920299748368393863, guid: 44bbd23957e021745860cba51b0f4592,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.73
+      objectReference: {fileID: 0}
     - target: {fileID: 6568567283141602711, guid: 44bbd23957e021745860cba51b0f4592,
         type: 3}
       propertyPath: m_Name
