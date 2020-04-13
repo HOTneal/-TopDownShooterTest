@@ -19,12 +19,12 @@ namespace Controllers.ShootingController
     
         public ModeCanShooting canShooting = ModeCanShooting.NoShooting;
         public float speedMoveBullet = 100.0f;
-        public ShotLogic m_ShotLogic;
         public bool isShoot = true;
         public bool isSemiGun = false;
         [HideInInspector] public bool isNoAmmo = false;
         [HideInInspector] public Vector3 bulletTargetPoint;
     
+        private ShotLogic m_ShotLogic;
         private RaycastHit m_Hit;
         private LinkManager m_LinkManager;
         private UnitController m_Unit;
