@@ -1995,7 +1995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4429f6d4eb43f2b438e848ed5b942ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Offset: {x: 0, y: 20, z: -25}
+  m_Offset: {x: 0, y: 37.7, z: -25.3}
   m_SpeedMoveCam: 20
 --- !u!114 &1146759527920024252
 MonoBehaviour:
@@ -2023,7 +2023,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShooting: 2
   speedMoveBullet: 100
-  m_ShotLogic: {fileID: 0}
   isShoot: 1
   isSemiGun: 0
   isNoAmmo: 0
@@ -2119,7 +2118,7 @@ PrefabInstance:
     - target: {fileID: 3858391749748390738, guid: 7cda6aa5224372f47ba1bcb515a8daba,
         type: 3}
       propertyPath: m_Volume
-      value: 0.73
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6480507193962074542, guid: 7cda6aa5224372f47ba1bcb515a8daba,
         type: 3}
@@ -2206,7 +2205,7 @@ PrefabInstance:
     - target: {fileID: -6408739120913461646, guid: f92d18df48b33534497388b8f2da299a,
         type: 3}
       propertyPath: m_Volume
-      value: 0.73
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 177477511572797204, guid: f92d18df48b33534497388b8f2da299a,
         type: 3}
@@ -2293,7 +2292,7 @@ PrefabInstance:
     - target: {fileID: 4920299748368393863, guid: 44bbd23957e021745860cba51b0f4592,
         type: 3}
       propertyPath: m_Volume
-      value: 0.73
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6568567283141602711, guid: 44bbd23957e021745860cba51b0f4592,
         type: 3}
