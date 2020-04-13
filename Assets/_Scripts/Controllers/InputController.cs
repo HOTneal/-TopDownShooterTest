@@ -34,6 +34,7 @@ namespace Controllers
         
             axis.x = horizontalKeyboard != 0 ? horizontalKeyboard : horizontalJoystick;
             axis.y = verticalKeyboard != 0 ? verticalKeyboard : verticalJoystick;
+            
             return axis;
         }
 

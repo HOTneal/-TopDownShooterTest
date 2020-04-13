@@ -27,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotgunWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthCheck.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheck.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeActivate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileShooting.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,9 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeFlight.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/EventMurderParameters.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Localization/LocalizedText.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/BulletsQuantityUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/RandomWeaponBot.cs" />
@@ -79,7 +77,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/SetTarget.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/ShootingCheckUnit.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DeadController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/KillListController.cs" />
@@ -91,21 +88,13 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/WeaponsParameters.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/Pistol.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheckUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/ScriptableObjects/DataWeapons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/TEST/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/TEST/WeaponShotLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/TEST/WeaponLogic_AUTO.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/TEST/WeaponLogic_SEMI_AUTO.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/WeaponController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/AutoWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController/BotController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotgunWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheck.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/RespawnController/RespawnController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/LaserWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileInputController.cs" />
@@ -113,10 +102,22 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileButtons.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileShooring.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileShooting.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileGrenadeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" />
+        <option value="$PROJECT_DIR$/Assets/TestRay.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthCheck.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotgunWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotLogic.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/AutoWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheck.cs" />
       </list>
     </option>
   </component>
@@ -204,7 +205,14 @@
       <workItem from="1586304887241" duration="13438000" />
       <workItem from="1586396196301" duration="436000" />
       <workItem from="1586480230871" duration="612000" />
-      <workItem from="1586486002117" duration="13755000" />
+      <workItem from="1586486002117" duration="27655000" />
+      <workItem from="1586532588727" duration="1627000" />
+      <workItem from="1586577373165" duration="921000" />
+      <workItem from="1586588227378" duration="1456000" />
+      <workItem from="1586599973316" duration="1157000" />
+      <workItem from="1586660308121" duration="10027000" />
+      <workItem from="1586686905180" duration="12000" />
+      <workItem from="1586689419962" duration="142000" />
     </task>
     <servers />
   </component>

@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 8551861916845032904}
   - component: {fileID: 1045122874216075042}
   - component: {fileID: 6335467843085720420}
+  - component: {fileID: 2820654330588906432}
   m_Layer: 0
   m_Name: Bot
   m_TagString: Bot
@@ -208,7 +209,9 @@ MonoBehaviour:
   pointForGenerateBullets: {fileID: 4870465728778269307}
   pointForDamage: {fileID: 559504954}
   pointsForGrenade: []
+  movementController: {fileID: 0}
   bulletsQuantity: {fileID: 0}
+  inputController: {fileID: 0}
   chController: {fileID: 0}
   shootingCheck: {fileID: 0}
   botController: {fileID: 0}
@@ -298,6 +301,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0165b74f9557d2e4794e626f2f51ce4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2820654330588906432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87857489431612806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0e0097a90d7094bb41d6fdd1e369dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoShoot: {fileID: 0}
 --- !u!1 &125403475638431602
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Controllers.BulletsController;
 using Managers;
 using ScriptableObjects;
@@ -26,8 +25,6 @@ namespace Controllers.ShootingController
             DataWeapons weapon = unit.bulletsQuantity.currentWeapon;
             
             m_LinkManager.bulletController.BulletsCount(unit);
-            StartRaycast(unit);
-            GenerateBullets(weapon, unit);
             AnimShooting(unit,true);
             m_AudioSourceShooting.PlayOneShot(weapon.SoundShot);
         }
@@ -37,41 +34,38 @@ namespace Controllers.ShootingController
             AnimShooting(unit,false);
         }
     
-        private void StartRaycast(Unit.UnitController unit)
+        public void StartRaycast(Unit.UnitController unit, float offsetBulletPos)
         {
-            if (Physics.Raycast(unit.pointForGenerateBullets.position, unit.pointForGenerateBullets.forward, out m_Hit))
+            Vector3 pointForBullets = unit.pointForGenerateBullets.position;
+            Vector3 startPos = new Vector3(pointForBullets.x - offsetBulletPos, pointForBullets.y, pointForBullets.z);
+            
+            if (Physics.Raycast(startPos, unit.pointForGenerateBullets.forward, out m_Hit))
             {
-                unit.shootingCheck.bulletTargetPoint = m_Hit.point;
+                unit.shootingCheck.bulletTargetPoint = new Vector3(m_Hit.point.x + offsetBulletPos, m_Hit.point.y, m_Hit.point.z);
 
                 if (m_Hit.transform.TryGetComponent(out Unit.UnitController damagedUnit))
                     Damage(unit, damagedUnit);
             }
         }
 
-        private void GenerateBullets(DataWeapons weapon, Unit.UnitController unit)
+        public void GenerateBullets(Unit.UnitController unit, float offsetBulletPos)
         {
-            var offsetBulletPos = 0.0f;
-            var marginBetweenBullets = 0.3f;
             ShootingCheck shootingCheck = unit.shootingCheck;
-        
-            for (int i = 0; i < weapon.QuantityBulletsPerShot; i++)
-            {
-                var bullet = Instantiate(m_Bullet, unit.pointForGenerateBullets.position, Quaternion.identity);
-                var bulletPos = bullet.transform.position;
-                var bulletMove = bullet.GetComponent<BulletMove>();
             
-                bullet.transform.position = new Vector3(bulletPos.x - offsetBulletPos, bulletPos.y, bulletPos.z);
-                bulletMove.targetPos = new Vector3(shootingCheck.bulletTargetPoint.x - offsetBulletPos, shootingCheck.bulletTargetPoint.y, shootingCheck.bulletTargetPoint.z);
-                bulletMove.speed = shootingCheck.speedMoveBullet;
-
-                offsetBulletPos -= marginBetweenBullets;
-            }
+            var bullet = Instantiate(m_Bullet, unit.pointForGenerateBullets.position, Quaternion.identity);
+            var bulletPos = bullet.transform.position;
+            var bulletMove = bullet.GetComponent<BulletMove>();
+            
+            bullet.transform.position = new Vector3(bulletPos.x, bulletPos.y, bulletPos.z);
+            bulletMove.targetPos = new Vector3(shootingCheck.bulletTargetPoint.x - offsetBulletPos, shootingCheck.bulletTargetPoint.y, shootingCheck.bulletTargetPoint.z);
+            bulletMove.speed = shootingCheck.speedMoveBullet;
         }
 
         public IEnumerator NoAmmo(Unit.UnitController unit)
         {
             m_AudioSourceShooting.PlayOneShot(m_SoundNoAmmo);
-        
+            unit.shootingCheck.DisableShooting();
+
             yield return new WaitForSeconds(0.3f);
             
             unit.shootingCheck.isNoAmmo = true;
@@ -85,7 +79,7 @@ namespace Controllers.ShootingController
 
         private void Damage(Unit.UnitController unit, Unit.UnitController damagedUnit)
         {
-            m_LinkManager.damageController.Damage(unit, damagedUnit, unit.bulletsQuantity.currentWeapon);
+            m_LinkManager.damageController.Damage(damagedUnit, unit.bulletsQuantity.currentWeapon);
             m_LinkManager.helthController.CheckLiveUnit(unit, damagedUnit, unit.bulletsQuantity.currentWeapon);
         }
     }

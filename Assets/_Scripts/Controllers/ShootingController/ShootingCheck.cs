@@ -50,7 +50,9 @@ namespace Controllers.ShootingController
                 if (canShooting == ModeCanShooting.Shooting)
                 {
                     m_LinkManager.shootingController.Shooting(unit);
-                    m_ShotLogic.Logic();
+                    
+                    m_ShotLogic.GenerateBullets(unit);
+                    m_ShotLogic.DelayForNextShot();
                 }
             }
             else
@@ -58,7 +60,6 @@ namespace Controllers.ShootingController
                 if (canShooting == ModeCanShooting.NoAmmo)
                 {
                     StartCoroutine(m_LinkManager.shootingController.NoAmmo(unit));
-                    DisableShooting();
                     isShoot = false;
                 }
             }

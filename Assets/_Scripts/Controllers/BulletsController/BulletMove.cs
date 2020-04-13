@@ -21,6 +21,11 @@ namespace Controllers.BulletsController
                 DestroyObj();
         }
 
+        public void SetTargetPostion()
+        {
+            targetPos = new Vector3();
+        }
+
         private void DestroyObj()
         {
             Destroy(gameObject);

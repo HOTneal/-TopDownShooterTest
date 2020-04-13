@@ -59,7 +59,6 @@ namespace Controllers.BulletsController
             m_AudioSource.Stop();
             
             bulletsQuantity.quantityBulletsInClip = bulletsQuantity.defaultBulletsInClip;
-            shootingCheck.EnableShooting();
 
             SetUIWeaponParameters(unit);
             shootingCheck.isNoAmmo = false;

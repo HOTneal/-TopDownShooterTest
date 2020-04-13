@@ -51,7 +51,7 @@ namespace Controllers.GrenadeController
 
         private void Damage(Unit.UnitController unit, Unit.UnitController damagedUnit, DataWeapons weapon)
         {
-            m_LinkManager.damageController.Damage(unit, damagedUnit, weapon);
+            m_LinkManager.damageController.Damage(damagedUnit, weapon);
             m_LinkManager.helthController.CheckLiveUnit(unit, damagedUnit, weapon);
         }
     }

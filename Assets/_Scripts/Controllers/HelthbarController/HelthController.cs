@@ -1,5 +1,4 @@
-﻿using Managers;
-using ScriptableObjects;
+﻿using ScriptableObjects;
 using UnityEngine;
 
 namespace Controllers.HelthbarController
@@ -11,8 +10,10 @@ namespace Controllers.HelthbarController
     
         public void CheckLiveUnit(Unit.UnitController unit, Unit.UnitController damagedUnit, DataWeapons weapon)
         {
-            if (damagedUnit.health <= 0)
-                LinkManager.instance.deadController.UnitDead(unit, damagedUnit, weapon);
+            HelthCheck helthCheck = damagedUnit.GetComponent<HelthCheck>();
+            
+            helthCheck.whoShoot = unit;
+            helthCheck.damagedWeapon = weapon;
         }
     
         public void SetColorBar(Unit.UnitController unit)

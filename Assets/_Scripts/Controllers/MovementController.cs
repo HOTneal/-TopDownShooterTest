@@ -69,9 +69,6 @@ namespace Controllers
 
         private void PlayerRotate()
         {
-            if (!(Vector3.Angle(Vector3.forward, moveVector) > 1.0f) &&
-                Vector3.Angle(Vector3.forward, moveVector) != 0) return;
-            
             if (isCanRotate)
                 moveVector = m_InputVector;
             

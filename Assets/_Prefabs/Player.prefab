@@ -1166,6 +1166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c407e37ee52dea4fbe7c9273e56156c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Lenght: 5000
+  m_IsVisible: 1
 --- !u!1 &6835037978961409573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1816,6 +1818,7 @@ GameObject:
   - component: {fileID: 2048061379}
   - component: {fileID: 1146759527920024252}
   - component: {fileID: 2617695857481570792}
+  - component: {fileID: 9129469060079243165}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1904,7 +1907,9 @@ MonoBehaviour:
   - {fileID: 3421156180056181244}
   - {fileID: 2811992024887648651}
   - {fileID: 8848185377050652019}
+  movementController: {fileID: 0}
   bulletsQuantity: {fileID: 0}
+  inputController: {fileID: 0}
   chController: {fileID: 0}
   shootingCheck: {fileID: 0}
   botController: {fileID: 0}
@@ -1960,6 +1965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e5a51524fab664eb12d249c8642700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCanShootMouse: 1
 --- !u!114 &3494839541404166976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,6 +1979,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  isCanRotate: 1
+  moveVector: {x: 0, y: 0, z: 0}
+  speedRotate: 0
+  speedWalk: 0
 --- !u!114 &2048061379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2018,6 +2028,19 @@ MonoBehaviour:
   isSemiGun: 0
   isNoAmmo: 0
   bulletTargetPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &9129469060079243165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8617199119289052361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0e0097a90d7094bb41d6fdd1e369dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoShoot: {fileID: 0}
 --- !u!1 &8786897367546406582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,15 +2341,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44bbd23957e021745860cba51b0f4592, type: 3}
---- !u!1 &4277656496390749983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6568567283141602711, guid: 44bbd23957e021745860cba51b0f4592,
-    type: 3}
-  m_PrefabInstance: {fileID: 6950590032464532104}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4277656496390841151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6568567283142095287, guid: 44bbd23957e021745860cba51b0f4592,
+    type: 3}
+  m_PrefabInstance: {fileID: 6950590032464532104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4277656496390749983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6568567283141602711, guid: 44bbd23957e021745860cba51b0f4592,
     type: 3}
   m_PrefabInstance: {fileID: 6950590032464532104}
   m_PrefabAsset: {fileID: 0}
