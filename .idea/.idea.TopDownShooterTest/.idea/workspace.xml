@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheck.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletMove.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/PoolController/PoolObject.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/PoolController/BulletsPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/PoolController/PoolObject.cs" />
       </list>
     </option>
   </component>
@@ -217,7 +217,7 @@
       <workItem from="1586739168359" duration="3957000" />
       <workItem from="1586757643133" duration="607000" />
       <workItem from="1586777848134" duration="9110000" />
-      <workItem from="1586823906800" duration="9030000" />
+      <workItem from="1586823906800" duration="10065000" />
     </task>
     <servers />
   </component>
