@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Controllers.BulletsController;
-using UnityEngine;
+﻿using Controllers.BulletsController;
 
 namespace Controllers.PoolController
 {

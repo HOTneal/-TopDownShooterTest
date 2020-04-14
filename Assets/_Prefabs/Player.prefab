@@ -1825,7 +1825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4741491241439370970
 Transform:
   m_ObjectHideFlags: 0
@@ -1912,7 +1912,7 @@ MonoBehaviour:
   inputController: {fileID: 0}
   chController: {fileID: 0}
   shootingCheck: {fileID: 0}
-  botController: {fileID: 0}
+  bot: {fileID: 0}
   helthbarUnit: {fileID: 0}
   pointForSpawn: {fileID: 0}
   setTarget: {fileID: 0}

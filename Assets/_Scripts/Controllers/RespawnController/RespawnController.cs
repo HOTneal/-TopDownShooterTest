@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Managers;
+using Unit;
 using UnityEngine;
 
 namespace Controllers.RespawnController
@@ -8,44 +9,60 @@ namespace Controllers.RespawnController
     {
         [SerializeField] private Transform[] m_SpawnPointsTeam1;
         [SerializeField] private Transform[] m_SpawnPointsTeam2;
-        [SerializeField] private GameObject m_Player;
-        [SerializeField] private GameObject m_Bot;
 
         private LinkManager m_LinkManager;
 
         private void Start()
         {
             m_LinkManager = LinkManager.instance;
-            SortPoints(m_SpawnPointsTeam1, m_Bot);
-            SortPoints(m_SpawnPointsTeam2, m_Player);
+            SortPoints(m_SpawnPointsTeam1, "Bot");
+            SortPoints(m_SpawnPointsTeam2, "Player");
         }
 
-        private void SortPoints(Transform[] points, GameObject unit)
+        private void SortPoints(Transform[] points, string typeUnit)
         {
             for (int i = 0; i < points.Length; i++)
-                SpawnUnit(points[i], unit);
+                SpawnUnit(points[i], TypeUnit(typeUnit));
         }
-    
-        private void SpawnUnit(Transform point, GameObject unitObj)
-        {
-            GameObject spawnedUnit = Instantiate(unitObj, point.position, Quaternion.identity) as GameObject;
-            Unit.UnitController unit = spawnedUnit.GetComponent<Unit.UnitController>();
 
+        private UnitController TypeUnit(string type)
+        {
+            UnitController unitFromPool = null;
+            switch (type)
+            {
+                case "Player":
+                    m_LinkManager.playerPool.CheckBulletsInPool();
+                    unitFromPool = m_LinkManager.playerPool.objInPool.Dequeue();
+                    break;
+
+                case "Bot":
+                    m_LinkManager.botsPool.CheckBulletsInPool();
+                    unitFromPool = m_LinkManager.botsPool.objInPool.Dequeue();
+                    break;
+            }
+
+            return unitFromPool;
+        }
+
+        private void SpawnUnit(Transform point, UnitController unit)
+        {
+            unit.transform.position = point.position;
             unit.pointForSpawn = point;
 
             if (unit.isBot)
                 unit.nickname = GenerateBotNickname();
 
             m_LinkManager.unitsHolder.AddUnitInHolder(unit);
+            unit.gameObject.SetActive(true);
         }
     
         public IEnumerator Respawn(Unit.UnitController unit, float timeRespawn)
         {
             yield return new WaitForSeconds(timeRespawn);
             if (unit.isBot)
-                SpawnUnit(unit.pointForSpawn, m_Bot);
+                SpawnUnit(unit.pointForSpawn, unit);
             else
-                SpawnUnit(unit.pointForSpawn, m_Player);
+                SpawnUnit(unit.pointForSpawn, unit);
         }
 
         private string GenerateBotNickname()

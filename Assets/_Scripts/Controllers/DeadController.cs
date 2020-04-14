@@ -1,5 +1,6 @@
 ﻿using Managers;
 using ScriptableObjects;
+using Unit;
 using UnityEngine;
 
 namespace Controllers
@@ -35,14 +36,21 @@ namespace Controllers
             m_LinkManager.uiManager.Interface(false);
             m_LinkManager.unitsHolder.DeleteUnitFromHolder(unit);
             m_LinkManager.mobileGrenadeController.isCanMove = false;
-            Destroy(unit.gameObject);
+            ReturnUnits(unit);
         }
 
         private void BotDead(Unit.UnitController unit)
         {
             Respawn(unit);
             m_LinkManager.unitsHolder.DeleteUnitFromHolder(unit);
-            Destroy(unit.gameObject);
+            ReturnUnits(unit);
+        }
+
+        private void ReturnUnits(UnitController unit)
+        {
+            unit.gameObject.SetActive(false);
+            m_LinkManager.playerPool.AddInList(unit);
+            unit.ResetParameters();
         }
     }
 }

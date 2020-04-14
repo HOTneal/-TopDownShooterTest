@@ -42,10 +42,12 @@ namespace Managers
         public DamageController damageController;
         public HelthController helthController;
         public DeadController deadController;
-        public BulletsPool bulletsPool;
-        public EventsManager eventsManager;
         public MobileShooting mobileShooting;
+        public EventsManager eventsManager;
+        public BulletsPool bulletsPool;
         public UnitsHolder unitsHolder;
+        public PlayerPool playerPool;
         public UIManager uiManager;
+        public BotsPool botsPool;
     }
 }

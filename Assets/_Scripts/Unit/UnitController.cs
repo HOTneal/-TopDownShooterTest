@@ -22,7 +22,7 @@ namespace Unit
         [HideInInspector] public InputController inputController;
         [HideInInspector] public CharacterController chController;
         [HideInInspector] public ShootingCheck shootingCheck;
-        [HideInInspector] public BotController botController;
+        [HideInInspector] public Bot bot;
         [HideInInspector] public HelthbarUnit helthbarUnit;
         [HideInInspector] public Transform pointForSpawn;
         [HideInInspector] public SetTarget setTarget;
@@ -53,7 +53,7 @@ namespace Unit
                 SetMobileGrenadeSettings();
             }
             else
-                botController = GetComponent<BotController>();
+                bot = GetComponent<Bot>();
 
             SetWeapon(idWeaponAtStart);
         }
@@ -86,6 +86,13 @@ namespace Unit
         private void SetMobileGrenadeSettings()
         {
             m_LinkManager.mobileGrenadeController.SetValues(pointsForGrenade);
+        }
+
+        public void ResetParameters()
+        {
+            health = 100;
+            helthbarUnit.helthbar.fillAmount = 1;
+            shootingCheck.isShoot = true;
         }
     }
 }

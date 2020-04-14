@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Managers;
+﻿using Managers;
 using UnityEngine;
 
 namespace Controllers.BotController
 {
-    public class BotController : MonoBehaviour
+    public class Bot : MonoBehaviour
     {
         [SerializeField] private float m_DistanceAttack = 20.0f;
 
@@ -32,15 +30,10 @@ namespace Controllers.BotController
             if (!isAttack || m_LinkManager.player == null || target == null)
                 return;
 
-            if (Vector3.Distance(m_BotTransform.position, target.localPosition) <= m_DistanceAttack)
+            if (Vector3.Distance(m_BotTransform.position, target.position) <= m_DistanceAttack)
                 m_BotUnit.Shoot();
             else
                 m_BotUnit.ShootEnd();
-        }
-
-        public void SetTarget(Transform player)
-        {
-            target = player;
         }
     }
 }

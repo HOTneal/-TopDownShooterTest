@@ -9,7 +9,7 @@
         <e p="_Scripts" t="Include">
           <e p="Controllers" t="Include">
             <e p="BotController" t="Include">
-              <e p="BotController.cs" t="Include" />
+              <e p="Bot.cs" t="Include" />
               <e p="RandomWeaponBot.cs" t="Include" />
             </e>
             <e p="BulletsController" t="Include">
@@ -50,7 +50,9 @@
             </e>
             <e p="MovementController.cs" t="Include" />
             <e p="PoolController" t="Include">
+              <e p="BotsPool.cs" t="Include" />
               <e p="BulletsPool.cs" t="Include" />
+              <e p="PlayerPool.cs" t="Include" />
               <e p="PoolObject.cs" t="Include" />
             </e>
             <e p="RespawnController" t="Include">
