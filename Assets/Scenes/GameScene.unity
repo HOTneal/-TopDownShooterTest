@@ -2444,7 +2444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4625b0d86fb8bef489c705f48ab22bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSize: 3
+  initialSize: 2
   prefab: {fileID: 4207883778890434411, guid: 8d878babbf8700d44a847f24da6e52b8, type: 3}
   poolParent: {fileID: 1530473869}
 --- !u!1 &1653595606
