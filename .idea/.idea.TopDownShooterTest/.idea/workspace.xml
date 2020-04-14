@@ -40,6 +40,7 @@
     <setting file="file://$USER_HOME$/Desktop/Arkanoid/Assets/_scripts/Menu/StartGame.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/EffectsController/DestroyEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/DamageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/PoolController/BulletsPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/AutoWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/LaserWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotLogic.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,9 +67,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/BulletsQuantityUnit.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Unit/UIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/RandomWeaponBot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BotController/RandomWeaponBot.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/GrenadeController/GrenadeActivate.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/KillListController/DestoryEventMurder.cs" />
@@ -102,7 +100,6 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileShooring.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileShooting.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MobileController/MobileGrenadeController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletMove.cs" />
         <option value="$PROJECT_DIR$/Assets/TestRay.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/InputController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/MovementController.cs" />
@@ -112,11 +109,15 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthCheck.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/HelthbarController/HelthController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/PoolController/PoolController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/PoolController/Pool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/AutoWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotgunWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Managers/LinkManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotLogic.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/ShootingCheck.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/BulletsController/BulletMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/PoolController/BulletsPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Controllers/ShootingController/TypeOfWeapons/ShotLogic.cs" />
       </list>
     </option>
   </component>
@@ -213,7 +214,9 @@
       <workItem from="1586686905180" duration="12000" />
       <workItem from="1586689419962" duration="142000" />
       <workItem from="1586739168359" duration="3957000" />
-      <workItem from="1586757643133" duration="606000" />
+      <workItem from="1586757643133" duration="607000" />
+      <workItem from="1586777848134" duration="9110000" />
+      <workItem from="1586823906800" duration="1334000" />
     </task>
     <servers />
   </component>

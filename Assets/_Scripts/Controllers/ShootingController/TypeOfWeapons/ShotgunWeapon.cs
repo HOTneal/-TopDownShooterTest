@@ -1,5 +1,4 @@
 ﻿using System;
-using Managers;
 
 namespace Controllers.ShootingController.TypeOfWeapons
 {
@@ -17,13 +16,13 @@ namespace Controllers.ShootingController.TypeOfWeapons
             }
         }
 
-        public override void GenerateBullets(Unit.UnitController unit)
+        public override void TakeBulletFromPool(Unit.UnitController unit)
         {
             var offsetBulletPos = 0.0f;
             for (int i = 1; i <= unit.bulletsQuantity.currentWeapon.QuantityBulletsPerShot; i++)
             {
                 StartRaycast(unit, offsetBulletPos);
-                GenerateBullets(unit, offsetBulletPos);
+                TakeBulletFromPool(unit, offsetBulletPos);
                 offsetBulletPos = IdentifyMultipleBullets(unit, i, offsetBulletPos);
             }
         }

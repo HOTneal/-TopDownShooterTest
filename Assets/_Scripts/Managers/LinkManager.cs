@@ -4,6 +4,7 @@ using Controllers.GrenadeController;
 using Controllers.HelthbarController;
 using Controllers.KillListController;
 using Controllers.MobileController;
+using Controllers.PoolController;
 using Controllers.RespawnController;
 using Controllers.ShootingController;
 using Unit;
@@ -41,6 +42,7 @@ namespace Managers
         public DamageController damageController;
         public HelthController helthController;
         public DeadController deadController;
+        public BulletsPool bulletsPool;
         public EventsManager eventsManager;
         public MobileShooting mobileShooting;
         public UnitsHolder unitsHolder;

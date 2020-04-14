@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Controllers.ShootingController.TypeOfWeapons;
 using Managers;
 using ScriptableObjects;
@@ -50,7 +49,7 @@ namespace Controllers.ShootingController
                 if (canShooting == ModeCanShooting.Shooting)
                 {
                     m_ShotLogic.Shooting(unit);
-                    m_ShotLogic.GenerateBullets(unit);
+                    m_ShotLogic.TakeBulletFromPool(unit);
                     m_ShotLogic.DelayForNextShot();
                 }
             }

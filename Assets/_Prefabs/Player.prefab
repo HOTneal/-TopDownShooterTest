@@ -1995,7 +1995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4429f6d4eb43f2b438e848ed5b942ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Offset: {x: 0, y: 37.7, z: -25.3}
+  m_Offset: {x: 0, y: 34.6, z: -23.7}
   m_SpeedMoveCam: 20
 --- !u!114 &1146759527920024252
 MonoBehaviour:

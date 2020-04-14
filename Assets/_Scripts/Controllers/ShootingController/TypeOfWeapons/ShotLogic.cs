@@ -25,7 +25,7 @@ namespace Controllers.ShootingController.TypeOfWeapons
 
         public abstract void DelayForNextShot();
 
-        public abstract void GenerateBullets(Unit.UnitController unit);
+        public abstract void TakeBulletFromPool(Unit.UnitController unit);
         
         public void Shooting(Unit.UnitController unit)
         {
@@ -55,17 +55,20 @@ namespace Controllers.ShootingController.TypeOfWeapons
             }
         }
         
-        public void GenerateBullets(Unit.UnitController unit, float offsetBulletPos)
+        public void TakeBulletFromPool(Unit.UnitController unit, float offsetBulletPos)
         {
+            m_LinkManager.bulletsPool.CheckBulletsInPool();
+
             ShootingCheck shootingCheck = unit.shootingCheck;
-            
-            var bullet = Instantiate(m_Bullet, unit.pointForGenerateBullets.position, Quaternion.identity);
-            var bulletPos = bullet.transform.position;
+            var bullet = m_LinkManager.bulletsPool.DeleteFromList();
+            var bulletPos = unit.pointForGenerateBullets.position;
             var bulletMove = bullet.GetComponent<BulletMove>();
             
-            bullet.transform.position = new Vector3(bulletPos.x, bulletPos.y, bulletPos.z);
+            bullet.transform.position = bulletPos;
             bulletMove.targetPos = new Vector3(shootingCheck.bulletTargetPoint.x - offsetBulletPos, shootingCheck.bulletTargetPoint.y, shootingCheck.bulletTargetPoint.z);
             bulletMove.speed = shootingCheck.speedMoveBullet;
+            
+            bullet.SetActive(true);
         }
 
         public IEnumerator NoAmmo(Unit.UnitController unit)

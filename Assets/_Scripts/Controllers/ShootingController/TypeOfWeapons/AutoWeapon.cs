@@ -1,6 +1,4 @@
-﻿using Managers;
-
-namespace Controllers.ShootingController.TypeOfWeapons
+﻿namespace Controllers.ShootingController.TypeOfWeapons
 {
     public class AutoWeapon : ShotLogic
     {
@@ -10,10 +8,10 @@ namespace Controllers.ShootingController.TypeOfWeapons
             shootingCheck.StartCoroutine(shootingCheck.NextShot());
         }
 
-        public override void GenerateBullets(Unit.UnitController unit)
+        public override void TakeBulletFromPool(Unit.UnitController unit)
         {
             StartRaycast(unit, 0);
-            GenerateBullets(unit, 0);
+            TakeBulletFromPool(unit, 0);
         }
     }
 }

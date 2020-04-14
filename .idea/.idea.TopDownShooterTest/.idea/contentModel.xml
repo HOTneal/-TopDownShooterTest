@@ -49,6 +49,9 @@
               <e p="MobileShooting.cs" t="Include" />
             </e>
             <e p="MovementController.cs" t="Include" />
+            <e p="PoolController" t="Include">
+              <e p="BulletsPool.cs" t="Include" />
+            </e>
             <e p="RespawnController" t="Include">
               <e p="RespawnController.cs" t="Include" />
               <e p="RespawnPlayer.cs" t="Include" />

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Managers;
+using UnityEngine;
 
 namespace Controllers.BulletsController
 {
@@ -18,22 +19,18 @@ namespace Controllers.BulletsController
         {
             m_BulletTransform.position = Vector3.MoveTowards(m_BulletTransform.position, targetPos, speed * Time.deltaTime);
             if (m_BulletTransform.position == targetPos)
-                DestroyObj();
+                DisableBullet();
         }
 
-        public void SetTargetPostion()
+        private void DisableBullet()
         {
-            targetPos = new Vector3();
+            LinkManager.instance.bulletsPool.AddInList(gameObject);
+            gameObject.SetActive(false);
         }
 
-        private void DestroyObj()
-        {
-            Destroy(gameObject);
-        }
-    
         private void OnBecameInvisible()
         {
-            DestroyObj();
+            DisableBullet();
         }
     }
 }

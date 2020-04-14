@@ -907,7 +907,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 717035721}
-  - component: {fileID: 717035720}
   - component: {fileID: 717035723}
   - component: {fileID: 717035724}
   - component: {fileID: 717035726}
@@ -927,18 +926,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &717035720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717035719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b478929bf2d252343a43b0ff7ac09e9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &717035721
 Transform:
   m_ObjectHideFlags: 0
@@ -2325,6 +2312,51 @@ MonoBehaviour:
   lastPositionPointEnd: {x: 0, y: 0, z: 0}
   defaultPosPointEndGrenade: {x: 0, y: 0, z: 0}
   defaultPosPointCenterGrenade: {x: 0, y: 0, z: 0}
+--- !u!1 &1517627531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517627533}
+  - component: {fileID: 1517627532}
+  m_Layer: 0
+  m_Name: PoolForBullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1517627532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517627531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea22d1f2c47fdc64fb1d5d28d4ad0888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Bullet: {fileID: 7709657895930172660, guid: b6104e29048eda44795cdd08bc868634,
+    type: 3}
+--- !u!4 &1517627533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517627531}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 54.389744, y: 7.178431, z: 14.365996}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1653595606
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,6 +3085,7 @@ MonoBehaviour:
   damageController: {fileID: 717035726}
   helthController: {fileID: 717035728}
   deadController: {fileID: 717035727}
+  bulletsPool: {fileID: 1517627532}
   eventsManager: {fileID: 2010730852}
   mobileShooting: {fileID: 1016593839}
   unitsHolder: {fileID: 717035722}
