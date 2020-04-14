@@ -8,7 +8,6 @@ namespace Controllers.ShootingController.TypeOfWeapons
 {
     public abstract class ShotLogic : MonoBehaviour
     {
-        [SerializeField] private GameObject m_Bullet;
         [SerializeField] private AudioClip m_SoundNoAmmo;
 
         public ShootingCheck shootingCheck;
@@ -68,7 +67,7 @@ namespace Controllers.ShootingController.TypeOfWeapons
             bulletMove.targetPos = new Vector3(shootingCheck.bulletTargetPoint.x - offsetBulletPos, shootingCheck.bulletTargetPoint.y, shootingCheck.bulletTargetPoint.z);
             bulletMove.speed = shootingCheck.speedMoveBullet;
             
-            bullet.SetActive(true);
+            bullet.gameObject.SetActive(true);
         }
 
         public IEnumerator NoAmmo(Unit.UnitController unit)

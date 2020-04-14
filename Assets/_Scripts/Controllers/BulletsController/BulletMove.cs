@@ -24,7 +24,7 @@ namespace Controllers.BulletsController
 
         private void DisableBullet()
         {
-            LinkManager.instance.bulletsPool.AddInList(gameObject);
+            LinkManager.instance.bulletsPool.AddInList(this);
             gameObject.SetActive(false);
         }
 
